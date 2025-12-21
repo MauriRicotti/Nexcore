@@ -85,127 +85,202 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Mobile menu toggle and accessibility
-  const navToggle = document.querySelector('.nav-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (navToggle && mobileMenu) {
-    let backdropEl = null;
-    let _savedScrollY = 0;
+  // ========== Mobile Menu System ==========
+  class MobileMenuController {
+    constructor() {
+      this.navToggle = document.querySelector('.nav-toggle');
+      this.mobileMenu = document.getElementById('mobile-menu');
+      this.backdrop = null;
+      this.savedScrollY = 0;
+      this.isOpen = false;
+      this.resizeHandler = null;
 
-    const createBackdrop = () => {
-      const b = document.createElement('div');
-      b.className = 'mobile-backdrop';
-      // insert BEFORE the mobile menu so the panel stays visually above the backdrop
-      if (mobileMenu && mobileMenu.parentNode) mobileMenu.parentNode.insertBefore(b, mobileMenu);
-      else document.body.appendChild(b);
+      if (this.navToggle && this.mobileMenu) {
+        this.init();
+      }
+    }
 
-      // set left to the panel width so it doesn't cover the panel
-      const setLeft = () => {
+    init() {
+      // Toggle button click
+      this.navToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.toggle();
+      });
+
+      // Links inside menu - use event delegation
+      this.mobileMenu.addEventListener('click', (e) => {
+        const link = e.target.closest('a[href^="#"]');
+        if (link) {
+          this.handleLinkClick(e, link);
+        }
+      });
+
+      // ESC key to close
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && this.isOpen) {
+          this.close();
+        }
+      });
+
+      // Prevent menu interactions from closing on internal clicks
+      this.mobileMenu.addEventListener('click', (e) => e.stopPropagation());
+
+      // Close when clicking backdrop
+      document.addEventListener('click', () => {
+        if (this.isOpen && this.backdrop) {
+          this.close();
+        }
+      });
+    }
+
+    createBackdrop() {
+      const backdrop = document.createElement('div');
+      backdrop.className = 'mobile-backdrop';
+      
+      // Insert before mobile menu in DOM
+      if (this.mobileMenu.parentNode) {
+        this.mobileMenu.parentNode.insertBefore(backdrop, this.mobileMenu);
+      } else {
+        document.body.appendChild(backdrop);
+      }
+
+      // Position backdrop left edge at panel width
+      const updateBackdropPosition = () => {
         try {
-          const w = mobileMenu.offsetWidth || mobileMenu.getBoundingClientRect().width;
-          b.style.left = w + 'px';
+          const panelWidth = this.mobileMenu.offsetWidth || 
+                           this.mobileMenu.getBoundingClientRect().width;
+          backdrop.style.left = panelWidth + 'px';
         } catch (err) {
-          b.style.left = '70vw';
+          backdrop.style.left = '70vw';
         }
       };
-      setLeft();
 
-      // update on resize while open
-      const onResize = () => { if (mobileMenu.classList.contains('is-open')) setLeft(); };
-      window.addEventListener('resize', onResize);
+      updateBackdropPosition();
 
-      // trigger transition
-      requestAnimationFrame(() => b.classList.add('is-open'));
-      b.addEventListener('click', closeMenu);
-      b._cleanup = () => { window.removeEventListener('resize', onResize); };
-      return b;
-    };
+      // Handle resize events
+      this.resizeHandler = () => updateBackdropPosition();
+      window.addEventListener('resize', this.resizeHandler);
 
-    const openMenu = () => {
-      // prevent page from jumping by locking scroll while preserving position
-      _savedScrollY = window.scrollY || window.pageYOffset;
+      // Trigger animation
+      requestAnimationFrame(() => backdrop.classList.add('is-open'));
+
+      return backdrop;
+    }
+
+    removeBackdrop() {
+      if (!this.backdrop) return;
+
+      this.backdrop.classList.remove('is-open');
+      
+      // Cleanup resize listener
+      if (this.resizeHandler) {
+        window.removeEventListener('resize', this.resizeHandler);
+        this.resizeHandler = null;
+      }
+
+      // Remove after transition
+      setTimeout(() => {
+        if (this.backdrop && this.backdrop.parentNode) {
+          this.backdrop.parentNode.removeChild(this.backdrop);
+        }
+        this.backdrop = null;
+      }, 120);
+    }
+
+    open() {
+      if (this.isOpen) return;
+
+      // Save scroll position
+      this.savedScrollY = window.scrollY || window.pageYOffset;
+
+      // Lock scroll
       try {
         document.body.style.position = 'fixed';
-        document.body.style.top = `-${_savedScrollY}px`;
+        document.body.style.top = `-${this.savedScrollY}px`;
         document.body.style.width = '100%';
+        document.body.style.overflow = 'hidden';
       } catch (err) {
         // ignore
       }
-      mobileMenu.classList.add('is-open');
-      mobileMenu.setAttribute('aria-hidden', 'false');
-      navToggle.setAttribute('aria-expanded', 'true');
-      navToggle.setAttribute('aria-label', 'Cerrar menú');
-      backdropEl = createBackdrop();
-      // focus first link for accessibility without scrolling the document
-      const firstLink = mobileMenu.querySelector('a');
-      if (firstLink) {
-        try { firstLink.focus({ preventScroll: true }); }
-        catch (err) { firstLink.focus(); }
-      }
-    };
 
-    const closeMenu = () => {
-      mobileMenu.classList.remove('is-open');
-      mobileMenu.setAttribute('aria-hidden', 'true');
-      navToggle.setAttribute('aria-expanded', 'false');
-      navToggle.setAttribute('aria-label', 'Abrir menú');
-      // restore scroll locking state and return to previous scroll position
+      // Update states
+      this.isOpen = true;
+      this.mobileMenu.classList.add('is-open');
+      this.mobileMenu.setAttribute('aria-hidden', 'false');
+      this.navToggle.setAttribute('aria-expanded', 'true');
+
+      // Create backdrop
+      this.backdrop = this.createBackdrop();
+    }
+
+    close(shouldRestoreScroll = true) {
+      if (!this.isOpen) return;
+
+      // Update states
+      this.isOpen = false;
+      this.mobileMenu.classList.remove('is-open');
+      this.mobileMenu.setAttribute('aria-hidden', 'true');
+      this.navToggle.setAttribute('aria-expanded', 'false');
+
+      // Restore scroll position BEFORE unlocking (important!)
+      try {
+        window.scrollTo(0, this.savedScrollY);
+      } catch (err) {
+        // ignore
+      }
+
+      // Unlock scroll
       try {
         document.body.style.position = '';
         document.body.style.top = '';
         document.body.style.width = '';
+        document.body.style.overflow = '';
       } catch (err) {
         // ignore
       }
-      document.body.style.overflow = '';
-      document.documentElement.style.overflow = '';
-      if (backdropEl) {
-        backdropEl.classList.remove('is-open');
-        if (typeof backdropEl._cleanup === 'function') backdropEl._cleanup();
-        // remove after transition
-        setTimeout(() => {
-          if (backdropEl && backdropEl.parentNode) backdropEl.parentNode.removeChild(backdropEl);
-          backdropEl = null;
-        }, 240);
+
+      // Remove backdrop
+      this.removeBackdrop();
+
+      // Focus toggle button
+      try {
+        this.navToggle.focus({ preventScroll: true });
+      } catch (err) {
+        this.navToggle.focus();
       }
-      // restore previous scroll position
-      try { window.scrollTo(0, _savedScrollY); } catch (err) { /* ignore */ }
-      try { navToggle.focus({ preventScroll: true }); } catch (err) { navToggle.focus(); }
-    };
+    }
 
-    navToggle.addEventListener('click', () => {
-      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-      if (isOpen) closeMenu(); else openMenu();
-    });
+    toggle() {
+      if (this.isOpen) {
+        this.close();
+      } else {
+        this.open();
+      }
+    }
 
-    // Close when clicking a link inside the mobile menu
-    mobileMenu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', (e) => {
-        const href = a.getAttribute('href');
-        // If it's an internal anchor, prevent default, close menu and then
-        // perform a smooth scroll after closing so document scrolling works
-        // (we remove `overflow: hidden` when closing the menu).
-        if (href && href.startsWith('#')) {
-          e.preventDefault();
-          closeMenu();
-          const target = document.querySelector(href);
-          if (target) {
-            // small timeout to ensure body scroll is re-enabled
-            setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 40);
-          }
-        } else {
-          closeMenu();
+    handleLinkClick(e, link) {
+      const href = link.getAttribute('href');
+      
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        this.close();
+
+        // Scroll to target after menu closes
+        const target = document.querySelector(href);
+        if (target) {
+          setTimeout(() => {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }, 120);
         }
-      });
-    });
-
-    // Close on Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') {
-        closeMenu();
+      } else {
+        // External link - just close the menu
+        this.close();
       }
-    });
+    }
   }
+
+  // Initialize mobile menu
+  new MobileMenuController();
 
   // Small accessibility: whatsapp anchor opens in new tab (handled by anchor attributes)
 
