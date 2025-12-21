@@ -236,4 +236,134 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', () => { requestAnimationFrame(update); });
   })();
+
+  // Funcionalidad para el botón "Ver Más Proyectos"
+  const verMasBtn = document.getElementById('ver-mas-btn');
+  if (verMasBtn) {
+    verMasBtn.addEventListener('click', () => {
+      const hiddenProjects = document.querySelectorAll('.hidden-project');
+      hiddenProjects.forEach(project => {
+        project.classList.add('visible');
+      });
+      // Opcional: ocultar el botón después de hacer clic
+      verMasBtn.style.display = 'none';
+    });
+  }
+
+  // Animación de la sección de contacto
+  if (window.gsap) {
+    // Animar título y subtitle
+    gsap.from('.contact-section .section-title', {
+      opacity: 0,
+      y: 40,
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: '#contact',
+        start: 'top 70%'
+      }
+    });
+
+    gsap.from('.contact-section .section-subtitle', {
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      delay: 0.2,
+      scrollTrigger: {
+        trigger: '#contact',
+        start: 'top 70%'
+      }
+    });
+  }
+
+  // Validación y manejo del formulario de contacto
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Obtener datos del formulario
+      const formData = new FormData(this);
+      
+      // Cambiar texto del botón
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = '✓ Mensaje Enviado';
+      submitBtn.disabled = true;
+      
+      // Aquí iría la lógica para enviar el formulario
+      // Por ahora, solo resetear después de 2 segundos
+      setTimeout(() => {
+        this.reset();
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }, 2000);
+    });
+  }
+
+  // Inicializar mapa de Leaflet
+  const initMap = () => {
+    const mapElement = document.getElementById('map');
+    if (mapElement && window.L) {
+      // Coordenadas de Buenos Aires, Argentina
+      const buenosAires = [-34.6037, -58.3816];
+      
+      // Crear mapa
+      const map = L.map('map', {
+        zoomControl: true,
+        dragging: true,
+        scrollWheelZoom: true
+      }).setView(buenosAires, 13);
+      
+      // Agregar capa de tiles (OpenStreetMap)
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors',
+        maxZoom: 19
+      }).addTo(map);
+      
+      // Agregar marcador en Buenos Aires
+      const marker = L.marker(buenosAires, {
+        title: 'Buenos Aires, Argentina'
+      }).addTo(map);
+      
+      // Popup del marcador
+      marker.bindPopup('<strong>Buenos Aires</strong><br>Argentina', {
+        className: 'custom-popup'
+      }).openPopup();
+      
+      // Estilo personalizado para Leaflet
+      const style = document.createElement('style');
+      style.textContent = `
+        .leaflet-container {
+          background-color: #0f0f0f !important;
+        }
+        .custom-popup .leaflet-popup-content-wrapper {
+          background-color: rgba(40, 88, 172, 0.95) !important;
+          border-radius: 8px;
+          border: 1px solid var(--color-primario) !important;
+        }
+        .custom-popup .leaflet-popup-content {
+          color: white;
+          font-size: 0.85rem;
+          font-family: Montserrat, sans-serif;
+          margin: 6px;
+        }
+        .custom-popup .leaflet-popup-tip {
+          background-color: rgba(40, 88, 172, 0.95) !important;
+        }
+        .leaflet-marker-icon {
+          filter: hue-rotate(200deg) brightness(1.1);
+        }
+      `;
+      document.head.appendChild(style);
+    }
+  };
+
+  // Iniciar mapa cuando el documento esté listo
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMap);
+  } else {
+    initMap();
+  }
+
+
 });
