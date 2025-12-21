@@ -1,37 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // ========== OVERLAY DE BIENVENIDA ==========
-  const splashOverlay = document.getElementById('splash-overlay');
-  
-  if (splashOverlay) {
-    // Bloquear scroll mientras está el overlay
-    document.body.style.overflow = 'hidden';
-    
-    // Mostrar overlay por 1.5 segundos y luego desaparecer
-    setTimeout(() => {
-      splashOverlay.classList.add('hidden');
-      // Remover del DOM después de la animación
-      setTimeout(() => {
-        splashOverlay.remove();
-        // Reactivar scroll
-        document.body.style.overflow = '';
-      }, 500);
-    }, 1500);
-  }
-
   // GSAP + ScrollTrigger: intro animations and scroll reveals
   if (window.gsap) {
     gsap.registerPlugin(ScrollTrigger);
 
     // prevent flash: set initial states via GSAP
-    gsap.set([".site-header", ".hero-title .big", ".hero-sub", ".hero-ctas a", ".hero-right", ".hero-feats .feat"], { opacity: 0, y: 20 });
+    gsap.set([".site-header", ".hero-title .big", ".hero-sub", ".hero-ctas a", ".hero-feats .feat"], { opacity: 0, y: 20 });
+    gsap.set(".hero-right", { opacity: 0, y: 30, scale: 0.85 });
 
     const tl = gsap.timeline({ defaults: { duration: 0.8, ease: 'power3.out' } });
     tl.to('.site-header', { y: 0, opacity: 1, duration: 0.5 })
-      .to('.hero-title .big', { opacity: 1, y: 0, stagger: 0.08 }, '-=0.3')
+      .to('.hero-right', { opacity: 1, y: 0, scale: 1, duration: 1, ease: 'back.out(1.2)' }, 0.2)
+      .to('.hero-title .big', { opacity: 1, y: 0, stagger: 0.08 }, '-=0.6')
       .to('.hero-sub', { opacity: 1, y: 0 }, '-=0.55')
       .to('.hero-ctas a', { opacity: 1, y: 0, stagger: 0.12 }, '-=0.45')
-      .to('.hero-feats .feat', { opacity: 1, y: 0, stagger: 0.12, duration: 0.6 }, '-=0.5')
-      .to('.hero-right', { opacity: 1, y: 0, scale: 1 }, '-=0.7');
+      .to('.hero-feats .feat', { opacity: 1, y: 0, stagger: 0.12, duration: 0.6 }, '-=0.5');
 
     // Scroll reveal for "nosotros"
     gsap.from('#nosotros .nosotros-left', {
@@ -508,7 +490,8 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   
   // Solo activar cursor personalizado si no es un dispositivo táctil
-  if (!isTouchDevice()) {
+  // DESHABILITADO: No activar cursor personalizado (usar cursor normal)
+  if (!isTouchDevice() && false) {
     // Obtener o crear elemento custom cursor
     let customCursor = document.getElementById('custom-cursor');
     if (!customCursor) {
@@ -617,6 +600,16 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
+    // Efecto de click en el cursor
+    document.addEventListener('mousedown', () => {
+      customCursor.classList.add('click');
+      
+      // Remover la clase después de la animación
+      setTimeout(() => {
+        customCursor.classList.remove('click');
+      }, 600);
+    });
+
     // Restaurar cursor normal al salir de la ventana
     document.addEventListener('mouseleave', () => {
       document.body.style.cursor = 'auto';
@@ -682,9 +675,26 @@ Promise.all([
   });
 }).catch(err => console.log('Error loading translations:', err));
 
+// Función para cambiar el mockup según el idioma
+function updateMockupImage() {
+  const mockupImg = document.getElementById('hero-mockup-img');
+  if (!mockupImg) return;
+  
+  const currentLang = i18next.language.split('-')[0];
+  
+  if (currentLang === 'en') {
+    mockupImg.src = 'assets/Mockup laptop ingles.webp';
+  } else {
+    mockupImg.src = 'assets/Mockup laptop hero2.webp';
+  }
+}
+
 // Función para traducir la página
 function translatePage() {
   const t = i18next.t;
+  
+  // Cambiar mockup según idioma
+  updateMockupImage();
   
   // Navbar
   document.querySelectorAll('[data-i18n]').forEach(el => {

@@ -38,13 +38,13 @@
   },
   "banner": {
     "item1Key": "1:1",
-    "item1Sub": "Trato directo",
+    "item1Sub": "TRATO DIRECTO",
     "item2Key": "UX/UI",
-    "item2Sub": "Diseño moderno",
+    "item2Sub": "DISEÑO MODERNO",
     "item3Key": "100%",
-    "item3Sub": "a medida",
+    "item3Sub": "A MEDIDA",
     "item4Key": "SEO",
-    "item4Sub": "optimizado"
+    "item4Sub": "OPTIMIZADO"
   },
   "proceso": {
     "label": "NUESTRO PROCESO",
@@ -197,5 +197,21 @@
   },
   "splash": {
     "subtitle": "Agencia de Desarrollo Web"
+  },
+  "footer": {
+    "description": "Agencia de desarrollo web especializada en crear soluciones digitales innovadoras para empresas de todos los tamaños.",
+    "navTitle": "Navegación",
+    "servicesTitle": "Servicios",
+    "service1": "Diseño Web",
+    "service2": "Desarrollo Full Stack",
+    "service3": "E-commerce",
+    "service4": "Optimización SEO",
+    "service5": "Consultoría Digital",
+    "contactTitle": "Contacto",
+    "copyright": "&copy; 2026 Nexcore. Todos los derechos reservados.",
+    "languageLabel": "Idioma:",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "cookies": "Cookies"
   }
 }

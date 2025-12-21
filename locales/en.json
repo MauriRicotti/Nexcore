@@ -38,13 +38,13 @@
   },
   "banner": {
     "item1Key": "1:1",
-    "item1Sub": "Direct service",
+    "item1Sub": "DIRECT SERVICE",
     "item2Key": "UX/UI",
-    "item2Sub": "Modern design",
+    "item2Sub": "MODERN DESIGN",
     "item3Key": "100%",
-    "item3Sub": "custom made",
+    "item3Sub": "CUSTOM MADE",
     "item4Key": "SEO",
-    "item4Sub": "optimized"
+    "item4Sub": "OPTIMIZED"
   },
   "proceso": {
     "label": "OUR PROCESS",
@@ -197,5 +197,21 @@
   },
   "splash": {
     "subtitle": "Web Development Agency"
+  },
+  "footer": {
+    "description": "Web development agency specialized in creating innovative digital solutions for companies of all sizes.",
+    "navTitle": "Navigation",
+    "servicesTitle": "Services",
+    "service1": "Web Design",
+    "service2": "Full Stack Development",
+    "service3": "E-commerce",
+    "service4": "SEO Optimization",
+    "service5": "Digital Consulting",
+    "contactTitle": "Contact",
+    "copyright": "&copy; 2026 Nexcore. All rights reserved.",
+    "languageLabel": "Language:",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookies"
   }
 }

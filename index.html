@@ -106,17 +106,6 @@
     </script>
   </head>
   <body>
-    <!-- Overlay de bienvenida -->
-    <div id="splash-overlay" class="splash-overlay">
-      <div class="splash-content">
-        <img src="assets/Nexcore logo.png" alt="Nexcore" class="splash-logo" />
-        <h1 class="splash-title">NEXCORE</h1>
-        <p class="splash-subtitle" data-i18n="splash.subtitle">
-          Agencia de Desarrollo Web
-        </p>
-      </div>
-    </div>
-
     <!-- Cursor personalizado -->
     <div id="custom-cursor" class="custom-cursor"></div>
 
@@ -255,6 +244,7 @@
           <div class="hero-right" aria-hidden="true">
             <div class="mockup-wrap" aria-hidden="true">
               <img
+                id="hero-mockup-img"
                 src="assets/Mockup laptop hero2.webp"
                 alt=""
                 loading="lazy"
@@ -264,10 +254,223 @@
           </div>
         </div>
 
-        <a class="floating-up" href="#top" aria-label="Ir arriba"
-          ><i class="bi bi-arrow-up" aria-hidden="true"></i
+        <a class="floating-up" href="#top" aria-label="Ir arriba" title="Arriba"
+          ><i class="bi bi-chevron-up" aria-hidden="true"></i
         ></a>
       </section>
+
+      <!-- Tech Stack Carousel -->
+      <div class="tech-carousel">
+        <div class="tech-carousel-track">
+          <!-- Primera serie -->
+          <div class="tech-item">
+            <div class="tech-icon html-icon">
+              <i class="bi bi-filetype-html"></i>
+            </div>
+            <span class="tech-name">HTML5</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon css-icon">
+              <i class="bi bi-filetype-css"></i>
+            </div>
+            <span class="tech-name">CSS3</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon js-icon">
+              <i class="bi bi-filetype-js"></i>
+            </div>
+            <span class="tech-name">JavaScript</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon bootstrap-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M3.5 3h17A1.5 1.5 0 0 1 22 4.5v15A1.5 1.5 0 0 1 20.5 21h-17A1.5 1.5 0 0 1 2 19.5v-15A1.5 1.5 0 0 1 3.5 3M7 7v4h3V7H7m5 0v10h3V7h-3M7 12v5h3v-5H7m5-5v10h3V7h-3"
+                />
+              </svg>
+            </div>
+            <span class="tech-name">Bootstrap</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon github-icon">
+              <i class="bi bi-github"></i>
+            </div>
+            <span class="tech-name">GitHub</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon vscode-icon">
+              <i class="bi bi-code-square"></i>
+            </div>
+            <span class="tech-name">VS Code</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon figma-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11z"
+                />
+              </svg>
+            </div>
+            <span class="tech-name">Figma</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon responsive-icon">
+              <i class="bi bi-phone"></i>
+            </div>
+            <span class="tech-name">Responsive</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon react-icon">
+              <i class="bi bi-bezier2"></i>
+            </div>
+            <span class="tech-name">React</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon nodejs-icon">
+              <i class="bi bi-server"></i>
+            </div>
+            <span class="tech-name">Node.js</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon tailwind-icon">
+              <i class="bi bi-palette"></i>
+            </div>
+            <span class="tech-name">Tailwind</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon wordpress-icon">
+              <i class="bi bi-wordpress"></i>
+            </div>
+            <span class="tech-name">WordPress</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon git-icon">
+              <i class="bi bi-diagram-3"></i>
+            </div>
+            <span class="tech-name">Git</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon seo-icon">
+              <i class="bi bi-search"></i>
+            </div>
+            <span class="tech-name">SEO</span>
+          </div>
+
+          <!-- Segunda serie (duplicada para loop continuo sin saltos) -->
+          <div class="tech-item">
+            <div class="tech-icon html-icon">
+              <i class="bi bi-filetype-html"></i>
+            </div>
+            <span class="tech-name">HTML5</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon css-icon">
+              <i class="bi bi-filetype-css"></i>
+            </div>
+            <span class="tech-name">CSS3</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon js-icon">
+              <i class="bi bi-filetype-js"></i>
+            </div>
+            <span class="tech-name">JavaScript</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon bootstrap-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M3.5 3h17A1.5 1.5 0 0 1 22 4.5v15A1.5 1.5 0 0 1 20.5 21h-17A1.5 1.5 0 0 1 2 19.5v-15A1.5 1.5 0 0 1 3.5 3M7 7v4h3V7H7m5 0v10h3V7h-3M7 12v5h3v-5H7m5-5v10h3V7h-3"
+                />
+              </svg>
+            </div>
+            <span class="tech-name">Bootstrap</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon github-icon">
+              <i class="bi bi-github"></i>
+            </div>
+            <span class="tech-name">GitHub</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon vscode-icon">
+              <i class="bi bi-code-square"></i>
+            </div>
+            <span class="tech-name">VS Code</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon figma-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11z"
+                />
+              </svg>
+            </div>
+            <span class="tech-name">Figma</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon responsive-icon">
+              <i class="bi bi-phone"></i>
+            </div>
+            <span class="tech-name">Responsive</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon react-icon">
+              <i class="bi bi-bezier2"></i>
+            </div>
+            <span class="tech-name">React</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon nodejs-icon">
+              <i class="bi bi-server"></i>
+            </div>
+            <span class="tech-name">Node.js</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon tailwind-icon">
+              <i class="bi bi-palette"></i>
+            </div>
+            <span class="tech-name">Tailwind</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon wordpress-icon">
+              <i class="bi bi-wordpress"></i>
+            </div>
+            <span class="tech-name">WordPress</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon git-icon">
+              <i class="bi bi-diagram-3"></i>
+            </div>
+            <span class="tech-name">Git</span>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon seo-icon">
+              <i class="bi bi-search"></i>
+            </div>
+            <span class="tech-name">SEO</span>
+          </div>
+        </div>
+      </div>
 
       <!-- Anchor para navegación exacta a la parte superior de 'nosotros' -->
       <div id="nosotros-top" class="anchor-offset" aria-hidden="true"></div>
@@ -354,28 +557,28 @@
             <div class="banner-item">
               <span class="banner-key" data-i18n="banner.item1Key">1:1</span
               ><span class="banner-item-sub" data-i18n="banner.item1Sub"
-                >Trato directo</span
+                >TRATO DIRECTO</span
               >
             </div>
             <div class="banner-sep" aria-hidden="true"></div>
             <div class="banner-item">
               <span class="banner-key" data-i18n="banner.item2Key">UX/UI</span
               ><span class="banner-item-sub" data-i18n="banner.item2Sub"
-                >Diseño moderno</span
+                >DISEÑO MODERNO</span
               >
             </div>
             <div class="banner-sep" aria-hidden="true"></div>
             <div class="banner-item">
               <span class="banner-key" data-i18n="banner.item3Key">100%</span
               ><span class="banner-item-sub" data-i18n="banner.item3Sub"
-                >a medida</span
+                >A MEDIDA</span
               >
             </div>
             <div class="banner-sep" aria-hidden="true"></div>
             <div class="banner-item">
               <span class="banner-key" data-i18n="banner.item4Key">SEO</span
               ><span class="banner-item-sub" data-i18n="banner.item4Sub"
-                >optimizado</span
+                >OPTIMIZADO</span
               >
             </div>
 
@@ -383,25 +586,25 @@
             <div class="banner-item">
               <span class="banner-key" data-i18n="banner.item1Key">1:1</span
               ><span class="banner-item-sub" data-i18n="banner.item1Sub"
-                >Trato directo</span
+                >TRATO DIRECTO</span
               >
             </div>
             <div class="banner-sep" aria-hidden="true"></div>
             <div class="banner-item">
               <span class="banner-key" data-i18n="banner.item2Key">UX/UI</span
               ><span class="banner-item-sub" data-i18n="banner.item2Sub"
-                >Diseño moderno</span
+                >DISEÑO MODERNO</span
               >
             </div>
             <div class="banner-sep" aria-hidden="true"></div>
             <div class="banner-item">
               <span class="banner-key">100%</span
-              ><span class="banner-item-sub">a medida</span>
+              ><span class="banner-item-sub">A MEDIDA</span>
             </div>
             <div class="banner-sep" aria-hidden="true"></div>
             <div class="banner-item">
               <span class="banner-key">SEO</span
-              ><span class="banner-item-sub">optimizado</span>
+              ><span class="banner-item-sub">OPTIMIZADO</span>
             </div>
           </div>
         </div>
@@ -833,6 +1036,7 @@
                   data-bs-target="#faqCollapseOne"
                   aria-expanded="true"
                   aria-controls="faqCollapseOne"
+                  data-i18n="faq.q1"
                 >
                   ¿Cuánto tiempo se tarda en desarrollar un sitio web básico?
                 </button>
@@ -843,7 +1047,7 @@
                 aria-labelledby="faqHeadingOne"
                 data-bs-parent="#faqAccordion"
               >
-                <div class="accordion-body">
+                <div class="accordion-body" data-i18n="faq.a1">
                   Un sitio básico o landing suele tardar entre 1 y 3 semanas,
                   dependiendo del contenido y revisiones. Proyectos más
                   complejos pueden tardar entre 4 a 8 semanas.
@@ -860,6 +1064,7 @@
                   data-bs-target="#faqCollapseTwo"
                   aria-expanded="false"
                   aria-controls="faqCollapseTwo"
+                  data-i18n="faq.q2"
                 >
                   ¿Ofrecen mantenimiento después del lanzamiento?
                 </button>
@@ -870,7 +1075,7 @@
                 aria-labelledby="faqHeadingTwo"
                 data-bs-parent="#faqAccordion"
               >
-                <div class="accordion-body">
+                <div class="accordion-body" data-i18n="faq.a2">
                   Sí, ofrecemos planes de mantenimiento y soporte para
                   actualizaciones, seguridad y mejoras continuas. También
                   realizamos seguimiento del rendimiento y SEO.
@@ -1353,7 +1558,7 @@
               <img src="assets/Nexcore logo.png" alt="Nexcore logo" />
               <span>NEXCORE</span>
             </div>
-            <p class="footer-description">
+            <p class="footer-description" data-i18n="footer.description">
               Agencia de desarrollo web especializada en crear soluciones
               digitales innovadoras para empresas de todos los tamaños.
             </p>
@@ -1395,31 +1600,53 @@
 
           <!-- Columna 2: Navegación -->
           <div class="footer-section">
-            <h4>Navegación</h4>
+            <h4 data-i18n="footer.navTitle">Navegación</h4>
             <ul class="footer-links">
-              <li><a href="#hero">Inicio</a></li>
-              <li><a href="#nosotros-top">Nosotros</a></li>
-              <li><a href="#servicios">Servicios</a></li>
-              <li><a href="#proyectos">Proyectos</a></li>
-              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#hero" data-i18n="nav.inicio">Inicio</a></li>
+              <li>
+                <a href="#nosotros-top" data-i18n="nav.nosotros">Nosotros</a>
+              </li>
+              <li>
+                <a href="#servicios" data-i18n="nav.servicios">Servicios</a>
+              </li>
+              <li>
+                <a href="#proyectos" data-i18n="nav.proyectos">Proyectos</a>
+              </li>
+              <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
             </ul>
           </div>
 
           <!-- Columna 3: Servicios -->
           <div class="footer-section">
-            <h4>Servicios</h4>
+            <h4 data-i18n="footer.servicesTitle">Servicios</h4>
             <ul class="footer-links">
-              <li><a href="#servicios">Diseño Web</a></li>
-              <li><a href="#servicios">Desarrollo Full Stack</a></li>
-              <li><a href="#servicios">E-commerce</a></li>
-              <li><a href="#servicios">Optimización SEO</a></li>
-              <li><a href="#servicios">Consultoría Digital</a></li>
+              <li>
+                <a href="#servicios" data-i18n="footer.service1">Diseño Web</a>
+              </li>
+              <li>
+                <a href="#servicios" data-i18n="footer.service2"
+                  >Desarrollo Full Stack</a
+                >
+              </li>
+              <li>
+                <a href="#servicios" data-i18n="footer.service3">E-commerce</a>
+              </li>
+              <li>
+                <a href="#servicios" data-i18n="footer.service4"
+                  >Optimización SEO</a
+                >
+              </li>
+              <li>
+                <a href="#servicios" data-i18n="footer.service5"
+                  >Consultoría Digital</a
+                >
+              </li>
             </ul>
           </div>
 
           <!-- Columna 4: Contacto -->
           <div class="footer-section">
-            <h4>Contacto</h4>
+            <h4 data-i18n="footer.contactTitle">Contacto</h4>
             <ul class="footer-links footer-contact">
               <li>
                 <a href="mailto:info@nexcore.com">
@@ -1459,12 +1686,16 @@
         <!-- Footer inferior -->
         <div class="footer-bottom">
           <div class="footer-bottom-left">
-            <p>&copy; 2025 Nexcore. Todos los derechos reservados.</p>
+            <p data-i18n="footer.copyright">
+              &copy; 2026 Nexcore. Todos los derechos reservados.
+            </p>
           </div>
           <div class="footer-bottom-center">
             <!-- Selector de idioma en footer -->
             <div class="footer-language-switcher">
-              <span class="language-label">Idioma:</span>
+              <span class="language-label" data-i18n="footer.languageLabel"
+                >Idioma:</span
+              >
               <button class="lang-btn" data-lang="es">ES</button>
               <span class="lang-separator">|</span>
               <button class="lang-btn active" data-lang="en">EN</button>
@@ -1472,9 +1703,15 @@
           </div>
           <div class="footer-bottom-right">
             <ul class="footer-legal">
-              <li><a href="#">Política de Privacidad</a></li>
-              <li><a href="#">Términos de Servicio</a></li>
-              <li><a href="#">Cookies</a></li>
+              <li>
+                <a href="#" data-i18n="footer.privacy"
+                  >Política de Privacidad</a
+                >
+              </li>
+              <li>
+                <a href="#" data-i18n="footer.terms">Términos de Servicio</a>
+              </li>
+              <li><a href="#" data-i18n="footer.cookies">Cookies</a></li>
             </ul>
           </div>
         </div>
