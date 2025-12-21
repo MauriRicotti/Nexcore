@@ -1,4 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // ========== OVERLAY DE BIENVENIDA ==========
+  const splashOverlay = document.getElementById('splash-overlay');
+  
+  if (splashOverlay) {
+    // Bloquear scroll mientras está el overlay
+    document.body.style.overflow = 'hidden';
+    
+    // Mostrar overlay por 1.5 segundos y luego desaparecer
+    setTimeout(() => {
+      splashOverlay.classList.add('hidden');
+      // Remover del DOM después de la animación
+      setTimeout(() => {
+        splashOverlay.remove();
+        // Reactivar scroll
+        document.body.style.overflow = '';
+      }, 500);
+    }, 1500);
+  }
+
   // GSAP + ScrollTrigger: intro animations and scroll reveals
   if (window.gsap) {
     gsap.registerPlugin(ScrollTrigger);
@@ -476,30 +495,231 @@ document.addEventListener('DOMContentLoaded', () => {
     initMap();
   }
 
-  // ========== CURSOR PERSONALIZADO ==========
-  const customCursor = document.getElementById('custom-cursor');
+  // ========== CURSOR PERSONALIZADO CON ESTELA ==========
+  // Detectar si el dispositivo es táctil/móvil
+  const isTouchDevice = () => {
+    return (
+      (typeof window !== 'undefined' &&
+        ('ontouchstart' in window ||
+          navigator.maxTouchPoints > 0 ||
+          navigator.msMaxTouchPoints > 0)) ||
+      window.matchMedia('(hover: none) and (pointer: coarse)').matches
+    );
+  };
   
-  if (customCursor) {
-    // Seguir al cursor
-    document.addEventListener('mousemove', (e) => {
-      customCursor.style.left = e.clientX + 'px';
-      customCursor.style.top = e.clientY + 'px';
+  // Solo activar cursor personalizado si no es un dispositivo táctil
+  if (!isTouchDevice()) {
+    // Obtener o crear elemento custom cursor
+    let customCursor = document.getElementById('custom-cursor');
+    if (!customCursor) {
+      customCursor = document.createElement('div');
+      customCursor.id = 'custom-cursor';
+      customCursor.className = 'custom-cursor';
+      document.body.appendChild(customCursor);
+    }
+    
+    // Crear canvas para la estela
+    const canvas = document.createElement('canvas');
+    canvas.id = 'cursor-trail-canvas';
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '9998';
+    document.body.appendChild(canvas);
+
+    const ctx = canvas.getContext('2d', { alpha: true });
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Variables para la estela
+    const trails = [];
+    let mouseX = 0;
+    let mouseY = 0;
+    const MAX_TRAILS = 30; // Reducido de 50 para mejor rendimiento
+    const TRAIL_DISTANCE = 8; // Aumentado de 5 para menos puntos
+
+    // Ocultar cursor por defecto
+    document.body.style.cursor = 'none';
+
+    // Redimensionar canvas al cambiar ventana
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     });
+
+    // Seguimiento del cursor y creación de estela
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+
+      // Actualizar posición del cursor personalizado
+      customCursor.style.left = mouseX + 'px';
+      customCursor.style.top = mouseY + 'px';
+
+      // Agregar puntos a la estela cada ciertos píxeles
+      const lastTrail = trails[trails.length - 1];
+      if (!lastTrail || Math.hypot(mouseX - lastTrail.x, mouseY - lastTrail.y) > TRAIL_DISTANCE) {
+        trails.push({
+          x: mouseX,
+          y: mouseY,
+          life: 1.0
+        });
+
+        // Limitar cantidad de puntos
+        if (trails.length > MAX_TRAILS) {
+          trails.shift();
+        }
+      }
+    });
+
+    // Animar la estela - optimizado
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Actualizar y dibujar trails
+      for (let i = 0; i < trails.length; i++) {
+        const trail = trails[i];
+        trail.life -= 0.03;
+
+        if (trail.life <= 0) {
+          trails.splice(i, 1);
+          i--;
+          continue;
+        }
+
+        // Usar fillStyle simple en lugar de gradiente para mejor rendimiento
+        const alpha = trail.life * 0.6;
+        ctx.fillStyle = `rgba(40, 89, 172, ${alpha})`;
+        ctx.beginPath();
+        const size = 6 * trail.life;
+        ctx.arc(trail.x, trail.y, size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      requestAnimationFrame(animate);
+    };
+
+    animate();
 
     // Hacer el cursor más grande al pasar sobre elementos interactivos
     const interactiveElements = document.querySelectorAll('a, button, input, textarea, select, .btn');
-    
+
     interactiveElements.forEach(el => {
       el.addEventListener('mouseenter', () => {
         customCursor.classList.add('active');
         el.style.cursor = 'none';
       });
-      
+
       el.addEventListener('mouseleave', () => {
         customCursor.classList.remove('active');
-        el.style.cursor = 'auto';
+        el.style.cursor = 'none';
       });
+    });
+
+    // Restaurar cursor normal al salir de la ventana
+    document.addEventListener('mouseleave', () => {
+      document.body.style.cursor = 'auto';
+    });
+
+    document.addEventListener('mouseenter', () => {
+      document.body.style.cursor = 'none';
     });
   }
 
 });
+
+// ========== i18next MULTI-IDIOMA ==========
+Promise.all([
+  fetch('locales/es.json').then(res => res.json()),
+  fetch('locales/en.json').then(res => res.json())
+]).then(([esData, enData]) => {
+  i18next.use(i18nextBrowserLanguageDetector).init({
+    fallbackLng: 'es',
+    debug: false,
+    resources: {
+      es: { translation: esData },
+      en: { translation: enData }
+    },
+    detection: {
+      order: ['localStorage', 'navigator'],
+      caches: ['localStorage']
+    }
+  }, function(err, t) {
+    if (err) return console.log('i18next error:', err);
+    
+    // Actualizar UI con idioma inicial
+    updateLanguageUI();
+    translatePage();
+  });
+
+  // Event listeners para botones de idioma - dentro del Promise
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.getAttribute('data-lang');
+      const currentLang = i18next.language.split('-')[0];
+      
+      // Evitar cambio si ya estamos en ese idioma
+      if (currentLang === lang) return;
+      
+      // Iniciar animación de blur
+      document.body.classList.add('language-switching');
+      
+      // Cambiar idioma a mitad de la animación (300ms)
+      setTimeout(() => {
+        i18next.changeLanguage(lang, (err, t) => {
+          if (err) return console.log('Error changing language:', err);
+          updateLanguageUI();
+          translatePage();
+          
+          // Limpiar clase después de la animación completa (300ms más)
+          setTimeout(() => {
+            document.body.classList.remove('language-switching');
+          }, 300);
+        });
+      }, 300);
+    });
+  });
+}).catch(err => console.log('Error loading translations:', err));
+
+// Función para traducir la página
+function translatePage() {
+  const t = i18next.t;
+  
+  // Navbar
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (key) {
+      el.textContent = t(key);
+    }
+  });
+  
+  // Traducir placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (key) {
+      el.placeholder = t(key);
+    }
+  });
+  
+  // Actualizar aria-labels y otros atributos
+  document.querySelectorAll('[data-i18n-attr]').forEach(el => {
+    const attr = el.getAttribute('data-i18n-attr');
+    const key = el.getAttribute('data-i18n-key');
+    if (attr && key) {
+      el.setAttribute(attr, t(key));
+    }
+  });
+}
+
+// Actualizar estado visual de los botones de idioma
+function updateLanguageUI() {
+  const currentLang = i18next.language.split('-')[0];
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.getAttribute('data-lang') === currentLang) {
+      btn.classList.add('active');
+    }
+  });
+}
+
