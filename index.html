@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Nexcore - Agencia de Desarrollo Web</title>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=BBH+Hegarty&family=Montserrat:wght@300;500;700;900&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/Nexcore logo.png" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div id="scroll-progress" aria-hidden="true"></div>
+      <nav class="nav container">
+        <div class="nav-left">
+          <button
+            class="nav-toggle"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            aria-label="Abrir menú"
+          >
+            <span class="hamburger" aria-hidden="true"></span>
+          </button>
+          <ul class="nav-menu">
+            <li><a href="#hero">Inicio</a></li>
+            <li><a href="#nosotros-top">Nosotros</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <a href="#" class="logo"
+          ><img
+            src="assets/Nexcore logo.png"
+            alt="Nexcore logo"
+            class="logo-img"
+          /><span>NEXCORE</span></a
+        >
+
+        <div class="nav-right">
+          <a class="btn btn-outline" href="#cotizar">Cotizar</a>
+          <a class="btn btn-primary" href="#contact">Contactos</a>
+        </div>
+
+        <!-- Menú móvil (panel lateral) -->
+        <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+          <ul class="mobile-menu-list">
+            <li><a href="#hero">Inicio</a></li>
+            <li><a href="#nosotros-top">Nosotros</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+          <div class="mobile-ctas">
+            <a class="btn btn-outline" href="#cotizar">Cotizar</a>
+            <a class="btn btn-primary" href="#contact">Contactos</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero" class="hero">
+        <div class="hero-deco deco-1" aria-hidden="true"></div>
+        <div class="hero-deco deco-2" aria-hidden="true"></div>
+        <div class="hero-deco deco-3" aria-hidden="true"></div>
+        <div class="hero-inner container">
+          <div class="hero-left">
+            <h1 class="hero-title">
+              <span class="big">Tu agencia</span>
+              <span class="big"
+                >Favorita De
+                <span class="arrow" aria-hidden="true">⟶</span></span
+              >
+              <span class="big highlight">Desarrollo Web</span>
+            </h1>
+
+            <p class="hero-sub">
+              Creamos lo que necesitás para que tu marca crezca. Diseño
+              estratégico y tecnología moderna enfocados en una sola cosa: los
+              resultados reales.
+            </p>
+
+            <div class="hero-ctas">
+              <a href="#cotizar" class="btn btn-primary"
+                >Cotizar<span class="icon"
+                  ><i class="bi bi-arrow-right" aria-hidden="true"></i></span
+              ></a>
+              <a href="#proyectos" class="btn btn-outline">Ver Proyectos</a>
+            </div>
+
+            <div class="hero-feats">
+              <div class="feat">
+                <h3>Diseño</h3>
+                <small>MODERNO</small>
+              </div>
+              <div class="feat">
+                <h3>SEO</h3>
+                <small>INICIAL</small>
+              </div>
+              <div class="feat">
+                <h3>Soporte</h3>
+                <small>POST-VENTA</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-right" aria-hidden="true">
+            <div class="mockup-wrap" aria-hidden="true">
+              <img
+                src="assets/Mockup laptop hero.webp"
+                alt="Mockup laptop"
+                class="hero-mockup"
+              />
+            </div>
+          </div>
+        </div>
+
+        <a class="floating-up" href="#top" aria-label="Ir arriba"
+          ><i class="bi bi-arrow-up" aria-hidden="true"></i
+        ></a>
+      </section>
+
+      <!-- Anchor para navegación exacta a la parte superior de 'nosotros' -->
+      <div id="nosotros-top" class="anchor-offset" aria-hidden="true"></div>
+      <section id="nosotros" class="nosotros container">
+        <div class="nosotros-inner">
+          <div class="nosotros-left">
+            <span class="eyebrow">QUIÉNES SOMOS</span>
+            <h2 class="nosotros-title">
+              Transformamos<br />
+              ideas en
+              <span class="nosotros-highlight">soluciones digitales</span>
+              reales
+            </h2>
+            <p class="nosotros-p">
+              En <b>NEXCORE</b> somos un equipo de Universitarios estudiantes de
+              Programación enfocados en convertir ideas en soluciones digitales
+              efectivas. Diseñamos y desarrollamos sitios web, landing pages y
+              sistemas a medida pensados para potenciar la presencia online de
+              negocios y profesionales.
+            </p>
+            <p class="nosotros-p muted">
+              Trabajamos integrando diseño, rendimiento y una comunicación
+              cercana, para ofrecer un proceso claro, ágil y transparente,
+              siempre orientado a generar resultados reales.
+            </p>
+            <a href="#contact" class="btn btn-cta"
+              >Trabajemos juntos
+              <span class="icon"
+                ><i class="bi bi-arrow-right" aria-hidden="true"></i></span
+            ></a>
+          </div>
+
+          <div class="nosotros-right" aria-hidden="true">
+            <div class="card card-1">
+              <div class="card-number">100%</div>
+              <div class="card-text">
+                Compromiso real con cada proyecto que llevamos adelante.
+              </div>
+            </div>
+
+            <div class="card card-2">
+              <h3>Soporte</h3>
+              <p>
+                Acompañamiento cercano y asistencia cuando tu proyecto lo
+                necesita.
+              </p>
+            </div>
+
+            <div class="card card-3">
+              <h3>Diseño</h3>
+              <p>Proyectos con foco en UX/UI y conversión para tus usuarios.</p>
+            </div>
+
+            <div class="card card-4">
+              <h3>SEO</h3>
+              <p>
+                Optimización para visibilidad, velocidad y mejores resultados.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Banner: colocado justo debajo de 'nosotros' -->
+      <section
+        id="features-banner"
+        class="rolling-banner banner--tall"
+        aria-label="Beneficios Nexcore"
+      >
+        <div class="container banner-wrap">
+          <div class="banner-track" aria-hidden="false">
+            <div class="banner-item">
+              <span class="banner-key">1:1</span
+              ><span class="banner-item-sub">Trato directo</span>
+            </div>
+            <div class="banner-sep" aria-hidden="true"></div>
+            <div class="banner-item">
+              <span class="banner-key">UX/UI</span
+              ><span class="banner-item-sub">Diseño moderno</span>
+            </div>
+            <div class="banner-sep" aria-hidden="true"></div>
+            <div class="banner-item">
+              <span class="banner-key">100%</span
+              ><span class="banner-item-sub">a medida</span>
+            </div>
+            <div class="banner-sep" aria-hidden="true"></div>
+            <div class="banner-item">
+              <span class="banner-key">SEO</span
+              ><span class="banner-item-sub">optimizado</span>
+            </div>
+
+            <!-- Duplicado para loop continuo -->
+            <div class="banner-item">
+              <span class="banner-key">1:1</span
+              ><span class="banner-item-sub">Trato directo</span>
+            </div>
+            <div class="banner-sep" aria-hidden="true"></div>
+            <div class="banner-item">
+              <span class="banner-key">UX/UI</span
+              ><span class="banner-item-sub">Diseño moderno</span>
+            </div>
+            <div class="banner-sep" aria-hidden="true"></div>
+            <div class="banner-item">
+              <span class="banner-key">100%</span
+              ><span class="banner-item-sub">a medida</span>
+            </div>
+            <div class="banner-sep" aria-hidden="true"></div>
+            <div class="banner-item">
+              <span class="banner-key">SEO</span
+              ><span class="banner-item-sub">optimizado</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección: Nuestro proceso (añadida) -->
+      <section
+        id="proceso"
+        class="proceso container"
+        aria-label="Nuestro proceso"
+      >
+        <div class="proceso-inner">
+          <div class="proceso-head">
+            <span class="eyebrow">NUESTRO PROCESO</span>
+            <h2 class="proceso-title">De la idea al lanzamiento</h2>
+          </div>
+
+          <div class="proceso-grid">
+            <article class="proceso-card">
+              <h3>Análisis</h3>
+              <p>
+                Conversamos sobre tu idea, tus objetivos y el tipo de proyecto
+                que necesitás. Definimos si lo mejor para vos es una landing, un
+                sitio institucional, una web personal o un desarrollo a medida.
+              </p>
+            </article>
+
+            <article class="proceso-card">
+              <h3>Diseño</h3>
+              <p>
+                Creamos un diseño moderno, claro y alineado con tu marca. Te
+                presentamos prototipos visuales para que puedas ver la estética
+                y estructura final de tu web antes de avanzar al desarrollo.
+              </p>
+            </article>
+
+            <article class="proceso-card">
+              <h3>Desarrollo técnico</h3>
+              <p>
+                Trabajamos con la tecnología que mejor se adapta a tu proyecto.
+                Según cada necesidad, podemos desarrollar soluciones a medida
+                con código o utilizar herramientas low-code como WordPress.
+              </p>
+            </article>
+
+            <article class="proceso-card">
+              <h3>Lanzamiento</h3>
+              <p>
+                Subimos tu sitio y lo dejamos funcionando al 100%, optimizado y
+                listo para recibir visitas desde el primer día. Ajustamos los
+                últimos detalles para asegurar una experiencia fluida.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección: Servicios -->
+      <section
+        id="servicios"
+        class="servicios container"
+        aria-label="Servicios"
+      >
+        <div class="servicios-inner">
+          <div class="servicios-head">
+            <span style="color: var(--color-primario)" class="eyebrow"
+              >NUESTROS SERVICIOS</span
+            >
+            <h2 class="servicios-title">
+              Soluciones digitales que
+              <span class="servicios-highlight">impulsan tu negocio</span>
+            </h2>
+            <p class="servicios-sub">
+              Combinamos estrategia, diseño y tecnología para crear productos
+              digitales que generan resultados reales y escalables.
+            </p>
+          </div>
+
+          <div class="servicios-grid" aria-hidden="false">
+            <article class="servicio-card" tabindex="0">
+              <div class="servicio-icon" aria-hidden="true">
+                <i class="bi bi-stack"></i>
+              </div>
+              <h3>Landing Pages</h3>
+              <small class="muted uppercase">PÁGINAS RÁPIDAS Y EFECTIVAS</small>
+              <p>
+                Páginas rápidas, modernas y enfocadas en convertir. Ideales para
+                campañas y productos puntuales.
+              </p>
+            </article>
+
+            <article class="servicio-card" tabindex="0">
+              <div class="servicio-icon" aria-hidden="true">
+                <i class="bi bi-building"></i>
+              </div>
+              <h3>Sitios Corporativos</h3>
+              <small class="muted uppercase">PRESENCIA PROFESIONAL</small>
+              <p>
+                Webs completas y profesionales para mostrar la información de tu
+                empresa: servicios, equipo y contacto.
+              </p>
+            </article>
+
+            <article class="servicio-card" tabindex="0">
+              <div class="servicio-icon" aria-hidden="true">
+                <i class="bi bi-person"></i>
+              </div>
+              <h3>Personal Brand Websites</h3>
+              <small class="muted uppercase">TU MARCA POTENCIADA</small>
+              <p>
+                Portafolios y sitios personales diseñados para potenciar tu
+                marca profesional y destacar tus servicios.
+              </p>
+            </article>
+
+            <article class="servicio-card" tabindex="0">
+              <div class="servicio-icon" aria-hidden="true">
+                <i class="bi bi-cart"></i>
+              </div>
+              <h3>Web Apps y Tiendas Online</h3>
+              <small class="muted uppercase">SOLUCIONES A MEDIDA</small>
+              <p>
+                Aplicaciones y tiendas online adaptadas a tu negocio:
+                escalables, seguras y listas para crecer.
+              </p>
+            </article>
+
+            <article class="servicio-card" tabindex="0">
+              <div class="servicio-icon" aria-hidden="true">
+                <i class="bi bi-shield-lock"></i>
+              </div>
+              <h3>Mantenimiento y Actualizaciones</h3>
+              <small class="muted uppercase">SOPORTE CONTINUO</small>
+              <p>
+                Mantenimiento, soporte y optimizaciones para mantener tu sitio
+                funcionando al 100%.
+              </p>
+            </article>
+
+            <article class="servicio-card" tabindex="0">
+              <div class="servicio-icon" aria-hidden="true">
+                <i class="bi bi-palette"></i>
+              </div>
+              <h3>Diseño & UX</h3>
+              <small class="muted uppercase">EXPERIENCIA DE USUARIO</small>
+              <p>
+                Diseños centrados en conversión y experiencia, con prototipos y
+                tests de usabilidad.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección: CTA banner -->
+      <section
+        id="cta-banner"
+        class="cta-banner"
+        aria-label="Llamado a la acción"
+      >
+        <div class="container cta-inner">
+          <div class="cta-content">
+            <h2>¿Listo para empezar tu proyecto?</h2>
+            <p>
+              Hablemos y transformemos tu idea en una web que atraiga clientes y
+              crezca con tu negocio.
+            </p>
+            <div class="cta-ctas">
+              <a href="#cotizar" class="btn btn-primary">Cotizar ahora</a>
+              <a href="#contact" class="btn btn-outline">Contáctanos</a>
+            </div>
+          </div>
+
+          <div class="cta-deco" aria-hidden="true"></div>
+        </div>
+      </section>
+      <!-- Sección: Proyectos (cabecera centrada + dos columnas debajo) -->
+      <section
+        id="proyectos"
+        class="proyectos container"
+        aria-label="Proyectos destacados"
+      >
+        <div class="proyectos-head">
+          <span style="color: var(--color-primario)" class="eyebrow"
+            >PORTFOLIO</span
+          >
+          <h2 class="proyectos-title">
+            Proyectos que <span class="proyectos-highlight">generan</span>
+            <span class="proyectos-title-big">resultados</span>
+          </h2>
+          <p class="proyectos-sub">
+            Cada proyecto es una oportunidad para crear experiencias digitales
+            excepcionales que impulsan el crecimiento de nuestros clientes.
+          </p>
+        </div>
+
+        <div class="proyectos-inner">
+          <div class="proyectos-info">
+            <div class="project-type">Landing Page</div>
+            <h3 class="project-name">Oklahoma Studio</h3>
+            <p class="project-text">
+              Una web moderna y visualmente atractiva diseñada para una barbería
+              profesional. Presenta sus servicios, equipo y estilo de trabajo
+              con una estética cuidada, transmitiendo calidad, confianza y una
+              experiencia premium desde el primer vistazo..
+            </p>
+
+            <ul class="project-list">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript</li>
+              <li>Bootstrap</li>
+            </ul>
+
+            <a href="#" class="btn btn-primary">Visitar Web</a>
+          </div>
+
+          <div class="proyectos-media" aria-hidden="true">
+            <img
+              src="assets/Proyectos/Oklahoma Studio.png"
+              alt="Mockup del proyecto"
+              class="project-image"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
