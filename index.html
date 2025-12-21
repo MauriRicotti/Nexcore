@@ -4,6 +4,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Nexcore - Agencia de Desarrollo Web</title>
+    <meta
+      name="description"
+      content="Nexcore — Agencia de desarrollo web en Buenos Aires. Creamos sitios y tiendas online, con diseño, rendimiento y SEO enfocados en resultados reales."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Nexcore" />
+    <link rel="canonical" href="https://nexcore-gamma.vercel.app/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap"
+      href="https://nexcore-gamma.vercel.app/sitemap.xml"
+    />
 
     <!-- Fonts -->
     <link
@@ -36,16 +51,76 @@
     <link rel="icon" type="image/png" href="assets/Nexcore logo6.png" />
     <link rel="apple-touch-icon" href="assets/Nexcore logo6.png" />
 
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Nexcore" />
+    <meta property="og:title" content="Nexcore - Agencia de Desarrollo Web" />
+    <meta
+      property="og:description"
+      content="Nexcore — Agencia de desarrollo web. Diseño, rendimiento y SEO enfocados en resultados reales."
+    />
+    <meta property="og:url" content="https://nexcore-gamma.vercel.app/" />
+    <meta
+      property="og:image"
+      content="https://nexcore-gamma.vercel.app/assets/Nexcore%20logo6.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@nexcore" />
+
     <!-- Theme-Color -->
     <meta name="theme-color" content="#0d0d0d" />
+
+    <!-- Structured data: Organization + WebSite (reemplazar URLs por dominio real) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "name": "Nexcore",
+            "url": "https://nexcore-gamma.vercel.app/",
+            "logo": "https://nexcore-gamma.vercel.app/assets/Nexcore%20logo6.png",
+            "sameAs": [
+              "https://facebook.com",
+              "https://linkedin.com",
+              "https://instagram.com"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "url": "https://nexcore-gamma.vercel.app/",
+            "name": "Nexcore",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://nexcore-gamma.vercel.app/?s={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
+    <!-- Cursor personalizado -->
+    <div id="custom-cursor" class="custom-cursor"></div>
+
     <header class="site-header" id="top">
       <div id="scroll-progress" aria-hidden="true"></div>
       <nav class="nav container">
         <button class="nav-toggle" aria-label="Menú">
           <span class="hamburger" aria-hidden="true"></span>
         </button>
+
+        <a href="#" class="logo">
+          <img
+            src="assets/Nexcore logo.png"
+            alt="Nexcore logo"
+            class="logo-img"
+          />
+          <span>NEXCORE</span>
+        </a>
+
         <ul class="nav-menu">
           <li><a href="#hero">Inicio</a></li>
           <li><a href="#nosotros-top">Nosotros</a></li>
@@ -54,17 +129,8 @@
           <li><a href="#faq">FAQ</a></li>
         </ul>
 
-        <a href="#" class="logo"
-          ><img
-            src="assets/Nexcore logo.png"
-            alt="Nexcore logo"
-            class="logo-img"
-          /><span>NEXCORE</span></a
-        >
-
         <div class="nav-right">
-          <a class="btn btn-outline" href="#cotizar">Cotizar</a>
-          <a class="btn btn-primary" href="#contact">Contactos</a>
+          <a class="btn btn-primary" href="#contact">Contactar</a>
         </div>
 
         <!-- Menú lateral móvil -->
@@ -77,8 +143,7 @@
             <li><a href="#faq">FAQ</a></li>
           </ul>
           <div class="mobile-ctas">
-            <a class="btn btn-outline" href="#cotizar">Cotizar</a>
-            <a class="btn btn-primary" href="#contact">Contactos</a>
+            <a class="btn btn-primary" href="#contact">Contactar</a>
           </div>
         </div>
       </nav>
@@ -92,7 +157,7 @@
         <div class="hero-inner container">
           <div class="hero-left">
             <h1 class="hero-title">
-              <span class="big">Tu agencia</span>
+              <span class="big">Tu Agencia</span>
               <span class="big"
                 >Favorita De
                 <span class="arrow" aria-hidden="true">⟶</span></span
@@ -133,8 +198,9 @@
           <div class="hero-right" aria-hidden="true">
             <div class="mockup-wrap" aria-hidden="true">
               <img
-                src="assets/Mockup laptop hero.webp"
-                alt="Mockup laptop"
+                src="assets/Mockup laptop hero2.webp"
+                alt=""
+                loading="lazy"
                 class="hero-mockup"
               />
             </div>
@@ -159,16 +225,24 @@
               reales
             </h2>
             <p class="nosotros-p">
-              En <b>NEXCORE</b> somos un equipo de Universitarios estudiantes de
-              Programación enfocados en convertir ideas en soluciones digitales
-              efectivas. Diseñamos y desarrollamos sitios web, landing pages y
-              sistemas a medida pensados para potenciar la presencia online de
-              negocios y profesionales.
+              En NEXCORE somos una agencia de desarrollo web en Florencio Varela
+              y Buenos Aires, formada por universitarios y estudiantes de
+              Programación apasionados por la tecnología y la innovación
+              digital. Nos especializamos en transformar ideas en soluciones web
+              funcionales, escalables y orientadas a resultados.
+            </p>
+            <p class="nosotros-p">
+              Desarrollamos sitios web profesionales, landing pages optimizadas
+              y sistemas a medida, acompañando a negocios, emprendedores y
+              profesionales en el crecimiento de su presencia online. Creemos en
+              el equilibrio entre diseño moderno, rendimiento, optimización SEO
+              y una comunicación clara y cercana.
             </p>
             <p class="nosotros-p muted">
-              Trabajamos integrando diseño, rendimiento y una comunicación
-              cercana, para ofrecer un proceso claro, ágil y transparente,
-              siempre orientado a generar resultados reales.
+              Nuestro objetivo es brindar un proceso de trabajo simple,
+              transparente y eficiente, construyendo soluciones digitales que
+              aporten valor real y ayuden a nuestros clientes a destacarse en
+              internet.
             </p>
             <a href="#contact" class="btn btn-cta"
               >Trabajemos juntos
@@ -456,7 +530,8 @@
           <div class="proyectos-media" aria-hidden="true">
             <img
               src="assets/Proyectos/Oklahoma Studio.png"
-              alt="Mockup del proyecto"
+              alt="Oklahoma Studio - landing para barbería"
+              loading="lazy"
               class="project-image"
             />
           </div>
@@ -482,12 +557,16 @@
           </div>
         </div>
 
+        <!-- Separador entre proyectos -->
+        <div class="project-divider"></div>
+
         <!-- Card adicional 2 -->
         <div class="proyectos-inner">
           <div class="proyectos-media" aria-hidden="true">
             <img
               src="assets/Proyectos/Empa-Market.png"
-              alt="Mockup Proyecto Dos"
+              alt="Empa-Market - tienda online"
+              loading="lazy"
               class="project-image"
             />
           </div>
@@ -510,12 +589,16 @@
           </div>
         </div>
 
+        <!-- Separador entre proyectos -->
+        <div class="project-divider"></div>
+
         <!-- Card adicional 3 -->
         <div class="proyectos-inner hidden-project">
           <div class="proyectos-media" aria-hidden="true">
             <img
               src="assets/Proyectos/imagen web becas.psd.jpg"
-              alt="Mockup Proyecto Tres"
+              alt="Sistema de Becas - mockup de interfaz"
+              loading="lazy"
               class="project-image"
             />
           </div>
@@ -539,12 +622,16 @@
           </div>
         </div>
 
+        <!-- Separador entre proyectos -->
+        <div class="project-divider hidden-project"></div>
+
         <!-- Card adicional 4: Proyecto Cuatro -->
         <div class="proyectos-inner hidden-project">
           <div class="proyectos-media" aria-hidden="true">
             <img
               src="assets/Proyectos/image.png"
-              alt="Mockup Proyecto Cuatro"
+              alt="Sistema de Fotocopiado - mockup de proyecto"
+              loading="lazy"
               class="project-image"
             />
           </div>
@@ -802,7 +889,7 @@
                   </div>
                   <h3>WhatsApp</h3>
                   <a
-                    href="https://wa.me/34900000000"
+                    href="https://wa.me/541141948773"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -836,7 +923,7 @@
                 action="#"
               >
                 <div class="form-row">
-                  <div class="form-group">
+                  <div class="form-group full">
                     <label for="nombre">Nombre Completo *</label>
                     <input
                       type="text"
@@ -846,7 +933,7 @@
                       required
                     />
                   </div>
-                  <div class="form-group">
+                  <div class="form-group full">
                     <label for="email">Correo Electrónico *</label>
                     <input
                       type="email"
@@ -859,7 +946,7 @@
                 </div>
 
                 <div class="form-row">
-                  <div class="form-group">
+                  <div class="form-group full">
                     <label for="telefono">Teléfono</label>
                     <input
                       type="tel"
@@ -928,6 +1015,125 @@
 
         <!-- Elemento decorativo -->
         <div class="contact-deco" aria-hidden="true"></div>
+      </section>
+
+      <!-- Sección de Formas de Pago -->
+      <section id="pagos" class="payment-section">
+        <div class="container">
+          <!-- Encabezado -->
+          <div class="section-header">
+            <h2 class="section-title">
+              Pagá Como <span class="highlight">Prefieras</span>
+            </h2>
+            <p class="section-subtitle">
+              Aceptamos múltiples métodos de pago para que elijas el que más te
+              convenga. Transacciones seguras y confiables para tu tranquilidad.
+            </p>
+          </div>
+
+          <!-- Grid de Opciones de Pago -->
+          <div class="payment-grid">
+            <!-- Card 1: Mercado Pago -->
+            <div class="payment-card popular">
+              <div class="popular-badge">
+                <i class="bi bi-star-fill"></i> POPULAR
+              </div>
+              <div class="payment-icon">
+                <i class="bi bi-wallet2"></i>
+              </div>
+              <h3>Mercado Pago</h3>
+              <p class="payment-description">
+                Pagá con tu cuenta de Mercado Pago de forma rápida y segura
+              </p>
+              <ul class="payment-features">
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>Instantáneo</span>
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>Seguro</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Card 2: Transferencia -->
+            <div class="payment-card">
+              <div class="payment-icon">
+                <i class="bi bi-bank"></i>
+              </div>
+              <h3>Transferencia</h3>
+              <p class="payment-description">
+                Transferencia bancaria directa desde tu cuenta
+              </p>
+              <ul class="payment-features">
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>Sin comisión</span>
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>CVU/Alias</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Card 3: Tarjetas -->
+            <div class="payment-card">
+              <div class="payment-icon">
+                <i class="bi bi-credit-card"></i>
+              </div>
+              <h3>Tarjetas</h3>
+              <p class="payment-description">
+                Crédito y débito de todas las entidades bancarias
+              </p>
+              <ul class="payment-features">
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>En cuotas</span>
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>Débito</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Card 4: Efectivo -->
+            <div class="payment-card">
+              <div class="payment-icon">
+                <i class="bi bi-cash-coin"></i>
+              </div>
+              <h3>Efectivo</h3>
+              <p class="payment-description">
+                Pago en efectivo para proyectos locales y presenciales
+              </p>
+              <ul class="payment-features">
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>Presencial</span>
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>Flexible</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Card 5: Seguridad -->
+            <div class="payment-card security-card">
+              <div class="payment-icon">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h3>Pago 100% Seguro y Protegido</h3>
+              <p class="payment-description">
+                Todas las transacciones están protegidas con los más altos
+                estándares de seguridad. Tu información está encriptada y nunca
+                compartimos tus datos con terceros.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -1024,7 +1230,7 @@
               </li>
               <li>
                 <a
-                  href="https://wa.me/34900000000"
+                  href="https://wa.me/541141948773"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

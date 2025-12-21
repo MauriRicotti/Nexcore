@@ -355,23 +355,59 @@ document.addEventListener('DOMContentLoaded', () => {
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      
-      // Obtener datos del formulario
+
       const formData = new FormData(this);
-      
-      // Cambiar texto del botón
+      const nombre = (formData.get('nombre') || '').toString().trim();
+      const email = (formData.get('email') || '').toString().trim();
+      const telefono = (formData.get('telefono') || '').toString().trim();
+      const asunto = (formData.get('asunto') || '').toString().trim();
+      let servicio = (formData.get('servicio') || '').toString().trim();
+      const servicioEl = document.getElementById('servicio');
+      if (servicioEl && servicioEl.options && servicioEl.selectedIndex >= 0) {
+        const selectedText = (servicioEl.options[servicioEl.selectedIndex].text || '').toString().trim();
+        if (selectedText && selectedText.toLowerCase() !== 'selecciona un servicio') {
+          servicio = selectedText;
+        }
+      }
+      const mensaje = (formData.get('mensaje') || '').toString().trim();
+
+      // Número destino (sin signos ni espacios): +54 11 4194 8773 -> 541141948773
+      const whatsappNumber = '541141948773';
+
+      // Construir texto en español, con salto de línea URL-encoded
+      let text = '';
+      if (nombre) text += `Hola, soy ${nombre}.`;
+      if (asunto) text += `\nAsunto: ${asunto}`;
+      if (servicio) text += `\nServicio: ${servicio}`;
+      if (telefono) text += `\nTeléfono: ${telefono}`;
+      if (email) text += `\nEmail: ${email}`;
+      if (mensaje) text += `\n\nMensaje:\n${mensaje}`;
+      if (!text) text = 'Hola, quiero consultar sobre un proyecto.';
+
+      const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+
+      // Abrir WhatsApp en nueva pestaña/ventana (en móvil el usuario será redirigido a la app)
+      try {
+        window.open(waUrl, '_blank');
+      } catch (err) {
+        window.location.href = waUrl;
+      }
+
+      // Feedback rápido al usuario
       const submitBtn = this.querySelector('button[type="submit"]');
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = '✓ Mensaje Enviado';
-      submitBtn.disabled = true;
-      
-      // Aquí iría la lógica para enviar el formulario
-      // Por ahora, solo resetear después de 2 segundos
+      const originalText = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) {
+        submitBtn.textContent = 'Abriendo WhatsApp...';
+        submitBtn.disabled = true;
+      }
+
       setTimeout(() => {
+        if (submitBtn) {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }
         this.reset();
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-      }, 2000);
+      }, 1400);
     });
   }
 
@@ -440,5 +476,30 @@ document.addEventListener('DOMContentLoaded', () => {
     initMap();
   }
 
+  // ========== CURSOR PERSONALIZADO ==========
+  const customCursor = document.getElementById('custom-cursor');
+  
+  if (customCursor) {
+    // Seguir al cursor
+    document.addEventListener('mousemove', (e) => {
+      customCursor.style.left = e.clientX + 'px';
+      customCursor.style.top = e.clientY + 'px';
+    });
+
+    // Hacer el cursor más grande al pasar sobre elementos interactivos
+    const interactiveElements = document.querySelectorAll('a, button, input, textarea, select, .btn');
+    
+    interactiveElements.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        customCursor.classList.add('active');
+        el.style.cursor = 'none';
+      });
+      
+      el.addEventListener('mouseleave', () => {
+        customCursor.classList.remove('active');
+        el.style.cursor = 'auto';
+      });
+    });
+  }
 
 });

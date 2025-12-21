@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Enlace al sitemap
+Sitemap: https://nexcore-gamma.vercel.app/sitemap.xml
+
+# Bloquear rastreo de paths internos de desarrollo (ejemplo)
+# Disallow: /admin/
