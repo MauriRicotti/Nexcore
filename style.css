@@ -1890,12 +1890,6 @@ body {
   z-index: 1;
   /* filter: blur(28px); */
   will-change: transform, opacity, filter;
-  background: radial-gradient(
-    circle at center,
-    rgba(11, 61, 145, 0.18),
-    rgba(11, 61, 145, 0.06) 40%,
-    transparent 60%
-  );
   mix-blend-mode: screen;
   opacity: 0.9;
 }
@@ -1906,24 +1900,6 @@ body {
   top: 6%;
   transform: translateZ(0);
   animation: decoFloat 10s ease-in-out infinite;
-}
-.hero-deco.deco-2 {
-  width: 640px;
-  height: 640px;
-  right: 6%;
-  top: 2%;
-  /* filter: blur(52px); */
-  opacity: 0.85;
-  animation: decoFloat 12s ease-in-out infinite reverse;
-}
-.hero-deco.deco-3 {
-  width: 300px;
-  height: 300px;
-  left: 36%;
-  bottom: 6%;
-  /* filter: blur(36px); */
-  opacity: 0.8;
-  animation: decoFloat 11s ease-in-out infinite;
 }
 
 @keyframes decoFloat {
