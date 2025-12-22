@@ -115,14 +115,26 @@
     "a1": "A basic site or landing page usually takes between 1-3 weeks, depending on content and revisions. More complex projects can take between 4-8 weeks.",
     "q2": "Do you offer maintenance after launch?",
     "a2": "Yes, we offer maintenance and support plans for updates, security and continuous improvements. We also monitor performance and SEO.",
-    "q3": "What technology do you use to develop websites?",
-    "a3": "We use HTML5, CSS3, JavaScript and modern frameworks like React or Vue depending on the project. We also work with WordPress for cases that require it.",
-    "q4": "Do you include images in the budget?",
-    "a4": "Yes, we include quality visual material. We can use original images or royalty-free images. For brand-specific content, we look for stock image options.",
+    "q3": "Do you work with CMS like WordPress?",
+    "a3": "Yes. Depending on the project we recommend WordPress, headless solutions, Webflow or custom development with HTML/CSS/JavaScript.",
+    "q4": "Do I need to provide content and photos?",
+    "a4": "It's ideal if you provide content and visual material. If you don't have any, we can also help create it for an additional cost or search for stock image options.",
     "q5": "Do you include SEO in projects?",
     "a5": "Yes, we include basic SEO optimization in all our projects: page structure, meta tags, load speed and responsive design.",
     "q6": "What is the approximate cost of a website?",
-    "a6": "Cost varies depending on type and complexity. We offer personalized quotes with no commitment. Contact us for a detailed evaluation of your project."
+    "a6": "Cost varies depending on type and complexity. We offer personalized quotes with no commitment. Contact us for a detailed evaluation of your project.",
+    "q7": "What happens after delivering the website?",
+    "a7": "After delivery, we provide training on how to use and manage the website. We offer continuous technical support and personalized maintenance plans based on your needs.",
+    "q8": "Do you offer e-commerce solutions?",
+    "a8": "Yes, we develop complete online stores with integrated payment systems, inventory management, shopping cart and more. We use platforms like Shopify, WooCommerce or custom solutions.",
+    "q9": "Will the site be compatible with mobile devices?",
+    "a9": "Of course. All our sites are fully responsive and adapt perfectly to any screen size: phones, tablets and desktop computers.",
+    "q10": "What data is included in hosting?",
+    "a10": "Hosting includes sufficient storage for images and content, unlimited bandwidth, SSL (security), and technical support. We recommend plans based on expected traffic.",
+    "q11": "Can you migrate an existing website?",
+    "a11": "Yes, we can migrate your current website without losing any data. We handle content transfer, databases, 301 redirects and DNS configuration for a smooth transition.",
+    "q12": "Is there availability for urgent projects?",
+    "a12": "Yes, we can accept urgent projects depending on our availability. Contact us directly to discuss your needs and offer you an accelerated plan if possible."
   },
   "contact": {
     "title": "Contact Us",
@@ -208,10 +220,27 @@
     "service4": "SEO Optimization",
     "service5": "Digital Consulting",
     "contactTitle": "Contact",
-    "copyright": "&copy; 2026 Nexcore. All rights reserved.",
+    "copyright": "2026 Nexcore. All rights reserved.",
     "languageLabel": "Language:",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "cookies": "Cookies"
+  },
+  "cookies": {
+    "title": "Cookie Preferences",
+    "description": "We use cookies to improve your experience. You can accept all or customize your selection.",
+    "acceptAll": "Accept All",
+    "reject": "Reject",
+    "settings": "Customize"
+  },
+  "donations": {
+    "title": "Support our work",
+    "description": "Your donation helps us continue creating quality content and improving our services.",
+    "alias": "Alias: mauriricotti",
+    "thanks": "Thank you for your generosity!",
+    "tooltip": "Donations"
+  },
+  "common": {
+    "backToTop": "Back to top"
   }
 }

@@ -115,14 +115,26 @@
     "a1": "Un sitio básico o landing suele tardar entre 1 y 3 semanas, dependiendo del contenido y revisiones. Proyectos más complejos pueden tardar entre 4 a 8 semanas.",
     "q2": "¿Ofrecen mantenimiento después del lanzamiento?",
     "a2": "Sí, ofrecemos planes de mantenimiento y soporte para actualizaciones, seguridad y mejoras continuas. También realizamos seguimiento del rendimiento y SEO.",
-    "q3": "¿Qué tecnología utilizan para desarrollar los sitios?",
-    "a3": "Utilizamos HTML5, CSS3, JavaScript y frameworks modernos como React o Vue según el proyecto. También trabajamos con WordPress para casos que lo requieran.",
-    "q4": "¿Incluyen imágenes en el presupuesto?",
-    "a4": "Sí, incluimos material visual de calidad. Podemos usar imágenes propias o libres de derechos. Para contenido específico de tu marca, buscamos opciones de banco de imágenes.",
+    "q3": "¿Trabajan con CMS como WordPress?",
+    "a3": "Sí. Dependiendo del proyecto recomendamos WordPress, soluciones headless, Webflow o desarrollos personalizados con HTML/CSS/JavaScript.",
+    "q4": "¿Necesito proveer contenido y fotos?",
+    "a4": "Es ideal que proveas contenido y material visual. Si no tienes, también ayudamos a crearlo por un costo adicional o buscamos opciones de banco de imágenes.",
     "q5": "¿Incluyen SEO en los proyectos?",
     "a5": "Sí, incluimos optimización SEO básica en todos nuestros proyectos: estructura de página, meta tags, velocidad de carga y responsive design.",
     "q6": "¿Cuál es el costo aproximado de un sitio web?",
-    "a6": "El costo varía según el tipo y complejidad. Ofrecemos presupuestos personalizados sin compromiso. Contáctanos para una evaluación detallada de tu proyecto."
+    "a6": "El costo varía según el tipo y complejidad. Ofrecemos presupuestos personalizados sin compromiso. Contáctanos para una evaluación detallada de tu proyecto.",
+    "q7": "¿Qué sucede después de entregar el sitio web?",
+    "a7": "Después de la entrega, brindamos capacitación sobre cómo usar y administrar el sitio. Ofrecemos soporte técnico continuo y planes de mantenimiento personalizados según tus necesidades.",
+    "q8": "¿Ofrecen soluciones de comercio electrónico?",
+    "a8": "Sí, desarrollamos tiendas online completas con sistemas de pago integrados, gestión de inventario, carrito de compras y más. Utilizamos plataformas como Shopify, WooCommerce o soluciones personalizadas.",
+    "q9": "¿El sitio será compatible con dispositivos móviles?",
+    "a9": "Por supuesto. Todos nuestros sitios son completamente responsive y se adaptan perfectamente a cualquier tamaño de pantalla: teléfonos, tablets y computadoras de escritorio.",
+    "q10": "¿Cuáles son los datos incluidos en el hosting?",
+    "a10": "El hosting incluye almacenamiento suficiente para imágenes y contenido, ancho de banda ilimitado, SSL (seguridad), y soporte técnico. Recomendamos planes según el tráfico esperado.",
+    "q11": "¿Pueden migrar un sitio existente?",
+    "a11": "Sí, podemos migrar tu sitio web actual sin perder datos. Nos encargamos de la transferencia de contenido, bases de datos, redirecciones 301 y configuración de DNS para una transición sin problemas.",
+    "q12": "¿Hay disponibilidad para proyectos urgentes?",
+    "a12": "Sí, podemos aceptar proyectos urgentes según nuestra disponibilidad. Contáctanos directamente para analizar tu necesidad y ofrecerte un plan acelerado si es posible."
   },
   "contact": {
     "title": "Contacta con Nosotros",
@@ -208,10 +220,27 @@
     "service4": "Optimización SEO",
     "service5": "Consultoría Digital",
     "contactTitle": "Contacto",
-    "copyright": "&copy; 2026 Nexcore. Todos los derechos reservados.",
+    "copyright": "2026 Nexcore. Todos los derechos reservados.",
     "languageLabel": "Idioma:",
     "privacy": "Política de Privacidad",
     "terms": "Términos de Servicio",
     "cookies": "Cookies"
+  },
+  "cookies": {
+    "title": "Preferencias de Cookies",
+    "description": "Utilizamos cookies para mejorar tu experiencia. Puedes aceptar todas o personalizar tu selección.",
+    "acceptAll": "Aceptar todas",
+    "reject": "Rechazar",
+    "settings": "Personalizar"
+  },
+  "donations": {
+    "title": "Apoya nuestro trabajo",
+    "description": "Tu donación nos ayuda a seguir creando contenido de calidad y mejorando nuestros servicios.",
+    "alias": "Alias: mauriricotti",
+    "thanks": "¡Gracias por tu generosidad!",
+    "tooltip": "Donaciones"
+  },
+  "common": {
+    "backToTop": "Arriba"
   }
 }

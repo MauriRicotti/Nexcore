@@ -200,10 +200,7 @@
           <div class="hero-left">
             <h1 class="hero-title">
               <span class="big" data-i18n="hero.title1">Tu Agencia</span>
-              <span class="big" data-i18n="hero.title2"
-                >Favorita De
-                <span class="arrow" aria-hidden="true">⟶</span></span
-              >
+              <span class="big" data-i18n="hero.title2">Favorita De</span>
               <span class="big highlight" data-i18n="hero.title3"
                 >Desarrollo Web</span
               >
@@ -254,7 +251,22 @@
           </div>
         </div>
 
-        <a class="floating-up" href="#top" aria-label="Ir arriba" title="Arriba"
+        <div class="scroll-indicator" aria-hidden="true">
+          <span class="scroll-text">Scroll</span>
+          <span class="scroll-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+
+        <a
+          class="floating-up"
+          href="#top"
+          aria-label="Ir arriba"
+          title="Arriba"
+          data-i18n-attr="title"
+          data-i18n-key="common.backToTop"
           ><i class="bi bi-chevron-up" aria-hidden="true"></i
         ></a>
       </section>
@@ -1026,171 +1038,355 @@
         </div>
 
         <div class="faq-accordion">
-          <div class="accordion" id="faqAccordion">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="faqHeadingOne">
-                <button
-                  class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#faqCollapseOne"
-                  aria-expanded="true"
-                  aria-controls="faqCollapseOne"
-                  data-i18n="faq.q1"
-                >
-                  ¿Cuánto tiempo se tarda en desarrollar un sitio web básico?
-                </button>
-              </h2>
-              <div
-                id="faqCollapseOne"
-                class="accordion-collapse collapse show"
-                aria-labelledby="faqHeadingOne"
-                data-bs-parent="#faqAccordion"
-              >
-                <div class="accordion-body" data-i18n="faq.a1">
-                  Un sitio básico o landing suele tardar entre 1 y 3 semanas,
-                  dependiendo del contenido y revisiones. Proyectos más
-                  complejos pueden tardar entre 4 a 8 semanas.
+          <div class="faq-columns">
+            <!-- Columna izquierda: Preguntas 1-6 -->
+            <div class="faq-column">
+              <div class="accordion" id="faqAccordionLeft">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="faqHeadingOne">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqCollapseOne"
+                      aria-expanded="false"
+                      aria-controls="faqCollapseOne"
+                      data-i18n="faq.q1"
+                    >
+                      ¿Cuánto tiempo se tarda en desarrollar un sitio web
+                      básico?
+                    </button>
+                  </h2>
+                  <div
+                    id="faqCollapseOne"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="faqHeadingOne"
+                    data-bs-parent="#faqAccordionLeft"
+                  >
+                    <div class="accordion-body" data-i18n="faq.a1">
+                      Un sitio básico o landing suele tardar entre 1 y 3
+                      semanas, dependiendo del contenido y revisiones. Proyectos
+                      más complejos pueden tardar entre 4 a 8 semanas.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="faqHeadingTwo">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqCollapseTwo"
+                      aria-expanded="false"
+                      aria-controls="faqCollapseTwo"
+                      data-i18n="faq.q2"
+                    >
+                      ¿Ofrecen mantenimiento después del lanzamiento?
+                    </button>
+                  </h2>
+                  <div
+                    id="faqCollapseTwo"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="faqHeadingTwo"
+                    data-bs-parent="#faqAccordionLeft"
+                  >
+                    <div class="accordion-body" data-i18n="faq.a2">
+                      Sí, ofrecemos planes de mantenimiento y soporte para
+                      actualizaciones, seguridad y mejoras continuas. También
+                      realizamos seguimiento del rendimiento y SEO.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="faqHeadingThree">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqCollapseThree"
+                      aria-expanded="false"
+                      aria-controls="faqCollapseThree"
+                      data-i18n="faq.q3"
+                    >
+                      ¿Trabajan con CMS como WordPress?
+                    </button>
+                  </h2>
+                  <div
+                    id="faqCollapseThree"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="faqHeadingThree"
+                    data-bs-parent="#faqAccordionLeft"
+                  >
+                    <div class="accordion-body" data-i18n="faq.a3">
+                      Sí. Dependiendo del proyecto recomendamos WordPress,
+                      soluciones headless, Webflow o desarrollos personalizados
+                      con HTML/CSS/JavaScript.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="faqHeadingFour">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqCollapseFour"
+                      aria-expanded="false"
+                      aria-controls="faqCollapseFour"
+                      data-i18n="faq.q4"
+                    >
+                      ¿Necesito proveer contenido y fotos?
+                    </button>
+                  </h2>
+                  <div
+                    id="faqCollapseFour"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="faqHeadingFour"
+                    data-bs-parent="#faqAccordionLeft"
+                  >
+                    <div class="accordion-body" data-i18n="faq.a4">
+                      Es ideal que proveas contenido y material visual. Si no
+                      tienes, también ayudamos a crearlo por un costo adicional
+                      o buscamos opciones de banco de imágenes.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="faqHeadingFive">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqCollapseFive"
+                      aria-expanded="false"
+                      aria-controls="faqCollapseFive"
+                      data-i18n="faq.q5"
+                    >
+                      ¿Incluyen SEO en los proyectos?
+                    </button>
+                  </h2>
+                  <div
+                    id="faqCollapseFive"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="faqHeadingFive"
+                    data-bs-parent="#faqAccordionLeft"
+                  >
+                    <div class="accordion-body" data-i18n="faq.a5">
+                      Sí, incluimos optimización SEO básica en todos nuestros
+                      proyectos: estructura de página, meta tags, velocidad de
+                      carga y responsive design.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="faqHeadingSix">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqCollapseSix"
+                      aria-expanded="false"
+                      aria-controls="faqCollapseSix"
+                      data-i18n="faq.q6"
+                    >
+                      ¿Cuál es el costo aproximado de un sitio web?
+                    </button>
+                  </h2>
+                  <div
+                    id="faqCollapseSix"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="faqHeadingSix"
+                    data-bs-parent="#faqAccordionLeft"
+                  >
+                    <div class="accordion-body" data-i18n="faq.a6">
+                      El costo varía según el tipo y complejidad. Ofrecemos
+                      presupuestos personalizados sin compromiso. Contáctanos
+                      para una evaluación detallada de tu proyecto.
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="faqHeadingTwo">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#faqCollapseTwo"
-                  aria-expanded="false"
-                  aria-controls="faqCollapseTwo"
-                  data-i18n="faq.q2"
-                >
-                  ¿Ofrecen mantenimiento después del lanzamiento?
-                </button>
-              </h2>
-              <div
-                id="faqCollapseTwo"
-                class="accordion-collapse collapse"
-                aria-labelledby="faqHeadingTwo"
-                data-bs-parent="#faqAccordion"
-              >
-                <div class="accordion-body" data-i18n="faq.a2">
-                  Sí, ofrecemos planes de mantenimiento y soporte para
-                  actualizaciones, seguridad y mejoras continuas. También
-                  realizamos seguimiento del rendimiento y SEO.
+            <!-- Columna derecha: Preguntas 7-12 -->
+            <div class="faq-column">
+              <div class="accordion" id="faqAccordionRight">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="faqHeadingSeven">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqCollapseSeven"
+                      aria-expanded="false"
+                      aria-controls="faqCollapseSeven"
+                      data-i18n="faq.q7"
+                    >
+                      ¿Qué sucede después de entregar el sitio web?
+                    </button>
+                  </h2>
+                  <div
+                    id="faqCollapseSeven"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="faqHeadingSeven"
+                    data-bs-parent="#faqAccordionRight"
+                  >
+                    <div class="accordion-body" data-i18n="faq.a7">
+                      Después de la entrega, brindamos capacitación sobre cómo
+                      usar y administrar el sitio. Ofrecemos soporte técnico
+                      continuo y planes de mantenimiento personalizados según
+                      tus necesidades.
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="faqHeadingThree">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#faqCollapseThree"
-                  aria-expanded="false"
-                  aria-controls="faqCollapseThree"
-                  data-i18n="faq.q3"
-                >
-                  ¿Trabajan con CMS como WordPress?
-                </button>
-              </h2>
-              <div
-                id="faqCollapseThree"
-                class="accordion-collapse collapse"
-                aria-labelledby="faqHeadingThree"
-                data-bs-parent="#faqAccordion"
-              >
-                <div class="accordion-body" data-i18n="faq.a3">
-                  Sí. Dependiendo del proyecto recomendamos WordPress,
-                  soluciones headless, Webflow o desarrollos personalizados con
-                  HTML/CSS/JavaScript.
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="faqHeadingEight">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqCollapseEight"
+                      aria-expanded="false"
+                      aria-controls="faqCollapseEight"
+                      data-i18n="faq.q8"
+                    >
+                      ¿Ofrecen soluciones de comercio electrónico?
+                    </button>
+                  </h2>
+                  <div
+                    id="faqCollapseEight"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="faqHeadingEight"
+                    data-bs-parent="#faqAccordionRight"
+                  >
+                    <div class="accordion-body" data-i18n="faq.a8">
+                      Sí, desarrollamos tiendas online completas con sistemas de
+                      pago integrados, gestión de inventario, carrito de compras
+                      y más. Utilizamos plataformas como Shopify, WooCommerce o
+                      soluciones personalizadas.
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="faqHeadingFour">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#faqCollapseFour"
-                  aria-expanded="false"
-                  aria-controls="faqCollapseFour"
-                  data-i18n="faq.q4"
-                >
-                  ¿Necesito proveer contenido y fotos?
-                </button>
-              </h2>
-              <div
-                id="faqCollapseFour"
-                class="accordion-collapse collapse"
-                aria-labelledby="faqHeadingFour"
-                data-bs-parent="#faqAccordion"
-              >
-                <div class="accordion-body" data-i18n="faq.a4">
-                  Es ideal que proveas contenido y material visual. Si no
-                  tienes, también ayudamos a crearlo por un costo adicional o
-                  buscamos opciones de banco de imágenes.
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="faqHeadingNine">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqCollapseNine"
+                      aria-expanded="false"
+                      aria-controls="faqCollapseNine"
+                      data-i18n="faq.q9"
+                    >
+                      ¿El sitio será compatible con dispositivos móviles?
+                    </button>
+                  </h2>
+                  <div
+                    id="faqCollapseNine"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="faqHeadingNine"
+                    data-bs-parent="#faqAccordionRight"
+                  >
+                    <div class="accordion-body" data-i18n="faq.a9">
+                      Por supuesto. Todos nuestros sitios son completamente
+                      responsive y se adaptan perfectamente a cualquier tamaño
+                      de pantalla: teléfonos, tablets y computadoras de
+                      escritorio.
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="faqHeadingFive">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#faqCollapseFive"
-                  aria-expanded="false"
-                  aria-controls="faqCollapseFive"
-                  data-i18n="faq.q5"
-                >
-                  ¿Incluyen SEO en los proyectos?
-                </button>
-              </h2>
-              <div
-                id="faqCollapseFive"
-                class="accordion-collapse collapse"
-                aria-labelledby="faqHeadingFive"
-                data-bs-parent="#faqAccordion"
-              >
-                <div class="accordion-body" data-i18n="faq.a5">
-                  Sí, incluimos optimización SEO básica en todos nuestros
-                  proyectos: estructura de página, meta tags, velocidad de carga
-                  y responsive design.
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="faqHeadingTen">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqCollapseTen"
+                      aria-expanded="false"
+                      aria-controls="faqCollapseTen"
+                      data-i18n="faq.q10"
+                    >
+                      ¿Cuáles son los datos incluidos en el hosting?
+                    </button>
+                  </h2>
+                  <div
+                    id="faqCollapseTen"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="faqHeadingTen"
+                    data-bs-parent="#faqAccordionRight"
+                  >
+                    <div class="accordion-body" data-i18n="faq.a10">
+                      El hosting incluye almacenamiento suficiente para imágenes
+                      y contenido, ancho de banda ilimitado, SSL (seguridad), y
+                      soporte técnico. Recomendamos planes según el tráfico
+                      esperado.
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="faqHeadingSix">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#faqCollapseSix"
-                  aria-expanded="false"
-                  aria-controls="faqCollapseSix"
-                  data-i18n="faq.q6"
-                >
-                  ¿Cuál es el costo aproximado de un sitio web?
-                </button>
-              </h2>
-              <div
-                id="faqCollapseSix"
-                class="accordion-collapse collapse"
-                aria-labelledby="faqHeadingSix"
-                data-bs-parent="#faqAccordion"
-              >
-                <div class="accordion-body" data-i18n="faq.a6">
-                  El costo varía según el tipo y complejidad. Ofrecemos
-                  presupuestos personalizados sin compromiso. Contáctanos para
-                  una evaluación detallada de tu proyecto.
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="faqHeadingEleven">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqCollapseEleven"
+                      aria-expanded="false"
+                      aria-controls="faqCollapseEleven"
+                      data-i18n="faq.q11"
+                    >
+                      ¿Pueden migrar un sitio existente?
+                    </button>
+                  </h2>
+                  <div
+                    id="faqCollapseEleven"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="faqHeadingEleven"
+                    data-bs-parent="#faqAccordionRight"
+                  >
+                    <div class="accordion-body" data-i18n="faq.a11">
+                      Sí, podemos migrar tu sitio web actual sin perder datos.
+                      Nos encargamos de la transferencia de contenido, bases de
+                      datos, redirecciones 301 y configuración de DNS para una
+                      transición sin problemas.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="faqHeadingTwelve">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqCollapseTwelve"
+                      aria-expanded="false"
+                      aria-controls="faqCollapseTwelve"
+                      data-i18n="faq.q12"
+                    >
+                      ¿Hay disponibilidad para proyectos urgentes?
+                    </button>
+                  </h2>
+                  <div
+                    id="faqCollapseTwelve"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="faqHeadingTwelve"
+                    data-bs-parent="#faqAccordionRight"
+                  >
+                    <div class="accordion-body" data-i18n="faq.a12">
+                      Sí, podemos aceptar proyectos urgentes según nuestra
+                      disponibilidad. Contáctanos directamente para analizar tu
+                      necesidad y ofrecerte un plan acelerado si es posible.
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1233,7 +1429,7 @@
                     <i class="bi bi-telephone"></i>
                   </div>
                   <h3 data-i18n="contact.phoneLabel">Teléfono</h3>
-                  <a href="tel:+34900000000">+34 (900) 00-0000</a>
+                  <a href="tel:+34900000000">+54 11 4194-8773</a>
                 </div>
 
                 <div class="info-card">
@@ -1332,7 +1528,7 @@
                       type="tel"
                       id="telefono"
                       name="telefono"
-                      placeholder="+34 900 00 0000"
+                      placeholder="+54 11 4194-8773"
                     />
                   </div>
                   <div class="form-group">
@@ -1657,7 +1853,7 @@
               <li>
                 <a href="tel:+34900000000">
                   <i class="bi bi-telephone"></i>
-                  +34 (900) 00-0000
+                  +54 11 4194-8773
                 </a>
               </li>
               <li>
@@ -1686,9 +1882,14 @@
         <!-- Footer inferior -->
         <div class="footer-bottom">
           <div class="footer-bottom-left">
-            <p data-i18n="footer.copyright">
-              &copy; 2026 Nexcore. Todos los derechos reservados.
-            </p>
+            <div class="footer-copyright-content">
+              <span class="copyright-icon">
+                <i class="bi bi-c-circle"></i>
+              </span>
+              <p data-i18n="footer.copyright">
+                2026 Nexcore. Todos los derechos reservados.
+              </p>
+            </div>
           </div>
           <div class="footer-bottom-center">
             <!-- Selector de idioma en footer -->
@@ -1700,6 +1901,16 @@
               <span class="lang-separator">|</span>
               <button class="lang-btn active" data-lang="en">EN</button>
             </div>
+            <button
+              class="btn-donate"
+              id="btn-donate-footer"
+              aria-label="Donaciones"
+              title="Donaciones"
+              data-i18n-attr="title"
+              data-i18n-key="donations.tooltip"
+            >
+              <i class="bi bi-heart-fill"></i>
+            </button>
           </div>
           <div class="footer-bottom-right">
             <ul class="footer-legal">
@@ -1720,6 +1931,79 @@
       <!-- Elemento decorativo de fondo -->
       <div class="footer-deco" aria-hidden="true"></div>
     </footer>
+
+    <!-- Donation Modal -->
+    <div id="donation-modal" class="donation-modal" aria-hidden="true">
+      <div class="donation-modal-content">
+        <button class="donation-modal-close" aria-label="Cerrar">
+          <i class="bi bi-x"></i>
+        </button>
+
+        <div class="donation-container">
+          <div class="donation-header">
+            <img
+              src="assets/Nexcore logo.png"
+              alt="Nexcore"
+              class="donation-logo"
+            />
+            <h2 data-i18n="donations.title">Apoya nuestro trabajo</h2>
+          </div>
+
+          <p class="donation-description" data-i18n="donations.description">
+            Tu donación nos ayuda a seguir creando contenido de calidad y
+            mejorando nuestros servicios.
+          </p>
+
+          <div class="donation-qr-container">
+            <img
+              id="donation-qr"
+              src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://link.mercadopago.com.ar/mauriricotti"
+              alt="Código QR Mercado Pago"
+              class="donation-qr"
+            />
+          </div>
+
+          <p class="donation-footer" data-i18n="donations.thanks">
+            ¡Gracias por tu generosidad!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div
+      id="cookie-banner"
+      class="cookie-banner"
+      aria-labelledby="cookie-title"
+    >
+      <div class="cookie-content">
+        <div class="cookie-text">
+          <h3 id="cookie-title" data-i18n="cookies.title">
+            Preferencias de Cookies
+          </h3>
+          <p data-i18n="cookies.description">
+            Utilizamos cookies para mejorar tu experiencia. Puedes aceptar todas
+            o personalizar tu selección.
+          </p>
+        </div>
+        <div class="cookie-buttons">
+          <button
+            id="cookie-accept-all"
+            class="btn btn-primary"
+            data-i18n="cookies.acceptAll"
+          >
+            Aceptar todas
+          </button>
+          <button
+            id="cookie-reject"
+            class="btn btn-outline"
+            data-i18n="cookies.reject"
+          >
+            Rechazar
+          </button>
+        </div>
+      </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>

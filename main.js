@@ -53,6 +53,24 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', toggleUp);
   }
 
+  // Handle scroll indicator visibility
+  const scrollIndicator = document.querySelector('.scroll-indicator');
+  if (scrollIndicator) {
+    const toggleScrollIndicator = () => {
+      if (window.scrollY > 200) {
+        scrollIndicator.style.opacity = '0';
+        scrollIndicator.style.pointerEvents = 'none';
+      } else {
+        scrollIndicator.style.opacity = '1';
+        scrollIndicator.style.pointerEvents = 'auto';
+      }
+    };
+    
+    scrollIndicator.style.transition = 'opacity 300ms ease';
+    toggleScrollIndicator();
+    window.addEventListener('scroll', toggleScrollIndicator);
+  }
+
   // Set CSS --vh and --header-h variables to avoid mobile viewport 100vh issues
   const setViewportVars = () => {
     document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
@@ -683,9 +701,9 @@ function updateMockupImage() {
   const currentLang = i18next.language.split('-')[0];
   
   if (currentLang === 'en') {
-    mockupImg.src = 'assets/Mockup laptop ingles.webp';
+    mockupImg.src = 'assets/Mockup laptop ingles verde.webp';
   } else {
-    mockupImg.src = 'assets/Mockup laptop hero2.webp';
+    mockupImg.src = 'assets/Mockup laptop español verde.webp';
   }
 }
 
@@ -732,3 +750,131 @@ function updateLanguageUI() {
     }
   });
 }
+
+// ========== COOKIE CONSENT MANAGEMENT ==========
+class CookieConsent {
+  constructor() {
+    this.banner = document.getElementById('cookie-banner');
+    this.acceptAllBtn = document.getElementById('cookie-accept-all');
+    this.rejectBtn = document.getElementById('cookie-reject');
+    this.storageKey = 'nexcore-cookies-consent';
+    
+    if (this.banner) {
+      this.init();
+    }
+  }
+
+  init() {
+    // Check if user has already made a choice
+    if (!this.hasConsent()) {
+      // Show banner after a short delay
+      setTimeout(() => this.show(), 1000);
+    }
+
+    // Event listeners
+    this.acceptAllBtn?.addEventListener('click', () => this.acceptAll());
+    this.rejectBtn?.addEventListener('click', () => this.reject());
+  }
+
+  hasConsent() {
+    return localStorage.getItem(this.storageKey);
+  }
+
+  show() {
+    this.banner.classList.add('show');
+  }
+
+  hide() {
+    this.banner.classList.remove('show');
+  }
+
+  acceptAll() {
+    const consent = {
+      accepted: true,
+      timestamp: new Date().toISOString(),
+      categories: {
+        necessary: true,
+        analytics: true,
+        marketing: true
+      }
+    };
+    localStorage.setItem(this.storageKey, JSON.stringify(consent));
+    this.hide();
+    this.loadAnalytics();
+  }
+
+  reject() {
+    const consent = {
+      accepted: false,
+      timestamp: new Date().toISOString(),
+      categories: {
+        necessary: true,
+        analytics: false,
+        marketing: false
+      }
+    };
+    localStorage.setItem(this.storageKey, JSON.stringify(consent));
+    this.hide();
+  }
+
+  loadAnalytics() {
+    // Load Google Analytics or other tracking scripts here
+    // Example: loadGoogleAnalytics();
+  }
+}
+
+// Initialize Cookie Consent on page load
+document.addEventListener('DOMContentLoaded', () => {
+  new CookieConsent();
+});
+// ========== DONATION MODAL MANAGEMENT ==========
+class DonationModal {
+  constructor() {
+    this.modal = document.getElementById('donation-modal');
+    this.openBtns = document.querySelectorAll('[id^="btn-donate"]');
+    this.closeBtn = document.querySelector('.donation-modal-close');
+    
+    if (this.modal && this.openBtns.length > 0) {
+      this.init();
+    }
+  }
+
+  init() {
+    this.openBtns.forEach(btn => {
+      btn.addEventListener('click', () => this.open());
+    });
+    
+    this.closeBtn?.addEventListener('click', () => this.close());
+    
+    // Close modal when clicking outside
+    this.modal?.addEventListener('click', (e) => {
+      if (e.target === this.modal) {
+        this.close();
+      }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        this.close();
+      }
+    });
+  }
+
+  open() {
+    this.modal.classList.add('show');
+    this.modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  close() {
+    this.modal.classList.remove('show');
+    this.modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+}
+
+// Initialize Donation Modal on page load
+document.addEventListener('DOMContentLoaded', () => {
+  new DonationModal();
+});
