@@ -4,6 +4,7 @@
     "nosotros": "About",
     "servicios": "Services",
     "proyectos": "Projects",
+    "testimonios": "Testimonials",
     "faq": "FAQ",
     "contactar": "Contact"
   },
@@ -23,7 +24,7 @@
   },
   "nosotros": {
     "label": "ABOUT US",
-    "title": "We transform ideas into real digital solutions",
+    "title": "We transform ideas into real <span style=\"color: #006341;\">digital solutions</span>",
     "p1": "At NEXCORE we are a web development agency in Florencio Varela and Buenos Aires, formed by university students and programming enthusiasts passionate about technology and digital innovation. We specialize in transforming ideas into functional, scalable web solutions focused on results.",
     "p2": "We develop professional websites, optimized landing pages and custom systems, accompanying businesses, entrepreneurs and professionals in growing their online presence. We believe in the balance between modern design, performance, SEO optimization and clear, close communication.",
     "p3": "Our goal is to provide a simple, transparent and efficient work process, building digital solutions that bring real value and help our clients stand out on the internet.",
@@ -48,7 +49,7 @@
   },
   "proceso": {
     "label": "OUR PROCESS",
-    "title": "From idea to launch",
+    "title": "From idea to <span style=\"color: #006341;\">your digital success</span>",
     "card1Title": "Analysis",
     "card1Text": "We talk about your idea, your goals and the type of project you need. We define if the best option for you is a landing page, institutional website, personal web or custom development.",
     "card2Title": "Design",
@@ -60,7 +61,7 @@
   },
   "servicios": {
     "label": "OUR SERVICES",
-    "title": "Digital solutions that boost your business",
+    "title": "Digital solutions that <span style=\"color: #006341;\">boost your business</span>",
     "subtitle": "We combine strategy, design and technology to create digital products that generate real and scalable results.",
     "service1Title": "Landing Pages",
     "service1Sub": "FAST AND EFFECTIVE PAGES",
@@ -239,6 +240,29 @@
     "alias": "Alias: mauriricotti",
     "thanks": "Thank you for your generosity!",
     "tooltip": "Donations"
+  },
+  "testimonios": {
+    "label": "TESTIMONIALS",
+    "title": "What our clients say",
+    "subtitle": "Discover real experiences from companies that transformed their digital presence with us.",
+    "testimonial1": "\"Excellent work. The Nexcore team perfectly understood our vision and turned it into a professional and modern website. The result exceeded our expectations.\"",
+    "author1Name": "Juan Carlos Morales",
+    "author1Role": "CEO - Oklahoma Studio",
+    "testimonial2": "\"From the first contact they were very professional and attentive. The website they delivered to us is fast, looks spectacular on mobile and we're already receiving more inquiries. Highly recommended!\"",
+    "author2Name": "María Rodríguez",
+    "author2Role": "Manager - Empa-Market",
+    "testimonial3": "\"Working with Nexcore was a smooth and pleasant experience. The team is creative, responsible and genuinely cared about making our project a success. We would definitely hire their services again.\"",
+    "author3Name": "Alejandro Fernández",
+    "author3Role": "Executive Director - UNAJ",
+    "testimonial4": "\"What I valued most was the constant communication and detailed explanations of each design decision. They really took the time to understand our business and market.\"",
+    "author4Name": "Sofía García",
+    "author4Role": "Owner - B2B E-commerce",
+    "testimonial5": "\"The website not only looks beautiful, but also succeeds in converting visitors into customers. We've already seen an increase in our ROI. Nexcore is the best investment we made this year.\"",
+    "author5Name": "Roberto Pérez",
+    "author5Role": "Owner - Digital Consulting",
+    "testimonial6": "\"I loved the attention to detail in every aspect. From animations to SEO structure, everything was carefully thought through. Definitely a world-class professional team.\"",
+    "author6Name": "Emilia López",
+    "author6Role": "Product Manager - Tech Startup"
   },
   "common": {
     "backToTop": "Back to top"

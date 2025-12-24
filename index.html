@@ -106,9 +106,6 @@
     </script>
   </head>
   <body>
-    <!-- Cursor personalizado -->
-    <div id="custom-cursor" class="custom-cursor"></div>
-
     <header class="site-header" id="top">
       <div id="scroll-progress" aria-hidden="true"></div>
       <nav class="nav container">
@@ -130,6 +127,9 @@
           <li><a href="#nosotros-top" data-i18n="nav.nosotros">Nosotros</a></li>
           <li><a href="#servicios" data-i18n="nav.servicios">Servicios</a></li>
           <li><a href="#proyectos" data-i18n="nav.proyectos">Proyectos</a></li>
+          <li>
+            <a href="#testimonios-top" data-i18n="nav.testimonios">Testimonios</a>
+          </li>
           <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
         </ul>
 
@@ -170,6 +170,9 @@
             </li>
             <li>
               <a href="#proyectos" data-i18n="nav.proyectos">Proyectos</a>
+            </li>
+            <li>
+              <a href="#testimonios-top" data-i18n="nav.testimonios">Testimonios</a>
             </li>
             <li><a href="#faq">FAQ</a></li>
           </ul>
@@ -242,7 +245,7 @@
             <div class="mockup-wrap" aria-hidden="true">
               <img
                 id="hero-mockup-img"
-                src="assets/Mockup laptop hero2.webp"
+                src="assets/Mockup laptop español verde.webp"
                 alt=""
                 loading="lazy"
                 class="hero-mockup"
@@ -634,44 +637,48 @@
               >NUESTRO PROCESO</span
             >
             <h2 class="proceso-title" data-i18n="proceso.title">
-              De la idea al lanzamiento
+              De la idea a tu éxito digital
             </h2>
           </div>
 
           <div class="proceso-grid">
-            <article class="proceso-card">
-              <h3 data-i18n="proceso.card1Title">Análisis</h3>
+            <article class="proceso-card" data-step="01">
+              <div class="paso-number">01</div>
+              <h3 data-i18n="proceso.card1Title">Análisis y Consulta</h3>
               <p data-i18n="proceso.card1Text">
-                Conversamos sobre tu idea, tus objetivos y el tipo de proyecto
-                que necesitás. Definimos si lo mejor para vos es una landing, un
-                sitio institucional, una web personal o un desarrollo a medida.
+                Escuchamos tu idea, objetivos y visión. Analizamos tu mercado y
+                necesidades para recomendarte la solución digital perfecta:
+                landing, sitio institucional, web personal o desarrollo custom.
               </p>
             </article>
 
-            <article class="proceso-card">
-              <h3 data-i18n="proceso.card2Title">Diseño</h3>
+            <article class="proceso-card" data-step="02">
+              <div class="paso-number">02</div>
+              <h3 data-i18n="proceso.card2Title">Diseño y Prototipado</h3>
               <p data-i18n="proceso.card2Text">
-                Creamos un diseño moderno, claro y alineado con tu marca. Te
-                presentamos prototipos visuales para que puedas ver la estética
-                y estructura final de tu web antes de avanzar al desarrollo.
+                Creamos un diseño moderno, intuitivo y alineado con tu marca. Te
+                mostramos prototipos interactivos para validar la estética,
+                estructura y experiencia antes de desarrollar.
               </p>
             </article>
 
-            <article class="proceso-card">
-              <h3 data-i18n="proceso.card3Title">Desarrollo técnico</h3>
+            <article class="proceso-card" data-step="03">
+              <div class="paso-number">03</div>
+              <h3 data-i18n="proceso.card3Title">Desarrollo y Optimización</h3>
               <p data-i18n="proceso.card3Text">
-                Trabajamos con la tecnología que mejor se adapta a tu proyecto.
-                Según cada necesidad, podemos desarrollar soluciones a medida
-                con código o utilizar herramientas low-code como WordPress.
+                Construimos tu sitio con tecnología moderna, optimizado para
+                velocidad, SEO y conversión. Usamos código personalizado o
+                herramientas low-code según lo que mejor se adapte a ti.
               </p>
             </article>
 
-            <article class="proceso-card">
-              <h3 data-i18n="proceso.card4Title">Lanzamiento</h3>
+            <article class="proceso-card" data-step="04">
+              <div class="paso-number">04</div>
+              <h3 data-i18n="proceso.card4Title">Lanzamiento y Soporte</h3>
               <p data-i18n="proceso.card4Text">
-                Subimos tu sitio y lo dejamos funcionando al 100%, optimizado y
-                listo para recibir visitas desde el primer día. Ajustamos los
-                últimos detalles para asegurar una experiencia fluida.
+                Publicamos tu sitio listo para recibir visitas. Realizamos
+                testing exhaustivo, optimizamos los últimos detalles y brindamos
+                soporte continuo para que siempre funcione perfectamente.
               </p>
             </article>
           </div>
@@ -694,7 +701,11 @@
             >
             <h2 class="servicios-title" data-i18n="servicios.title">
               Soluciones digitales que
-              <span class="servicios-highlight">impulsan tu negocio</span>
+              <span
+                class="servicios-highlight"
+                style="color: #006341 !important"
+                >impulsan tu negocio</span
+              >
             </h2>
             <p class="servicios-sub" data-i18n="servicios.subtitle">
               Combinamos estrategia, diseño y tecnología para crear productos
@@ -1018,6 +1029,246 @@
             data-i18n="proyectos.verMasBtn"
           >
             Ver Más Proyectos
+          </button>
+        </div>
+      </section>
+
+      <!-- Anchor para navegación exacta a la parte superior de 'testimonios' -->
+      <div id="testimonios-top" class="anchor-offset" aria-hidden="true"></div>
+      <!-- Sección: Testimonios -->
+      <section
+        id="testimonios"
+        class="testimonios container"
+        aria-label="Testimonios de clientes"
+      >
+        <div class="testimonios-head">
+          <span
+            class="eyebrow"
+            style="color: var(--color-primario)"
+            data-i18n="testimonios.label"
+            >TESTIMONIOS</span
+          >
+          <h2 class="testimonios-title" data-i18n="testimonios.title">
+            Lo que dicen nuestros clientes
+          </h2>
+          <p class="testimonios-sub" data-i18n="testimonios.subtitle">
+            Conoce las experiencias reales de empresas que transformaron su
+            presencia digital con nosotros.
+          </p>
+        </div>
+
+        <div class="testimonios-slider-wrapper">
+          <div class="testimonios-grid testimonios-slider">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="star-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p class="testimonial-text" data-i18n="testimonios.testimonial1">
+                "Excelente trabajo. El equipo de Nexcore entendió perfectamente
+                nuestra visión y la convirtieron en una web profesional y
+                moderna. El resultado superó nuestras expectativas."
+              </p>
+            </div>
+            <div class="testimonial-footer">
+              <div class="testimonial-author">
+                <div class="author-avatar">
+                  <span>JC</span>
+                </div>
+                <div class="author-info">
+                  <h4 class="author-name" data-i18n="testimonios.author1Name">
+                    Juan Carlos Morales
+                  </h4>
+                  <p class="author-role" data-i18n="testimonios.author1Role">
+                    CEO - Oklahoma Studio
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="star-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p class="testimonial-text" data-i18n="testimonios.testimonial2">
+                "Desde el primer contacto fueron muy profesionales y atentos. El
+                sitio que nos entregaron es rápido, se ve espectacular en móvil
+                y ya estamos recibiendo más consultas. ¡Muy recomendados!"
+              </p>
+            </div>
+            <div class="testimonial-footer">
+              <div class="testimonial-author">
+                <div class="author-avatar">
+                  <span>MR</span>
+                </div>
+                <div class="author-info">
+                  <h4 class="author-name" data-i18n="testimonios.author2Name">
+                    María Rodríguez
+                  </h4>
+                  <p class="author-role" data-i18n="testimonios.author2Role">
+                    Gerente - Empa-Market
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="star-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p class="testimonial-text" data-i18n="testimonios.testimonial3">
+                "Trabajar con Nexcore fue una experiencia fluida y agradable. El
+                equipo es creativo, responsable y se preocupó genuinamente por
+                que nuestro proyecto fuera un éxito. Sin dudas volveríamos a
+                contratar sus servicios."
+              </p>
+            </div>
+            <div class="testimonial-footer">
+              <div class="testimonial-author">
+                <div class="author-avatar">
+                  <span>AF</span>
+                </div>
+                <div class="author-info">
+                  <h4 class="author-name" data-i18n="testimonios.author3Name">
+                    Alejandro Fernández
+                  </h4>
+                  <p class="author-role" data-i18n="testimonios.author3Role">
+                    Director Ejecutivo - UNAJ
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 4 -->
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="star-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p class="testimonial-text" data-i18n="testimonios.testimonial4">
+                "Lo que más valoré fue la comunicación constante y las
+                explicaciones detalladas de cada decisión de diseño. Realmente
+                se tomaron el tiempo de entender nuestro negocio y mercado."
+              </p>
+            </div>
+            <div class="testimonial-footer">
+              <div class="testimonial-author">
+                <div class="author-avatar">
+                  <span>SG</span>
+                </div>
+                <div class="author-info">
+                  <h4 class="author-name" data-i18n="testimonios.author4Name">
+                    Sofía García
+                  </h4>
+                  <p class="author-role" data-i18n="testimonios.author4Role">
+                    Propietaria - E-commerce B2B
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 5 -->
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="star-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p class="testimonial-text" data-i18n="testimonios.testimonial5">
+                "El sitio no solo se ve hermoso, sino que también cumple el
+                objetivo de convertir visitantes en clientes. Ya hemos visto un
+                aumento en nuestro ROI. Nexcore es la mejor inversión que
+                hicimos este año."
+              </p>
+            </div>
+            <div class="testimonial-footer">
+              <div class="testimonial-author">
+                <div class="author-avatar">
+                  <span>RP</span>
+                </div>
+                <div class="author-info">
+                  <h4 class="author-name" data-i18n="testimonios.author5Name">
+                    Roberto Pérez
+                  </h4>
+                  <p class="author-role" data-i18n="testimonios.author5Role">
+                    Dueño - Consultora Digital
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 6 -->
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="star-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p class="testimonial-text" data-i18n="testimonios.testimonial6">
+                "Me encantó la atención al detalle en cada aspecto. Desde las
+                animaciones hasta la estructura SEO, todo fue cuidadosamente
+                pensado. Definitivamente un equipo de profesionales de clase
+                mundial."
+              </p>
+            </div>
+            <div class="testimonial-footer">
+              <div class="testimonial-author">
+                <div class="author-avatar">
+                  <span>EL</span>
+                </div>
+                <div class="author-info">
+                  <h4 class="author-name" data-i18n="testimonios.author6Name">
+                    Emilia López
+                  </h4>
+                  <p class="author-role" data-i18n="testimonios.author6Role">
+                    Product Manager - Tech Startup
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="testimonios-controls">
+          <button class="slider-btn prev" id="testimonios-prev" aria-label="Testimonios anteriores">
+            <i class="bi bi-caret-left-fill"></i>
+          </button>
+          <div class="slider-dots" id="testimonios-dots"></div>
+          <button class="slider-btn next" id="testimonios-next" aria-label="Próximos testimonios">
+            <i class="bi bi-caret-right-fill"></i>
           </button>
         </div>
       </section>
@@ -1807,6 +2058,11 @@
               </li>
               <li>
                 <a href="#proyectos" data-i18n="nav.proyectos">Proyectos</a>
+              </li>
+              <li>
+                <a href="#testimonios-top" data-i18n="nav.testimonios"
+                  >Testimonios</a
+                >
               </li>
               <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
             </ul>

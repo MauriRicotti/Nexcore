@@ -344,28 +344,72 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Animación de la sección de contacto
+  // Animación de títulos y subtítulos en múltiples secciones
   if (window.gsap) {
-    // Animar título y subtitle
-    gsap.from('.contact-section .section-title', {
-      opacity: 0,
-      y: 40,
-      duration: 0.8,
-      scrollTrigger: {
-        trigger: '#contact',
-        start: 'top 70%'
+    // Configuración de secciones con sus selectores específicos
+    const animatedSections = [
+      { id: '#servicios', titleClass: '.servicios-title', subtitleClass: '.servicios-sub' },
+      { id: '#testimonios', titleClass: '.testimonios-title', subtitleClass: '.testimonios-sub' },
+      { id: '#faq', titleClass: '.faq-title', subtitleClass: '.faq-sub' },
+      { id: '#pagos', titleClass: '.section-title', subtitleClass: '.section-subtitle' },
+      { id: '#contact', titleClass: '.section-title', subtitleClass: '.section-subtitle' }
+    ];
+    
+    animatedSections.forEach(section => {
+      const titleEl = document.querySelector(`${section.id} ${section.titleClass}`);
+      const subtitleEl = document.querySelector(`${section.id} ${section.subtitleClass}`);
+      
+      if (titleEl) {
+        gsap.from(titleEl, {
+          opacity: 0,
+          y: 40,
+          duration: 0.8,
+          scrollTrigger: {
+            trigger: section.id,
+            start: 'top 70%'
+          }
+        });
+      }
+      
+      if (subtitleEl) {
+        gsap.from(subtitleEl, {
+          opacity: 0,
+          y: 30,
+          duration: 0.8,
+          delay: 0.2,
+          scrollTrigger: {
+            trigger: section.id,
+            start: 'top 70%'
+          }
+        });
       }
     });
 
-    gsap.from('.contact-section .section-subtitle', {
-      opacity: 0,
-      y: 30,
-      duration: 0.8,
-      delay: 0.2,
-      scrollTrigger: {
-        trigger: '#contact',
-        start: 'top 70%'
-      }
+    // Animación de cards en múltiples secciones
+    const cardAnimations = [
+      { selector: '.card:not(.card-1):not(.card-2):not(.card-3):not(.card-4)', section: '#nosotros' },
+      { selector: '.proceso-card', section: '#proceso' },
+      { selector: '.servicio-card', section: '#servicios' },
+      { selector: '.testimonial-card', section: '#testimonios' },
+      { selector: '.proyectos-inner', section: '#proyectos' },
+      { selector: '.accordion-item', section: '#faq' },
+      { selector: '.info-card', section: '#contact' },
+      { selector: '.payment-card', section: '#pagos' }
+    ];
+
+    cardAnimations.forEach(animation => {
+      gsap.utils.toArray(animation.selector).forEach((card, index) => {
+        gsap.from(card, {
+          opacity: 0,
+          y: 30,
+          duration: 0.6,
+          delay: index * 0.1,
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 80%'
+          }
+        });
+      });
     });
   }
 
@@ -434,54 +478,109 @@ document.addEventListener('DOMContentLoaded', () => {
   const initMap = () => {
     const mapElement = document.getElementById('map');
     if (mapElement && window.L) {
-      // Coordenadas de Buenos Aires, Argentina
-      const buenosAires = [-34.6037, -58.3816];
+      // Coordenadas de Florencio Varela, Buenos Aires, Argentina
+      const florencioVarela = [-34.7633, -58.2923];
       
       // Crear mapa
       const map = L.map('map', {
         zoomControl: true,
         dragging: true,
         scrollWheelZoom: true
-      }).setView(buenosAires, 13);
+      }).setView(florencioVarela, 14);
       
-      // Agregar capa de tiles (OpenStreetMap)
+      // Agregar capa de tiles mejorada (Stamen Terrain o OpenStreetMap)
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors',
         maxZoom: 19
       }).addTo(map);
       
-      // Agregar marcador en Buenos Aires
-      const marker = L.marker(buenosAires, {
-        title: 'Buenos Aires, Argentina'
+      // Crear icono personalizado para Nexcore
+      const nexcoreIcon = L.divIcon({
+        className: 'nexcore-marker',
+        html: `
+          <div class="marker-icon" style="background: linear-gradient(135deg, #006341, #17b169); border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; box-shadow: 0 4px 12px rgba(0, 99, 65, 0.4); border: 3px solid white;">
+            <i class="bi bi-building" style="font-size: 24px;"></i>
+          </div>
+        `,
+        iconSize: [48, 48],
+        iconAnchor: [24, 48],
+        popupAnchor: [0, -48]
+      });
+      
+      // Agregar marcador en Florencio Varela
+      const marker = L.marker(florencioVarela, {
+        title: 'Nexcore - Florencio Varela',
+        icon: nexcoreIcon
       }).addTo(map);
       
-      // Popup del marcador
-      marker.bindPopup('<strong>Buenos Aires</strong><br>Argentina', {
-        className: 'custom-popup'
+      // Popup del marcador mejorado
+      marker.bindPopup(`
+        <div style="text-align: center;">
+          <strong style="font-size: 16px; color: white;">NEXCORE</strong>
+          <br>
+          <span style="font-size: 14px; color: #bdbdbd;">Florencio Varela</span>
+          <br>
+          <span style="font-size: 12px; color: #17b169;">Buenos Aires, Argentina</span>
+          <br>
+          <a href="https://wa.me/541141948773" target="_blank" rel="noopener noreferrer" style="color: #17b169; text-decoration: none; font-weight: 600; font-size: 12px; margin-top: 8px; display: inline-block;">Contactar</a>
+        </div>
+      `, {
+        className: 'custom-popup',
+        maxWidth: 280
       }).openPopup();
       
-      // Estilo personalizado para Leaflet
+      // Estilo personalizado para Leaflet mejorado
       const style = document.createElement('style');
       style.textContent = `
         .leaflet-container {
           background-color: #0f0f0f !important;
+          border-radius: 12px;
+          box-shadow: 0 10px 40px rgba(0, 99, 65, 0.1);
         }
+        
         .custom-popup .leaflet-popup-content-wrapper {
-          background-color: rgba(40, 88, 172, 0.95) !important;
-          border-radius: 8px;
-          border: 1px solid var(--color-primario) !important;
+          background: linear-gradient(135deg, rgba(15, 15, 15, 0.98), rgba(7, 8, 12, 0.98)) !important;
+          border-radius: 12px;
+          border: 1px solid rgba(0, 99, 65, 0.5) !important;
+          box-shadow: 0 8px 32px rgba(0, 99, 65, 0.2) !important;
+          padding: 0 !important;
         }
+        
         .custom-popup .leaflet-popup-content {
           color: white;
           font-size: 0.85rem;
           font-family: Montserrat, sans-serif;
-          margin: 6px;
+          margin: 12px !important;
+          padding: 0 !important;
         }
+        
         .custom-popup .leaflet-popup-tip {
-          background-color: rgba(40, 88, 172, 0.95) !important;
+          background: rgba(15, 15, 15, 0.98) !important;
+          border: 1px solid rgba(0, 99, 65, 0.5) !important;
         }
+        
         .leaflet-marker-icon {
-          filter: hue-rotate(200deg) brightness(1.1);
+          filter: drop-shadow(0 4px 8px rgba(0, 99, 65, 0.3));
+        }
+        
+        .leaflet-zoom-control {
+          border: 1px solid var(--color-primario) !important;
+          background: rgba(15, 15, 15, 0.9) !important;
+          border-radius: 6px !important;
+        }
+        
+        .leaflet-control-zoom-in, .leaflet-control-zoom-out {
+          color: var(--color-primario) !important;
+          background: transparent !important;
+          border: none !important;
+          font-weight: bold !important;
+          font-size: 18px !important;
+          transition: all 300ms ease !important;
+        }
+        
+        .leaflet-control-zoom-in:hover, .leaflet-control-zoom-out:hover {
+          background: var(--color-primario) !important;
+          color: white !important;
         }
       `;
       document.head.appendChild(style);
@@ -718,7 +817,13 @@ function translatePage() {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (key) {
-      el.textContent = t(key);
+      const text = t(key);
+      // Usar innerHTML para títulos que contienen HTML con color
+      if (key === 'servicios.title' || key === 'proceso.title' || key === 'nosotros.title') {
+        el.innerHTML = text;
+      } else {
+        el.textContent = text;
+      }
     }
   });
   
@@ -874,7 +979,154 @@ class DonationModal {
   }
 }
 
+// Mouse tracking glow effect for service cards, testimonial cards and payment cards
+const initCardMouseTracking = () => {
+  const cards = document.querySelectorAll('.servicio-card, .testimonial-card, .payment-card');
+  
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      // Update the ::after pseudo-element position
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      // Reset position when mouse leaves
+      card.style.setProperty('--mouse-x', '50%');
+      card.style.setProperty('--mouse-y', '50%');
+    });
+  });
+};
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', initCardMouseTracking);
+
+// Reinitialize when new content is loaded (if applicable)
+window.addEventListener('load', initCardMouseTracking);
+
 // Initialize Donation Modal on page load
 document.addEventListener('DOMContentLoaded', () => {
   new DonationModal();
+});
+
+// ========== TESTIMONIOS SLIDER ==========
+class TestimoniosSlider {
+  constructor() {
+    this.slider = document.querySelector('.testimonios-slider');
+    this.cards = document.querySelectorAll('.testimonios-slider .testimonial-card');
+    this.prevBtn = document.getElementById('testimonios-prev');
+    this.nextBtn = document.getElementById('testimonios-next');
+    this.dotsContainer = document.getElementById('testimonios-dots');
+    
+    if (!this.slider || !this.cards.length) {
+      console.warn('Slider elements not found');
+      return;
+    }
+    
+    this.currentIndex = 0;
+    this.cardsPerView = this.getCardsPerView();
+    this.totalSlides = Math.ceil(this.cards.length / this.cardsPerView);
+    this.dots = [];
+    
+    this.init();
+  }
+  
+  getCardsPerView() {
+    if (window.innerWidth <= 768) return 1;
+    if (window.innerWidth <= 1024) return 2;
+    return 3;
+  }
+  
+  init() {
+    this.createDots();
+    this.attachEventListeners();
+    this.updateView();
+    
+    // Actualizar en resize
+    window.addEventListener('resize', () => {
+      const newCardsPerView = this.getCardsPerView();
+      if (newCardsPerView !== this.cardsPerView) {
+        this.cardsPerView = newCardsPerView;
+        this.totalSlides = Math.ceil(this.cards.length / this.cardsPerView);
+        this.currentIndex = Math.min(this.currentIndex, this.totalSlides - 1);
+        this.createDots();
+        this.updateView();
+      }
+    });
+  }
+  
+  createDots() {
+    this.dotsContainer.innerHTML = '';
+    this.dots = [];
+    
+    for (let i = 0; i < this.totalSlides; i++) {
+      const dot = document.createElement('button');
+      dot.className = `slider-dot ${i === 0 ? 'active' : ''}`;
+      dot.setAttribute('aria-label', `Ir a slide ${i + 1}`);
+      dot.type = 'button';
+      dot.addEventListener('click', () => this.goToSlide(i));
+      this.dotsContainer.appendChild(dot);
+      this.dots.push(dot);
+    }
+  }
+  
+  attachEventListeners() {
+    if (this.prevBtn) {
+      this.prevBtn.addEventListener('click', () => this.prev());
+    }
+    if (this.nextBtn) {
+      this.nextBtn.addEventListener('click', () => this.next());
+    }
+  }
+  
+  updateView() {
+    // Calcular el desplazamiento considerando el ancho de la tarjeta + gap
+    const wrapperWidth = this.slider.parentElement.offsetWidth;
+    const cardWidth = this.cards[0].offsetWidth;
+    const gap = 24; // px, el mismo del CSS
+    const offset = -this.currentIndex * (cardWidth + gap);
+    
+    this.slider.style.transform = `translateX(${offset}px)`;
+    
+    // Actualizar dots
+    this.dots.forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === this.currentIndex);
+    });
+    
+    // Actualizar estado de botones
+    if (this.prevBtn) {
+      this.prevBtn.disabled = this.currentIndex === 0;
+    }
+    if (this.nextBtn) {
+      this.nextBtn.disabled = this.currentIndex === this.totalSlides - 1;
+    }
+  }
+  
+  next() {
+    if (this.currentIndex < this.totalSlides - 1) {
+      this.currentIndex++;
+      this.updateView();
+    }
+  }
+  
+  prev() {
+    if (this.currentIndex > 0) {
+      this.currentIndex--;
+      this.updateView();
+    }
+  }
+  
+  goToSlide(index) {
+    this.currentIndex = Math.max(0, Math.min(index, this.totalSlides - 1));
+    this.updateView();
+  }
+}
+
+// Inicializar slider de testimonios cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+  new TestimoniosSlider();
 });
