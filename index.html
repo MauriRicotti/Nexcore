@@ -1,36 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Nexcore - Agencia de Desarrollo Web</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VaultMail - Gestor seguro de cuentas</title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="Assets/Logo VaultMail-Favicon.png"
+    />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="true" />
     <meta
-      name="description"
-      content="Nexcore — Agencia de desarrollo web en Buenos Aires. Creamos sitios y tiendas online, con diseño, rendimiento y SEO enfocados en resultados reales."
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
     />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="Nexcore" />
-    <link rel="canonical" href="https://nexcore-gamma.vercel.app/" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="sitemap"
-      type="application/xml"
-      title="Sitemap"
-      href="https://nexcore-gamma.vercel.app/sitemap.xml"
-    />
-
-    <!-- Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=BBH+Hegarty&family=Montserrat:wght@300;500;700;900&family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Bootstrap Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-    />
+    <meta name="apple-mobile-web-app-title" content="VaultMail" />
+    <meta name="theme-color" content="#0f5d9a" />
 
     <!-- Bootstrap CSS -->
     <link
@@ -38,2315 +30,1624 @@
       rel="stylesheet"
     />
 
-    <!-- Styles -->
+    <!-- Estilos personalizados -->
     <link rel="stylesheet" href="style.css" />
 
-    <!-- i18next para multi-idioma -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/23.7.6/i18next.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-browser-languagedetector/7.2.0/i18nextBrowserLanguageDetector.min.js"></script>
-
-    <!-- Leaflet CSS para mapa interactivo -->
+    <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
     />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/Nexcore logo verde.png" />
-    <link rel="apple-touch-icon" href="assets/Nexcore logo verde.png" />
-
-    <!-- Open Graph / Social -->
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="es_ES" />
-    <meta property="og:site_name" content="Nexcore" />
-    <meta property="og:title" content="Nexcore - Agencia de Desarrollo Web" />
-    <meta
-      property="og:description"
-      content="Nexcore — Agencia de desarrollo web. Diseño, rendimiento y SEO enfocados en resultados reales."
-    />
-    <meta property="og:url" content="https://nexcore-gamma.vercel.app/" />
-    <meta
-      property="og:image"
-      content="https://nexcore-gamma.vercel.app/assets/Nexcore%20logo6.png"
-    />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@nexcore" />
-
-    <!-- Theme-Color -->
-    <meta name="theme-color" content="#0d0d0d" />
-
-    <!-- Structured data: Organization + WebSite (reemplazar URLs por dominio real) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Organization",
-            "name": "Nexcore",
-            "url": "https://nexcore-gamma.vercel.app/",
-            "logo": "https://nexcore-gamma.vercel.app/assets/Nexcore%20logo6.png",
-            "sameAs": [
-              "https://facebook.com",
-              "https://linkedin.com",
-              "https://instagram.com"
-            ]
-          },
-          {
-            "@type": "WebSite",
-            "url": "https://nexcore-gamma.vercel.app/",
-            "name": "Nexcore",
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": "https://nexcore-gamma.vercel.app/?s={search_term_string}",
-              "query-input": "required name=search_term_string"
-            }
-          }
-        ]
-      }
-    </script>
+    <!-- Popper.js para tooltips -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
   </head>
+
   <body>
-    <header class="site-header" id="top">
-      <div id="scroll-progress" aria-hidden="true"></div>
-      <nav class="nav container">
-        <button class="nav-toggle" aria-label="Menú">
-          <span class="hamburger" aria-hidden="true"></span>
-        </button>
-
-        <a href="#" class="logo">
-          <img
-            src="assets/Nexcore logo.png"
-            alt="Nexcore logo"
-            class="logo-img"
-          />
-          <span>NEXCORE</span>
-        </a>
-
-        <ul class="nav-menu">
-          <li><a href="#hero" data-i18n="nav.inicio">Inicio</a></li>
-          <li><a href="#nosotros-top" data-i18n="nav.nosotros">Nosotros</a></li>
-          <li><a href="#servicios" data-i18n="nav.servicios">Servicios</a></li>
-          <li><a href="#proyectos" data-i18n="nav.proyectos">Proyectos</a></li>
-          <li>
-            <a href="#testimonios-top" data-i18n="nav.testimonios">Testimonios</a>
-          </li>
-          <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
-        </ul>
-
-        <div class="nav-right">
-          <div class="language-switcher">
-            <button
-              class="lang-btn"
-              id="lang-es"
-              data-lang="es"
-              title="Español"
-            >
-              ES
-            </button>
-            <span class="lang-separator">/</span>
-            <button
-              class="lang-btn"
-              id="lang-en"
-              data-lang="en"
-              title="English"
-            >
-              EN
-            </button>
-          </div>
-          <a class="btn btn-primary" href="#contact" data-i18n="nav.contactar"
-            >Contactar</a
-          >
+    <!-- Pantalla de Login Fullscreen -->
+    <!-- Pantalla de Acceso Concedido -->
+    <div id="successScreen" class="success-screen d-none">
+      <div class="success-screen-content">
+        <div class="success-screen-icon">
+          <i class="bi bi-check-circle"></i>
         </div>
-
-        <!-- Menú lateral móvil -->
-        <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
-          <ul class="mobile-menu-list">
-            <li><a href="#hero" data-i18n="nav.inicio">Inicio</a></li>
-            <li>
-              <a href="#nosotros-top" data-i18n="nav.nosotros">Nosotros</a>
-            </li>
-            <li>
-              <a href="#servicios" data-i18n="nav.servicios">Servicios</a>
-            </li>
-            <li>
-              <a href="#proyectos" data-i18n="nav.proyectos">Proyectos</a>
-            </li>
-            <li>
-              <a href="#testimonios-top" data-i18n="nav.testimonios">Testimonios</a>
-            </li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-
-          <!-- Selector de idioma en mobile -->
-          <div class="mobile-language-switcher">
-            <span class="language-label">Idioma:</span>
-            <div class="mobile-lang-buttons">
-              <button class="lang-btn" data-lang="es">ES</button>
-              <span class="lang-separator">|</span>
-              <button class="lang-btn active" data-lang="en">EN</button>
-            </div>
-          </div>
-
-          <div class="mobile-ctas">
-            <a class="btn btn-primary" href="#contact">Contactar</a>
-          </div>
+        <h1 class="success-screen-title">¡Acceso Concedido!</h1>
+        <p class="success-screen-message">
+          Tu sesión se ha iniciado correctamente
+        </p>
+        <div class="success-screen-loader">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-      </nav>
-    </header>
+      </div>
+    </div>
 
-    <main>
-      <section id="hero" class="hero">
-        <div class="hero-deco deco-1" aria-hidden="true"></div>
-        <div class="hero-deco deco-2" aria-hidden="true"></div>
-        <div class="hero-deco deco-3" aria-hidden="true"></div>
-        <div class="hero-inner container">
-          <div class="hero-left">
-            <h1 class="hero-title">
-              <span class="big" data-i18n="hero.title1">Tu Agencia</span>
-              <span class="big" data-i18n="hero.title2">Favorita De</span>
-              <span class="big highlight" data-i18n="hero.title3"
-                >Desarrollo Web</span
-              >
-            </h1>
-
-            <p class="hero-sub" data-i18n="hero.subtitle">
-              Creamos lo que necesitás para que tu marca crezca. Diseño
-              estratégico y tecnología moderna enfocados en una sola cosa: los
-              resultados reales.
-            </p>
-
-            <div class="hero-ctas">
-              <a href="#cotizar" class="btn btn-primary" data-i18n="hero.cta1"
-                >Cotizar<span class="icon"
-                  ><i class="bi bi-arrow-right" aria-hidden="true"></i></span
-              ></a>
-              <a href="#proyectos" class="btn btn-outline" data-i18n="hero.cta2"
-                >Proyectos</a
-              >
-            </div>
-
-            <div class="hero-feats">
-              <div class="feat">
-                <h3 data-i18n="hero.feat1">Diseño</h3>
-                <small data-i18n="hero.feat1Sub">MODERNO</small>
-              </div>
-              <div class="feat">
-                <h3 data-i18n="hero.feat2">SEO</h3>
-                <small data-i18n="hero.feat2Sub">INICIAL</small>
-              </div>
-              <div class="feat">
-                <h3 data-i18n="hero.feat3">Soporte</h3>
-                <small data-i18n="hero.feat3Sub">POST-VENTA</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-right" aria-hidden="true">
-            <div class="mockup-wrap" aria-hidden="true">
+    <!-- Pantalla de Login Fullscreen -->
+    <div id="loginScreen" class="login-screen d-none">
+      <div class="login-screen-container">
+        <!-- Columna izquierda (solo en PC) / Parte superior en mobile con logo -->
+        <div class="login-screen-left">
+          <div class="login-screen-left-content">
+            <!-- Logo para mobile (se muestra con CSS en mobile) -->
+            <div class="login-screen-logo-wrapper">
               <img
-                id="hero-mockup-img"
-                src="assets/Mockup laptop español verde.webp"
-                alt=""
-                loading="lazy"
-                class="hero-mockup"
+                src="Assets/Logo VaultMail.png"
+                alt="VaultMail Logo"
+                class="login-screen-logo"
               />
             </div>
+            <!-- Texto solo en PC -->
+            <h2 class="login-screen-tagline">VaultMail</h2>
+            <p class="login-screen-description">
+              Almacena y gestiona tus contraseñas de forma segura en un único
+              lugar
+            </p>
+            <div class="login-screen-features">
+              <div class="feature-item">
+                <i class="bi bi-shield-lock"></i>
+                <span>Encriptación 256-bit</span>
+              </div>
+              <div class="feature-item">
+                <i class="bi bi-lock"></i>
+                <span>Acceso seguro</span>
+              </div>
+              <div class="feature-item">
+                <i class="bi bi-cloud-check"></i>
+                <span>Sincronización automática</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="scroll-indicator" aria-hidden="true">
-          <span class="scroll-text">Scroll</span>
-          <span class="scroll-dots">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
+        <!-- Columna derecha (formulario) -->
+        <div class="login-screen-right">
+          <div class="login-screen-form-wrapper">
+            <div class="login-screen-header">
+              <h1 class="login-screen-title">Login</h1>
+              <p class="login-screen-subtitle">Gestor seguro de cuentas</p>
+            </div>
+
+            <form id="loginForm" class="login-screen-form">
+              <div class="login-screen-form-group">
+                <label for="loginPassword" class="login-screen-label"
+                  >Contraseña</label
+                >
+                <div class="login-screen-input-group">
+                  <input
+                    type="password"
+                    class="login-screen-input"
+                    id="loginPassword"
+                    placeholder="••••••••"
+                    required
+                    autofocus
+                  />
+                  <button
+                    class="login-screen-input-toggle"
+                    type="button"
+                    id="toggleLoginPassword"
+                    tabindex="-1"
+                  >
+                    <i class="bi bi-eye"></i>
+                  </button>
+                </div>
+                <div class="login-screen-password-strength d-none">
+                  <div class="strength-bar">
+                    <div class="strength-fill" id="strengthFill"></div>
+                  </div>
+                  <small class="strength-text" id="strengthText"></small>
+                </div>
+                <small class="login-screen-helper-text">
+                  Introduce tu contraseña para acceder
+                </small>
+              </div>
+
+              <button type="submit" class="login-screen-btn-submit">
+                <span class="btn-text">Acceder</span>
+                <i class="bi bi-arrow-right"></i>
+              </button>
+
+              <div
+                id="loginError"
+                class="login-screen-alert login-screen-alert-error d-none"
+                role="alert"
+              ></div>
+            </form>
+
+            <div class="login-screen-footer">
+              <p class="login-screen-info">
+                <i class="bi bi-info-circle"></i>
+                Tu contraseña no se almacena en servidores
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Confirmación de Logout -->
+    <div id="logoutConfirmModal" class="modal-logout d-none">
+      <div class="modal-logout-overlay"></div>
+      <div class="modal-logout-content">
+        <div class="modal-logout-icon">
+          <i class="bi bi-exclamation-circle"></i>
+        </div>
+        <h2 class="modal-logout-title">¿Cerrar Sesión?</h2>
+        <p class="modal-logout-message">
+          Tu sesión será cerrada y tendrás que iniciar sesión nuevamente
+        </p>
+        <div class="modal-logout-actions">
+          <button
+            class="modal-logout-btn modal-logout-cancel"
+            id="cancelLogoutBtn"
+          >
+            Cancelar
+          </button>
+          <button
+            class="modal-logout-btn modal-logout-confirm"
+            id="confirmLogoutBtn"
+          >
+            Cerrar Sesión
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Importación de Cuentas -->
+    <div id="importModal" class="modal-logout d-none">
+      <div class="modal-logout-overlay"></div>
+      <div class="modal-logout-content">
+        <div class="modal-logout-icon">
+          <i class="bi bi-file-arrow-down"></i>
+        </div>
+        <h2 class="modal-logout-title">Importar Cuentas</h2>
+        <p class="modal-logout-message">
+          Se han encontrado <span id="importAccountCount">0</span> cuenta(s).
+          ¿Cómo deseas importarlas?
+        </p>
+        <div class="modal-logout-actions">
+          <button
+            class="modal-logout-btn modal-logout-cancel"
+            id="importCancelBtn"
+          >
+            Cancelar
+          </button>
+          <button
+            class="modal-logout-btn modal-logout-confirm"
+            id="importAddBtn"
+            style="background-color: #0f5d9a; color: white"
+          >
+            <i class="bi bi-plus-circle" style="margin-right: 5px"></i>Agregar
+          </button>
+          <button
+            class="modal-logout-btn modal-logout-confirm"
+            id="importOverwriteBtn"
+            style="background-color: #dc3545; color: white"
+          >
+            <i class="bi bi-arrow-repeat" style="margin-right: 5px"></i
+            >Sobreescribir
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-container">
+        <div class="logo-section">
+          <div class="logo">
+            <img
+              src="Assets/Logo VaultMail.png"
+              alt="VaultMail Logo"
+              class="logo-img"
+            />
+          </div>
+          <div class="logo-text">
+            <h1>VaultMail</h1>
+            <p>Gestor seguro de cuentas</p>
+          </div>
+        </div>
+        <div class="header-tagline">
+          <span>Almacena seguro. Accede rápido.</span>
+        </div>
+        <div class="header-spacer"></div>
+        <button class="logout-btn" id="logoutBtn" title="Cerrar sesión">
+          <i class="bi bi-door-open"></i>
+          <span class="logout-text">Cerrar sesión</span>
+        </button>
+        <button class="sidebar-toggle" id="sidebarToggle" title="Abrir menú">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h3>Navegación</h3>
+        <div class="sidebar-header-buttons">
+          <button
+            class="sidebar-collapse-btn"
+            id="sidebarCollapseBtn"
+            title="Colapsar sidebar"
+          >
+            <i class="bi bi-chevron-left"></i>
+          </button>
+          <button class="sidebar-close" id="sidebarClose">
+            <i class="bi bi-x"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="sidebar-content">
+        <!-- Navigation Section -->
+        <div class="sidebar-section">
+          <nav class="sidebar-nav">
+            <button
+              class="sidebar-nav-item active"
+              data-view="all"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-title="Ver todas las cuentas"
+            >
+              <i class="bi bi-inbox"></i>
+              <span class="sidebar-label">Todas las cuentas</span>
+            </button>
+            <button
+              class="sidebar-nav-item"
+              data-view="favorites"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-title="Ver solo favoritas"
+            >
+              <i class="bi bi-star-fill"></i>
+              <span class="sidebar-label">Favoritas</span>
+            </button>
+            <button
+              class="sidebar-nav-item"
+              data-view="inactive"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-title="Ver archivadas"
+            >
+              <i class="bi bi-archive"></i>
+              <span class="sidebar-label">Archivadas</span>
+            </button>
+          </nav>
         </div>
 
-        <a
-          class="floating-up"
-          href="#top"
-          aria-label="Ir arriba"
-          title="Arriba"
-          data-i18n-attr="title"
-          data-i18n-key="common.backToTop"
-          ><i class="bi bi-chevron-up" aria-hidden="true"></i
-        ></a>
-      </section>
+        <!-- Separator -->
+        <div class="sidebar-section-divider"></div>
 
-      <!-- Tech Stack Carousel -->
-      <div class="tech-carousel">
-        <div class="tech-carousel-track">
-          <!-- Primera serie -->
-          <div class="tech-item">
-            <div class="tech-icon html-icon">
-              <i class="bi bi-filetype-html"></i>
-            </div>
-            <span class="tech-name">HTML5</span>
-          </div>
-          <div class="tech-item">
-            <div class="tech-icon css-icon">
-              <i class="bi bi-filetype-css"></i>
-            </div>
-            <span class="tech-name">CSS3</span>
-          </div>
-          <div class="tech-item">
-            <div class="tech-icon js-icon">
-              <i class="bi bi-filetype-js"></i>
-            </div>
-            <span class="tech-name">JavaScript</span>
-          </div>
-          <div class="tech-item">
-            <div class="tech-icon bootstrap-icon">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
+        <!-- Categories Section -->
+        <div class="sidebar-section">
+          <h4 class="sidebar-section-title">Categorías</h4>
+          <nav class="sidebar-nav">
+            <button
+              class="sidebar-nav-item"
+              data-category="streaming"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-title="Streaming"
+            >
+              <i class="bi bi-play-circle-fill"></i>
+              <span class="sidebar-label">Streaming</span>
+              <span class="category-counter" data-category="streaming">0</span>
+            </button>
+            <button
+              class="sidebar-nav-item"
+              data-category="redes-sociales"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-title="Redes Sociales"
+            >
+              <i class="bi bi-share"></i>
+              <span class="sidebar-label">Redes Sociales</span>
+              <span class="category-counter" data-category="redes-sociales"
+                >0</span
               >
-                <path
-                  d="M3.5 3h17A1.5 1.5 0 0 1 22 4.5v15A1.5 1.5 0 0 1 20.5 21h-17A1.5 1.5 0 0 1 2 19.5v-15A1.5 1.5 0 0 1 3.5 3M7 7v4h3V7H7m5 0v10h3V7h-3M7 12v5h3v-5H7m5-5v10h3V7h-3"
-                />
-              </svg>
-            </div>
-            <span class="tech-name">Bootstrap</span>
-          </div>
-          <div class="tech-item">
-            <div class="tech-icon github-icon">
-              <i class="bi bi-github"></i>
-            </div>
-            <span class="tech-name">GitHub</span>
-          </div>
-          <div class="tech-item">
-            <div class="tech-icon vscode-icon">
-              <i class="bi bi-code-square"></i>
-            </div>
-            <span class="tech-name">VS Code</span>
-          </div>
-          <div class="tech-item">
-            <div class="tech-icon figma-icon">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
+            </button>
+            <button
+              class="sidebar-nav-item"
+              data-category="billetera-virtual"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-title="Billetera Virtual"
+            >
+              <i class="bi bi-wallet-fill"></i>
+              <span class="sidebar-label">Billetera Virtual</span>
+              <span class="category-counter" data-category="billetera-virtual"
+                >0</span
               >
-                <path
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11z"
-                />
-              </svg>
-            </div>
-            <span class="tech-name">Figma</span>
-          </div>
-          <div class="tech-item">
-            <div class="tech-icon responsive-icon">
+            </button>
+            <button
+              class="sidebar-nav-item"
+              data-category="trabajo"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-title="Trabajo"
+            >
+              <i class="bi bi-briefcase-fill"></i>
+              <span class="sidebar-label">Trabajo</span>
+              <span class="category-counter" data-category="trabajo">0</span>
+            </button>
+            <button
+              class="sidebar-nav-item"
+              data-category="app"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-title="App"
+            >
               <i class="bi bi-phone"></i>
-            </div>
-            <span class="tech-name">Responsive</span>
-          </div>
-          <div class="tech-item">
-            <div class="tech-icon react-icon">
-              <i class="bi bi-bezier2"></i>
-            </div>
-            <span class="tech-name">React</span>
-          </div>
-          <div class="tech-item">
-            <div class="tech-icon nodejs-icon">
-              <i class="bi bi-server"></i>
-            </div>
-            <span class="tech-name">Node.js</span>
-          </div>
-          <div class="tech-item">
-            <div class="tech-icon tailwind-icon">
-              <i class="bi bi-palette"></i>
-            </div>
-            <span class="tech-name">Tailwind</span>
-          </div>
-          <div class="tech-item">
-            <div class="tech-icon wordpress-icon">
-              <i class="bi bi-wordpress"></i>
-            </div>
-            <span class="tech-name">WordPress</span>
-          </div>
-          <div class="tech-item">
-            <div class="tech-icon git-icon">
-              <i class="bi bi-diagram-3"></i>
-            </div>
-            <span class="tech-name">Git</span>
-          </div>
-          <div class="tech-item">
-            <div class="tech-icon seo-icon">
-              <i class="bi bi-search"></i>
-            </div>
-            <span class="tech-name">SEO</span>
-          </div>
+              <span class="sidebar-label">App</span>
+              <span class="category-counter" data-category="app">0</span>
+            </button>
+            <button
+              class="sidebar-nav-item"
+              data-category="video-juego"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-title="Video Juego"
+            >
+              <i class="bi bi-controller"></i>
+              <span class="sidebar-label">Video Juego</span>
+              <span class="category-counter" data-category="video-juego"
+                >0</span
+              >
+            </button>
+            <button
+              class="sidebar-nav-item"
+              data-category="personal"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-title="Personal"
+            >
+              <i class="bi bi-person-circle"></i>
+              <span class="sidebar-label">Personal</span>
+              <span class="category-counter" data-category="personal">0</span>
+            </button>
+            <button
+              class="sidebar-nav-item"
+              data-category="otros"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-title="Otros"
+            >
+              <i class="bi bi-box-seam"></i>
+              <span class="sidebar-label">Otros</span>
+              <span class="category-counter" data-category="otros">0</span>
+            </button>
+          </nav>
+        </div>
 
-          <!-- Segunda serie (duplicada para loop continuo sin saltos) -->
-          <div class="tech-item">
-            <div class="tech-icon html-icon">
-              <i class="bi bi-filetype-html"></i>
+        <!-- Statistics Section -->
+        <div class="sidebar-section">
+          <h4 class="sidebar-section-title">Estadísticas</h4>
+          <div class="sidebar-stats">
+            <div
+              class="sidebar-stat"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-title="Total de cuentas"
+            >
+              <div class="sidebar-stat-value" id="sidebarTotalAccounts">0</div>
+              <div class="sidebar-stat-label">Total</div>
             </div>
-            <span class="tech-name">HTML5</span>
+            <div class="sidebar-stat">
+              <div class="sidebar-stat-value" id="sidebarActiveAccounts">0</div>
+              <div class="sidebar-stat-label">En uso</div>
+            </div>
+            <div class="sidebar-stat">
+              <div class="sidebar-stat-value" id="sidebarFavoritesCount">0</div>
+              <div class="sidebar-stat-label">Favoritas</div>
+            </div>
           </div>
-          <div class="tech-item">
-            <div class="tech-icon css-icon">
-              <i class="bi bi-filetype-css"></i>
-            </div>
-            <span class="tech-name">CSS3</span>
+        </div>
+
+        <!-- Divider between Statistics and Actions -->
+        <div class="sidebar-section-divider"></div>
+
+        <!-- Actions Section -->
+        <div class="sidebar-section">
+          <h4 class="sidebar-section-title">Acciones</h4>
+          <nav class="sidebar-nav">
+            <button
+              class="sidebar-nav-item"
+              id="sidebarNewAccountBtn"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-title="Nueva cuenta"
+            >
+              <i class="bi bi-plus-circle"></i>
+              <span class="sidebar-label">Nueva Cuenta</span>
+            </button>
+            <button
+              class="sidebar-nav-item"
+              id="sidebarChangePasswordBtn"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-title="Cambiar contraseña maestra"
+            >
+              <i class="bi bi-key"></i>
+              <span class="sidebar-label">Cambiar Contraseña</span>
+            </button>
+            <button
+              class="sidebar-nav-item"
+              id="sidebarExportBtn"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-title="Exportar cuentas"
+            >
+              <i class="bi bi-download"></i>
+              <span class="sidebar-label">Exportar</span>
+            </button>
+            <button
+              class="sidebar-nav-item"
+              id="sidebarImportBtn"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-title="Importar cuentas"
+            >
+              <i class="bi bi-upload"></i>
+              <span class="sidebar-label">Importar</span>
+            </button>
+            <button
+              class="sidebar-nav-item"
+              id="sidebarHelpBtn"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-title="Centro de ayuda"
+            >
+              <i class="bi bi-question-circle"></i>
+              <span class="sidebar-label">Centro de Ayuda</span>
+            </button>
+          </nav>
+          <div class="sidebar-actions-divider"></div>
+          <button
+            class="theme-toggle-sidebar"
+            id="themeToggleSidebar"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            data-bs-title="Cambiar tema"
+          >
+            <i class="bi bi-moon"></i>
+            <span>Cambiar Tema</span>
+          </button>
+          <button
+            class="theme-toggle-sidebar"
+            id="sidebarLogoutBtn"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            data-bs-title="Cerrar sesión"
+          >
+            <i class="bi bi-box-arrow-right"></i>
+            <span>Cerrar Sesión</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <span class="sidebar-footer-text">VaultMail © 2026</span>
+      </div>
+    </aside>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-container">
+      <div class="page-title">
+        <h2>Mis Cuentas</h2>
+        <p>Organiza y administra tus cuentas de forma segura</p>
+      </div>
+
+      <!-- Search and Filters -->
+      <div class="search-section">
+        <div class="search-bar">
+          <i class="bi bi-search"></i>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Buscar por email o notas..."
+          />
+          <div class="search-bar-hint" id="searchBarHint">
+            <kbd>Ctrl+K</kbd>
           </div>
-          <div class="tech-item">
-            <div class="tech-icon js-icon">
-              <i class="bi bi-filetype-js"></i>
+          <button
+            type="button"
+            class="btn-clear-search"
+            id="clearSearchBtn"
+            style="display: none"
+          >
+            <i class="bi bi-x-circle"></i>
+          </button>
+        </div>
+        <div class="filters">
+          <select id="categoryFilter" class="filter-select">
+            <option value="">Todas las categorías</option>
+            <option value="streaming">Streaming</option>
+            <option value="redes-sociales">Redes Sociales</option>
+            <option value="billetera-virtual">Billetera Virtual</option>
+            <option value="trabajo">Trabajo</option>
+            <option value="app">App</option>
+            <option value="video-juego">Video Juego</option>
+            <option value="personal">Personal</option>
+            <option value="otros">Otros</option>
+          </select>
+          <select id="statusFilter" class="filter-select">
+            <option value="">Todos los estados</option>
+            <option value="activa">En uso</option>
+            <option value="inactiva">En desuso</option>
+          </select>
+          <button class="btn btn-primary" id="newAccountBtn">
+            <span>+</span> Nueva Cuenta
+          </button>
+        </div>
+      </div>
+
+      <!-- Statistics Cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="totalAccounts">0</div>
+          <div class="stat-label">Total de cuentas</div>
+        </div>
+        <div class="stat-card stat-card-active">
+          <div class="stat-value" id="activeAccounts">0</div>
+          <div class="stat-label">En uso</div>
+        </div>
+        <div class="stat-card stat-card-inactive">
+          <div class="stat-value" id="inactiveAccounts">0</div>
+          <div class="stat-label">En desuso</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="totalFavorites">0</div>
+          <div class="stat-label">Favoritas</div>
+        </div>
+      </div>
+
+      <!-- View Controls Bar -->
+      <div class="view-controls-bar">
+        <div class="view-controls-left">
+          <button
+            class="btn btn-control"
+            id="toggleViewBtn"
+            title="Cambiar vista"
+          >
+            <i class="bi bi-grid-3x3"></i>
+            <span>Vista Cards</span>
+          </button>
+          <button
+            class="btn btn-control"
+            id="showFavoritesBtn"
+            title="Mostrar solo favoritos"
+          >
+            <i class="bi bi-star"></i>
+            <span>Favoritos</span>
+          </button>
+          <button
+            class="btn btn-control"
+            id="togglePasswordVisibilityBtn"
+            title="Mostrar/Ocultar contraseñas"
+          >
+            <i class="bi bi-eye"></i>
+            <span>Ver Contraseñas</span>
+          </button>
+          <button
+            class="btn btn-control"
+            id="showArchivedBtn"
+            title="Mostrar cuentas archivadas"
+          >
+            <i class="bi bi-archive"></i>
+            <span>Archivadas</span>
+          </button>
+        </div>
+        <div class="view-controls-right">
+          <button
+            class="btn btn-control"
+            id="exportBtn"
+            title="Exportar cuentas"
+          >
+            <i class="bi bi-download"></i>
+            <span>Exportar</span>
+          </button>
+          <button
+            class="btn btn-control"
+            id="importBtn"
+            title="Importar cuentas"
+          >
+            <i class="bi bi-upload"></i>
+            <span>Importar</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Accounts Container -->
+      <div class="accounts-wrapper" id="accountsWrapper">
+        <div class="accounts-container" id="accountsContainer">
+          <div class="empty-state card">
+            <div class="empty-state-content">
+              <i class="bi bi-envelope-heart empty-state-icon"></i>
+              <h3>No hay cuentas guardadas</h3>
+              <p>Comienza agregando tu primera cuenta</p>
             </div>
-            <span class="tech-name">JavaScript</span>
-          </div>
-          <div class="tech-item">
-            <div class="tech-icon bootstrap-icon">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M3.5 3h17A1.5 1.5 0 0 1 22 4.5v15A1.5 1.5 0 0 1 20.5 21h-17A1.5 1.5 0 0 1 2 19.5v-15A1.5 1.5 0 0 1 3.5 3M7 7v4h3V7H7m5 0v10h3V7h-3M7 12v5h3v-5H7m5-5v10h3V7h-3"
-                />
-              </svg>
-            </div>
-            <span class="tech-name">Bootstrap</span>
-          </div>
-          <div class="tech-item">
-            <div class="tech-icon github-icon">
-              <i class="bi bi-github"></i>
-            </div>
-            <span class="tech-name">GitHub</span>
-          </div>
-          <div class="tech-item">
-            <div class="tech-icon vscode-icon">
-              <i class="bi bi-code-square"></i>
-            </div>
-            <span class="tech-name">VS Code</span>
-          </div>
-          <div class="tech-item">
-            <div class="tech-icon figma-icon">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11z"
-                />
-              </svg>
-            </div>
-            <span class="tech-name">Figma</span>
-          </div>
-          <div class="tech-item">
-            <div class="tech-icon responsive-icon">
-              <i class="bi bi-phone"></i>
-            </div>
-            <span class="tech-name">Responsive</span>
-          </div>
-          <div class="tech-item">
-            <div class="tech-icon react-icon">
-              <i class="bi bi-bezier2"></i>
-            </div>
-            <span class="tech-name">React</span>
-          </div>
-          <div class="tech-item">
-            <div class="tech-icon nodejs-icon">
-              <i class="bi bi-server"></i>
-            </div>
-            <span class="tech-name">Node.js</span>
-          </div>
-          <div class="tech-item">
-            <div class="tech-icon tailwind-icon">
-              <i class="bi bi-palette"></i>
-            </div>
-            <span class="tech-name">Tailwind</span>
-          </div>
-          <div class="tech-item">
-            <div class="tech-icon wordpress-icon">
-              <i class="bi bi-wordpress"></i>
-            </div>
-            <span class="tech-name">WordPress</span>
-          </div>
-          <div class="tech-item">
-            <div class="tech-icon git-icon">
-              <i class="bi bi-diagram-3"></i>
-            </div>
-            <span class="tech-name">Git</span>
-          </div>
-          <div class="tech-item">
-            <div class="tech-icon seo-icon">
-              <i class="bi bi-search"></i>
-            </div>
-            <span class="tech-name">SEO</span>
           </div>
         </div>
       </div>
 
-      <!-- Anchor para navegación exacta a la parte superior de 'nosotros' -->
-      <div id="nosotros-top" class="anchor-offset" aria-hidden="true"></div>
-      <section id="nosotros" class="nosotros container">
-        <div class="nosotros-inner">
-          <div class="nosotros-left">
-            <span class="eyebrow" data-i18n="nosotros.label"
-              >QUIÉNES SOMOS</span
-            >
-            <h2 class="nosotros-title" data-i18n="nosotros.title">
-              Transformamos<br />
-              ideas en
-              <span class="nosotros-highlight">soluciones digitales</span>
-              reales
-            </h2>
-            <p class="nosotros-p" data-i18n="nosotros.p1">
-              En NEXCORE somos una agencia de desarrollo web en Florencio Varela
-              y Buenos Aires, formada por universitarios y estudiantes de
-              Programación apasionados por la tecnología y la innovación
-              digital. Nos especializamos en transformar ideas en soluciones web
-              funcionales, escalables y orientadas a resultados.
-            </p>
-            <p class="nosotros-p" data-i18n="nosotros.p2">
-              Desarrollamos sitios web profesionales, landing pages optimizadas
-              y sistemas a medida, acompañando a negocios, emprendedores y
-              profesionales en el crecimiento de su presencia online. Creemos en
-              el equilibrio entre diseño moderno, rendimiento, optimización SEO
-              y una comunicación clara y cercana.
-            </p>
-            <p class="nosotros-p muted" data-i18n="nosotros.p3">
-              Nuestro objetivo es brindar un proceso de trabajo simple,
-              transparente y eficiente, construyendo soluciones digitales que
-              aporten valor real y ayuden a nuestros clientes a destacarse en
-              internet.
-            </p>
-            <a href="#contact" class="btn btn-cta" data-i18n="nosotros.cta"
-              >Trabajemos juntos
-              <span class="icon"
-                ><i class="bi bi-arrow-right" aria-hidden="true"></i></span
-            ></a>
+      <!-- Skeleton Loading Container -->
+      <div class="skeleton-loader" id="skeletonLoader" style="display: none">
+        <div class="skeleton-card">
+          <div class="skeleton-header">
+            <div class="skeleton-avatar"></div>
+            <div class="skeleton-info">
+              <div class="skeleton-title"></div>
+              <div class="skeleton-text" style="width: 60%"></div>
+            </div>
           </div>
-
-          <div class="nosotros-right" aria-hidden="true">
-            <div class="card card-1">
-              <div class="card-number">100%</div>
-              <div class="card-text" data-i18n="nosotros.card1">
-                Compromiso real con cada proyecto que llevamos adelante.
-              </div>
-            </div>
-
-            <div class="card card-2">
-              <h3 data-i18n="nosotros.card2Title">Soporte</h3>
-              <p data-i18n="nosotros.card2Text">
-                Acompañamiento cercano y asistencia cuando tu proyecto lo
-                necesita.
-              </p>
-            </div>
-
-            <div class="card card-3">
-              <h3 data-i18n="nosotros.card3Title">Diseño</h3>
-              <p data-i18n="nosotros.card3Text">
-                Proyectos con foco en UX/UI y conversión para tus usuarios.
-              </p>
-            </div>
-
-            <div class="card card-4">
-              <h3 data-i18n="nosotros.card4Title">SEO</h3>
-              <p data-i18n="nosotros.card4Text">
-                Optimización para visibilidad, velocidad y mejores resultados.
-              </p>
-            </div>
+          <div class="skeleton-body">
+            <div class="skeleton-text"></div>
+            <div class="skeleton-text" style="width: 80%"></div>
+          </div>
+          <div class="skeleton-footer">
+            <div class="skeleton-button"></div>
+            <div class="skeleton-button"></div>
           </div>
         </div>
-      </section>
-
-      <!-- Banner: colocado justo debajo de 'nosotros' -->
-      <section
-        id="features-banner"
-        class="rolling-banner banner--tall"
-        aria-label="Beneficios Nexcore"
-      >
-        <div class="container banner-wrap">
-          <div class="banner-track" aria-hidden="false">
-            <div class="banner-item">
-              <span class="banner-key" data-i18n="banner.item1Key">1:1</span
-              ><span class="banner-item-sub" data-i18n="banner.item1Sub"
-                >TRATO DIRECTO</span
-              >
+        <div class="skeleton-card">
+          <div class="skeleton-header">
+            <div class="skeleton-avatar"></div>
+            <div class="skeleton-info">
+              <div class="skeleton-title"></div>
+              <div class="skeleton-text" style="width: 60%"></div>
             </div>
-            <div class="banner-sep" aria-hidden="true"></div>
-            <div class="banner-item">
-              <span class="banner-key" data-i18n="banner.item2Key">UX/UI</span
-              ><span class="banner-item-sub" data-i18n="banner.item2Sub"
-                >DISEÑO MODERNO</span
-              >
-            </div>
-            <div class="banner-sep" aria-hidden="true"></div>
-            <div class="banner-item">
-              <span class="banner-key" data-i18n="banner.item3Key">100%</span
-              ><span class="banner-item-sub" data-i18n="banner.item3Sub"
-                >A MEDIDA</span
-              >
-            </div>
-            <div class="banner-sep" aria-hidden="true"></div>
-            <div class="banner-item">
-              <span class="banner-key" data-i18n="banner.item4Key">SEO</span
-              ><span class="banner-item-sub" data-i18n="banner.item4Sub"
-                >OPTIMIZADO</span
-              >
-            </div>
-
-            <!-- Duplicado para loop continuo -->
-            <div class="banner-item">
-              <span class="banner-key" data-i18n="banner.item1Key">1:1</span
-              ><span class="banner-item-sub" data-i18n="banner.item1Sub"
-                >TRATO DIRECTO</span
-              >
-            </div>
-            <div class="banner-sep" aria-hidden="true"></div>
-            <div class="banner-item">
-              <span class="banner-key" data-i18n="banner.item2Key">UX/UI</span
-              ><span class="banner-item-sub" data-i18n="banner.item2Sub"
-                >DISEÑO MODERNO</span
-              >
-            </div>
-            <div class="banner-sep" aria-hidden="true"></div>
-            <div class="banner-item">
-              <span class="banner-key">100%</span
-              ><span class="banner-item-sub">A MEDIDA</span>
-            </div>
-            <div class="banner-sep" aria-hidden="true"></div>
-            <div class="banner-item">
-              <span class="banner-key">SEO</span
-              ><span class="banner-item-sub">OPTIMIZADO</span>
-            </div>
+          </div>
+          <div class="skeleton-body">
+            <div class="skeleton-text"></div>
+            <div class="skeleton-text" style="width: 80%"></div>
+          </div>
+          <div class="skeleton-footer">
+            <div class="skeleton-button"></div>
+            <div class="skeleton-button"></div>
           </div>
         </div>
-      </section>
-
-      <!-- Sección: Nuestro proceso (añadida) -->
-      <section
-        id="proceso"
-        class="proceso container"
-        aria-label="Nuestro proceso"
-      >
-        <div class="proceso-inner">
-          <div class="proceso-head">
-            <span class="eyebrow" data-i18n="proceso.label"
-              >NUESTRO PROCESO</span
-            >
-            <h2 class="proceso-title" data-i18n="proceso.title">
-              De la idea a tu éxito digital
-            </h2>
+        <div class="skeleton-card">
+          <div class="skeleton-header">
+            <div class="skeleton-avatar"></div>
+            <div class="skeleton-info">
+              <div class="skeleton-title"></div>
+              <div class="skeleton-text" style="width: 60%"></div>
+            </div>
           </div>
-
-          <div class="proceso-grid">
-            <article class="proceso-card" data-step="01">
-              <div class="paso-number">01</div>
-              <h3 data-i18n="proceso.card1Title">Análisis y Consulta</h3>
-              <p data-i18n="proceso.card1Text">
-                Escuchamos tu idea, objetivos y visión. Analizamos tu mercado y
-                necesidades para recomendarte la solución digital perfecta:
-                landing, sitio institucional, web personal o desarrollo custom.
-              </p>
-            </article>
-
-            <article class="proceso-card" data-step="02">
-              <div class="paso-number">02</div>
-              <h3 data-i18n="proceso.card2Title">Diseño y Prototipado</h3>
-              <p data-i18n="proceso.card2Text">
-                Creamos un diseño moderno, intuitivo y alineado con tu marca. Te
-                mostramos prototipos interactivos para validar la estética,
-                estructura y experiencia antes de desarrollar.
-              </p>
-            </article>
-
-            <article class="proceso-card" data-step="03">
-              <div class="paso-number">03</div>
-              <h3 data-i18n="proceso.card3Title">Desarrollo y Optimización</h3>
-              <p data-i18n="proceso.card3Text">
-                Construimos tu sitio con tecnología moderna, optimizado para
-                velocidad, SEO y conversión. Usamos código personalizado o
-                herramientas low-code según lo que mejor se adapte a ti.
-              </p>
-            </article>
-
-            <article class="proceso-card" data-step="04">
-              <div class="paso-number">04</div>
-              <h3 data-i18n="proceso.card4Title">Lanzamiento y Soporte</h3>
-              <p data-i18n="proceso.card4Text">
-                Publicamos tu sitio listo para recibir visitas. Realizamos
-                testing exhaustivo, optimizamos los últimos detalles y brindamos
-                soporte continuo para que siempre funcione perfectamente.
-              </p>
-            </article>
+          <div class="skeleton-body">
+            <div class="skeleton-text"></div>
+            <div class="skeleton-text" style="width: 80%"></div>
+          </div>
+          <div class="skeleton-footer">
+            <div class="skeleton-button"></div>
+            <div class="skeleton-button"></div>
           </div>
         </div>
-      </section>
-
-      <!-- Sección: Servicios -->
-      <section
-        id="servicios"
-        class="servicios container"
-        aria-label="Servicios"
-      >
-        <div class="servicios-inner">
-          <div class="servicios-head">
-            <span
-              style="color: var(--color-primario)"
-              class="eyebrow"
-              data-i18n="servicios.label"
-              >NUESTROS SERVICIOS</span
-            >
-            <h2 class="servicios-title" data-i18n="servicios.title">
-              Soluciones digitales que
-              <span
-                class="servicios-highlight"
-                style="color: #006341 !important"
-                >impulsan tu negocio</span
-              >
-            </h2>
-            <p class="servicios-sub" data-i18n="servicios.subtitle">
-              Combinamos estrategia, diseño y tecnología para crear productos
-              digitales que generan resultados reales y escalables.
-            </p>
-          </div>
-
-          <div class="servicios-grid" aria-hidden="false">
-            <article class="servicio-card" tabindex="0">
-              <div class="servicio-icon" aria-hidden="true">
-                <i class="bi bi-stack"></i>
-              </div>
-              <h3 data-i18n="servicios.service1Title">Landing Pages</h3>
-              <small class="muted uppercase" data-i18n="servicios.service1Sub"
-                >PÁGINAS RÁPIDAS Y EFECTIVAS</small
-              >
-              <p data-i18n="servicios.service1Text">
-                Páginas rápidas, modernas y enfocadas en convertir. Ideales para
-                campañas y productos puntuales.
-              </p>
-            </article>
-
-            <article class="servicio-card" tabindex="0">
-              <div class="servicio-icon" aria-hidden="true">
-                <i class="bi bi-building"></i>
-              </div>
-              <h3 data-i18n="servicios.service2Title">Sitios Corporativos</h3>
-              <small class="muted uppercase" data-i18n="servicios.service2Sub"
-                >PRESENCIA PROFESIONAL</small
-              >
-              <p data-i18n="servicios.service2Text">
-                Webs completas y profesionales para mostrar la información de tu
-                empresa: servicios, equipo y contacto.
-              </p>
-            </article>
-
-            <article class="servicio-card" tabindex="0">
-              <div class="servicio-icon" aria-hidden="true">
-                <i class="bi bi-person"></i>
-              </div>
-              <h3 data-i18n="servicios.service3Title">
-                Personal Brand Websites
-              </h3>
-              <small class="muted uppercase" data-i18n="servicios.service3Sub"
-                >TU MARCA POTENCIADA</small
-              >
-              <p data-i18n="servicios.service3Text">
-                Portafolios y sitios personales diseñados para potenciar tu
-                marca profesional y destacar tus servicios.
-              </p>
-            </article>
-
-            <article class="servicio-card" tabindex="0">
-              <div class="servicio-icon" aria-hidden="true">
-                <i class="bi bi-cart"></i>
-              </div>
-              <h3 data-i18n="servicios.service4Title">
-                Web Apps y Tiendas Online
-              </h3>
-              <small class="muted uppercase" data-i18n="servicios.service4Sub"
-                >SOLUCIONES A MEDIDA</small
-              >
-              <p data-i18n="servicios.service4Text">
-                Aplicaciones y tiendas online adaptadas a tu negocio:
-                escalables, seguras y listas para crecer.
-              </p>
-            </article>
-
-            <article class="servicio-card" tabindex="0">
-              <div class="servicio-icon" aria-hidden="true">
-                <i class="bi bi-shield-lock"></i>
-              </div>
-              <h3 data-i18n="servicios.service5Title">
-                Mantenimiento y Actualizaciones
-              </h3>
-              <small class="muted uppercase" data-i18n="servicios.service5Sub"
-                >SOPORTE CONTINUO</small
-              >
-              <p data-i18n="servicios.service5Text">
-                Mantenimiento, soporte y optimizaciones para mantener tu sitio
-                funcionando al 100%.
-              </p>
-            </article>
-
-            <article class="servicio-card" tabindex="0">
-              <div class="servicio-icon" aria-hidden="true">
-                <i class="bi bi-palette"></i>
-              </div>
-              <h3 data-i18n="servicios.service6Title">Diseño & UX</h3>
-              <small class="muted uppercase" data-i18n="servicios.service6Sub"
-                >EXPERIENCIA DE USUARIO</small
-              >
-              <p data-i18n="servicios.service6Text">
-                Diseños centrados en conversión y experiencia, con prototipos y
-                tests de usabilidad.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Sección: CTA banner -->
-      <section
-        id="cta-banner"
-        class="cta-banner"
-        aria-label="Llamado a la acción"
-      >
-        <div class="container cta-inner">
-          <div class="cta-content">
-            <h2 data-i18n="cta.title">¿Listo para empezar tu proyecto?</h2>
-            <p data-i18n="cta.subtitle">
-              Hablemos y transformemos tu idea en una web que atraiga clientes y
-              crezca con tu negocio.
-            </p>
-            <div class="cta-ctas">
-              <a href="#cotizar" class="btn btn-primary" data-i18n="cta.btn1"
-                >Cotizar ahora</a
-              >
-              <a href="#contact" class="btn btn-outline" data-i18n="cta.btn2"
-                >Contáctanos</a
-              >
-            </div>
-          </div>
-
-          <div class="cta-deco" aria-hidden="true"></div>
-        </div>
-      </section>
-
-      <!-- Sección: Proyectos (cabecera centrada + dos columnas debajo) -->
-      <section
-        id="proyectos"
-        class="proyectos container"
-        aria-label="Proyectos destacados"
-      >
-        <div class="proyectos-head">
-          <span
-            style="color: var(--color-primario)"
-            class="eyebrow"
-            data-i18n="proyectos.label"
-            >PORTFOLIO</span
-          >
-          <h2 class="proyectos-title">
-            <span data-i18n="proyectos.title">Proyectos que</span>
-            <span
-              class="proyectos-highlight"
-              data-i18n="proyectos.titleHighlight"
-              >generan</span
-            >
-            <span class="proyectos-title-big" data-i18n="proyectos.titleBig"
-              >resultados</span
-            >
-          </h2>
-          <p class="proyectos-sub" data-i18n="proyectos.subtitle">
-            Cada proyecto es una oportunidad para crear experiencias digitales
-            excepcionales que impulsan el crecimiento de nuestros clientes.
-          </p>
-        </div>
-
-        <div class="proyectos-inner">
-          <div class="proyectos-media" aria-hidden="true">
-            <img
-              src="assets/Proyectos/Oklahoma Studio.png"
-              alt="Oklahoma Studio - landing para barbería"
-              loading="lazy"
-              class="project-image"
-            />
-          </div>
-
-          <div class="proyectos-info">
-            <div class="project-type" data-i18n="proyectos.project1Type">
-              Landing Page
-            </div>
-            <h3 class="project-name" data-i18n="proyectos.project1Name">
-              Oklahoma Studio
-            </h3>
-            <p class="project-text" data-i18n="proyectos.project1Text">
-              Una web moderna y visualmente atractiva diseñada para una barbería
-              profesional. Presenta sus servicios, equipo y estilo de trabajo
-              con una estética cuidada, transmitiendo calidad, confianza y una
-              experiencia premium desde el primer vistazo.
-            </p>
-
-            <ul class="project-list">
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>JavaScript</li>
-              <li>Bootstrap</li>
-            </ul>
-
-            <a
-              href="https://oklahoma-studio.vercel.app/"
-              class="btn btn-primary"
-              data-i18n="proyectos.project1Btn"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Visitar Web</a
-            >
-          </div>
-        </div>
-
-        <!-- Separador entre proyectos -->
-        <div class="project-divider"></div>
-
-        <!-- Card adicional 2 -->
-        <div class="proyectos-inner">
-          <div class="proyectos-media" aria-hidden="true">
-            <img
-              src="assets/Proyectos/Empa-Market.png"
-              alt="Empa-Market - tienda online"
-              loading="lazy"
-              class="project-image"
-            />
-          </div>
-
-          <div class="proyectos-info">
-            <div class="project-type" data-i18n="proyectos.project2Type">
-              Tienda Online
-            </div>
-            <h3 class="project-name" data-i18n="proyectos.project2Name">
-              Empa-Market
-            </h3>
-            <p class="project-text" data-i18n="proyectos.project2Text">
-              Tienda online con flujo de compra optimizado, filtros de producto
-              y un diseño enfocado en conversión y usabilidad.
-            </p>
-
-            <ul class="project-list">
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>JavaScript</li>
-            </ul>
-
-            <a
-              href="https://empa-market.vercel.app/"
-              class="btn btn-primary"
-              data-i18n="proyectos.project2Btn"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Visitar Web</a
-            >
-          </div>
-        </div>
-
-        <!-- Separador entre proyectos -->
-        <div class="project-divider"></div>
-
-        <!-- Card adicional 3 -->
-        <div class="proyectos-inner hidden-project">
-          <div class="proyectos-media" aria-hidden="true">
-            <img
-              src="assets/Proyectos/imagen web becas.psd.jpg"
-              alt="Sistema de Becas - mockup de interfaz"
-              loading="lazy"
-              class="project-image"
-            />
-          </div>
-
-          <div class="proyectos-info">
-            <div class="project-type">Software</div>
-            <h3 class="project-name">Sistema de Becas - UNAJ</h3>
-            <p class="project-text">
-              Identidad visual y sitio corporativo para una marca nueva, con
-              foco en narrativa de marca y experiencia de usuario.
-            </p>
-
-            <ul class="project-list">
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>JavaScript</li>
-              <li>Responsive</li>
-              <li>Bootstrap</li>
-              <li>Base de datos</li>
-            </ul>
-
-            <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Visitar Web</a>
-          </div>
-        </div>
-
-        <!-- Separador entre proyectos -->
-        <div class="project-divider hidden-project"></div>
-
-        <!-- Card adicional 4: Proyecto Cuatro -->
-        <div class="proyectos-inner hidden-project">
-          <div class="proyectos-media" aria-hidden="true">
-            <img
-              src="assets/Proyectos/image.png"
-              alt="Sistema de Fotocopiado - mockup de proyecto"
-              loading="lazy"
-              class="project-image"
-            />
-          </div>
-
-          <div class="proyectos-info">
-            <div class="project-type" data-i18n="proyectos.project3Type">
-              Software
-            </div>
-            <h3 class="project-name" data-i18n="proyectos.project3Name">
-              Sistema de Fotocopiado - UNAJ
-            </h3>
-            <p class="project-text" data-i18n="proyectos.project3Text">
-              Aplicación web a medida con panel de administración y
-              funcionalidades orientadas al usuario. Diseño modular y
-              rendimiento optimizado.
-            </p>
-
-            <ul class="project-list">
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>JavaScript</li>
-              <li>Responsive</li>
-              <li>Bootstrap</li>
-              <li>Base de datos</li>
-            </ul>
-
-            <a
-              href="#"
-              class="btn btn-primary"
-              data-i18n="proyectos.project3Btn"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Visitar Web</a
-            >
-          </div>
-        </div>
-
-        <!-- Separador entre proyectos -->
-        <div class="project-divider hidden-project"></div>
-
-        <!-- Card adicional 5: Landing Page -->
-        <div class="proyectos-inner hidden-project">
-          <div class="proyectos-media" aria-hidden="true">
-            <img
-              src="assets/Proyectos/PowerLab GYM.png"
-              alt="PowerLab GYM - landing para gimnasio"
-              loading="lazy"
-              class="project-image"
-            />
-          </div>
-
-          <div class="proyectos-info">
-            <div class="project-type">
-              Landing Page
-            </div>
-            <h3 class="project-name">
-              PowerLab GYM
-            </h3>
-            <p class="project-text">
-              Sitio web para gimnasio con diseño moderno, enfoque en rendimiento y secciones claras para presentar servicios, planes y entrenamiento.
-            </p>
-
-            <ul class="project-list">
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>JavaScript</li>
-            </ul>
-
-            <a href="https://powerlab-gamma.vercel.app/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Visitar Web</a>
-          </div>
-        </div>
-
-        <!-- Separador entre proyectos -->
-        <div class="project-divider hidden-project"></div>
-
-        <!-- Card adicional 6: Software -->
-        <div class="proyectos-inner hidden-project">
-          <div class="proyectos-media" aria-hidden="true">
-            <img
-              src="assets/Proyectos/VaultMail.png"
-              alt="VaultMail - software de gestión de correos"
-              loading="lazy"
-              class="project-image"
-            />
-          </div>
-
-          <div class="proyectos-info">
-            <div class="project-type">
-              Software
-            </div>
-            <h3 class="project-name">
-              VaultMail - App de Gestión de Correos
-            </h3>
-            <p class="project-text">
-              VaultMail es un gestor seguro de credenciales que permite almacenar y administrar correos y contraseñas de forma protegida, con enfoque en seguridad y privacidad del usuario.
-            </p>
-
-            <ul class="project-list">
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>JavaScript</li>
-              <li>Bootstrap</li>
-            </ul>
-
-            <a href="vaultmail.vercel.app" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Visitar Web</a>
-          </div>
-        </div>
-
-        <!-- Botón Ver Más -->
-        <div class="proyectos-see-more">
-          <button
-            id="ver-mas-btn"
-            class="btn btn-outline"
-            data-i18n="proyectos.verMasBtn"
-          >
-            Ver Más Proyectos
-          </button>
-        </div>
-      </section>
-
-      <!-- Anchor para navegación exacta a la parte superior de 'testimonios' -->
-      <div id="testimonios-top" class="anchor-offset" aria-hidden="true"></div>
-      <!-- Sección: Testimonios -->
-      <section
-        id="testimonios"
-        class="testimonios container"
-        aria-label="Testimonios de clientes"
-      >
-        <div class="testimonios-head">
-          <span
-            class="eyebrow"
-            style="color: var(--color-primario)"
-            data-i18n="testimonios.label"
-            >TESTIMONIOS</span
-          >
-          <h2 class="testimonios-title" data-i18n="testimonios.title">
-            Lo que dicen nuestros clientes
-          </h2>
-          <p class="testimonios-sub" data-i18n="testimonios.subtitle">
-            Conoce las experiencias reales de empresas que transformaron su
-            presencia digital con nosotros.
-          </p>
-        </div>
-
-        <div class="testimonios-slider-wrapper">
-          <div class="testimonios-grid testimonios-slider">
-          <!-- Testimonial 1 -->
-          <div class="testimonial-card">
-            <div class="testimonial-header">
-              <div class="star-rating">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-              </div>
-              <p class="testimonial-text" data-i18n="testimonios.testimonial1">
-                "Excelente trabajo. El equipo de Nexcore entendió perfectamente
-                nuestra visión y la convirtieron en una web profesional y
-                moderna. El resultado superó nuestras expectativas."
-              </p>
-            </div>
-            <div class="testimonial-footer">
-              <div class="testimonial-author">
-                <div class="author-avatar">
-                  <span>JC</span>
-                </div>
-                <div class="author-info">
-                  <h4 class="author-name" data-i18n="testimonios.author1Name">
-                    Juan Carlos Morales
-                  </h4>
-                  <p class="author-role" data-i18n="testimonios.author1Role">
-                    CEO - Oklahoma Studio
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Testimonial 2 -->
-          <div class="testimonial-card">
-            <div class="testimonial-header">
-              <div class="star-rating">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-              </div>
-              <p class="testimonial-text" data-i18n="testimonios.testimonial2">
-                "Desde el primer contacto fueron muy profesionales y atentos. El
-                sitio que nos entregaron es rápido, se ve espectacular en móvil
-                y ya estamos recibiendo más consultas. ¡Muy recomendados!"
-              </p>
-            </div>
-            <div class="testimonial-footer">
-              <div class="testimonial-author">
-                <div class="author-avatar">
-                  <span>MR</span>
-                </div>
-                <div class="author-info">
-                  <h4 class="author-name" data-i18n="testimonios.author2Name">
-                    María Rodríguez
-                  </h4>
-                  <p class="author-role" data-i18n="testimonios.author2Role">
-                    Gerente - Empa-Market
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Testimonial 3 -->
-          <div class="testimonial-card">
-            <div class="testimonial-header">
-              <div class="star-rating">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-              </div>
-              <p class="testimonial-text" data-i18n="testimonios.testimonial3">
-                "Trabajar con Nexcore fue una experiencia fluida y agradable. El
-                equipo es creativo, responsable y se preocupó genuinamente por
-                que nuestro proyecto fuera un éxito. Sin dudas volveríamos a
-                contratar sus servicios."
-              </p>
-            </div>
-            <div class="testimonial-footer">
-              <div class="testimonial-author">
-                <div class="author-avatar">
-                  <span>AF</span>
-                </div>
-                <div class="author-info">
-                  <h4 class="author-name" data-i18n="testimonios.author3Name">
-                    Alejandro Fernández
-                  </h4>
-                  <p class="author-role" data-i18n="testimonios.author3Role">
-                    Director Ejecutivo - UNAJ
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Testimonial 4 -->
-          <div class="testimonial-card">
-            <div class="testimonial-header">
-              <div class="star-rating">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-              </div>
-              <p class="testimonial-text" data-i18n="testimonios.testimonial4">
-                "Lo que más valoré fue la comunicación constante y las
-                explicaciones detalladas de cada decisión de diseño. Realmente
-                se tomaron el tiempo de entender nuestro negocio y mercado."
-              </p>
-            </div>
-            <div class="testimonial-footer">
-              <div class="testimonial-author">
-                <div class="author-avatar">
-                  <span>SG</span>
-                </div>
-                <div class="author-info">
-                  <h4 class="author-name" data-i18n="testimonios.author4Name">
-                    Sofía García
-                  </h4>
-                  <p class="author-role" data-i18n="testimonios.author4Role">
-                    Propietaria - E-commerce B2B
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Testimonial 5 -->
-          <div class="testimonial-card">
-            <div class="testimonial-header">
-              <div class="star-rating">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-              </div>
-              <p class="testimonial-text" data-i18n="testimonios.testimonial5">
-                "El sitio no solo se ve hermoso, sino que también cumple el
-                objetivo de convertir visitantes en clientes. Ya hemos visto un
-                aumento en nuestro ROI. Nexcore es la mejor inversión que
-                hicimos este año."
-              </p>
-            </div>
-            <div class="testimonial-footer">
-              <div class="testimonial-author">
-                <div class="author-avatar">
-                  <span>RP</span>
-                </div>
-                <div class="author-info">
-                  <h4 class="author-name" data-i18n="testimonios.author5Name">
-                    Roberto Pérez
-                  </h4>
-                  <p class="author-role" data-i18n="testimonios.author5Role">
-                    Dueño - Consultora Digital
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Testimonial 6 -->
-          <div class="testimonial-card">
-            <div class="testimonial-header">
-              <div class="star-rating">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-              </div>
-              <p class="testimonial-text" data-i18n="testimonios.testimonial6">
-                "Me encantó la atención al detalle en cada aspecto. Desde las
-                animaciones hasta la estructura SEO, todo fue cuidadosamente
-                pensado. Definitivamente un equipo de profesionales de clase
-                mundial."
-              </p>
-            </div>
-            <div class="testimonial-footer">
-              <div class="testimonial-author">
-                <div class="author-avatar">
-                  <span>EL</span>
-                </div>
-                <div class="author-info">
-                  <h4 class="author-name" data-i18n="testimonios.author6Name">
-                    Emilia López
-                  </h4>
-                  <p class="author-role" data-i18n="testimonios.author6Role">
-                    Product Manager - Tech Startup
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slider Controls -->
-        <div class="testimonios-controls">
-          <button class="slider-btn prev" id="testimonios-prev" aria-label="Testimonios anteriores">
-            <i class="bi bi-caret-left-fill"></i>
-          </button>
-          <div class="slider-dots" id="testimonios-dots"></div>
-          <button class="slider-btn next" id="testimonios-next" aria-label="Próximos testimonios">
-            <i class="bi bi-caret-right-fill"></i>
-          </button>
-        </div>
-      </section>
-
-      <!-- Sección: Preguntas Frecuentes -->
-      <section id="faq" class="faq container" aria-label="Preguntas frecuentes">
-        <div class="faq-head">
-          <span
-            class="eyebrow"
-            style="color: var(--color-primario)"
-            data-i18n="faq.label"
-            >FAQ</span
-          >
-          <h2 class="faq-title" data-i18n="faq.title">Preguntas frecuentes</h2>
-          <p class="faq-sub" data-i18n="faq.subtitle">
-            Respuestas rápidas a dudas comunes sobre nuestros servicios.
-          </p>
-        </div>
-
-        <div class="faq-accordion">
-          <div class="faq-columns">
-            <!-- Columna izquierda: Preguntas 1-6 -->
-            <div class="faq-column">
-              <div class="accordion" id="faqAccordionLeft">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="faqHeadingOne">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faqCollapseOne"
-                      aria-expanded="false"
-                      aria-controls="faqCollapseOne"
-                      data-i18n="faq.q1"
-                    >
-                      ¿Cuánto tiempo se tarda en desarrollar un sitio web
-                      básico?
-                    </button>
-                  </h2>
-                  <div
-                    id="faqCollapseOne"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="faqHeadingOne"
-                    data-bs-parent="#faqAccordionLeft"
-                  >
-                    <div class="accordion-body" data-i18n="faq.a1">
-                      Un sitio básico o landing suele tardar entre 1 y 3
-                      semanas, dependiendo del contenido y revisiones. Proyectos
-                      más complejos pueden tardar entre 4 a 8 semanas.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="faqHeadingTwo">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faqCollapseTwo"
-                      aria-expanded="false"
-                      aria-controls="faqCollapseTwo"
-                      data-i18n="faq.q2"
-                    >
-                      ¿Ofrecen mantenimiento después del lanzamiento?
-                    </button>
-                  </h2>
-                  <div
-                    id="faqCollapseTwo"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="faqHeadingTwo"
-                    data-bs-parent="#faqAccordionLeft"
-                  >
-                    <div class="accordion-body" data-i18n="faq.a2">
-                      Sí, ofrecemos planes de mantenimiento y soporte para
-                      actualizaciones, seguridad y mejoras continuas. También
-                      realizamos seguimiento del rendimiento y SEO.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="faqHeadingThree">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faqCollapseThree"
-                      aria-expanded="false"
-                      aria-controls="faqCollapseThree"
-                      data-i18n="faq.q3"
-                    >
-                      ¿Trabajan con CMS como WordPress?
-                    </button>
-                  </h2>
-                  <div
-                    id="faqCollapseThree"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="faqHeadingThree"
-                    data-bs-parent="#faqAccordionLeft"
-                  >
-                    <div class="accordion-body" data-i18n="faq.a3">
-                      Sí. Dependiendo del proyecto recomendamos WordPress,
-                      soluciones headless, Webflow o desarrollos personalizados
-                      con HTML/CSS/JavaScript.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="faqHeadingFour">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faqCollapseFour"
-                      aria-expanded="false"
-                      aria-controls="faqCollapseFour"
-                      data-i18n="faq.q4"
-                    >
-                      ¿Necesito proveer contenido y fotos?
-                    </button>
-                  </h2>
-                  <div
-                    id="faqCollapseFour"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="faqHeadingFour"
-                    data-bs-parent="#faqAccordionLeft"
-                  >
-                    <div class="accordion-body" data-i18n="faq.a4">
-                      Es ideal que proveas contenido y material visual. Si no
-                      tienes, también ayudamos a crearlo por un costo adicional
-                      o buscamos opciones de banco de imágenes.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="faqHeadingFive">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faqCollapseFive"
-                      aria-expanded="false"
-                      aria-controls="faqCollapseFive"
-                      data-i18n="faq.q5"
-                    >
-                      ¿Incluyen SEO en los proyectos?
-                    </button>
-                  </h2>
-                  <div
-                    id="faqCollapseFive"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="faqHeadingFive"
-                    data-bs-parent="#faqAccordionLeft"
-                  >
-                    <div class="accordion-body" data-i18n="faq.a5">
-                      Sí, incluimos optimización SEO básica en todos nuestros
-                      proyectos: estructura de página, meta tags, velocidad de
-                      carga y responsive design.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="faqHeadingSix">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faqCollapseSix"
-                      aria-expanded="false"
-                      aria-controls="faqCollapseSix"
-                      data-i18n="faq.q6"
-                    >
-                      ¿Cuál es el costo aproximado de un sitio web?
-                    </button>
-                  </h2>
-                  <div
-                    id="faqCollapseSix"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="faqHeadingSix"
-                    data-bs-parent="#faqAccordionLeft"
-                  >
-                    <div class="accordion-body" data-i18n="faq.a6">
-                      El costo varía según el tipo y complejidad. Ofrecemos
-                      presupuestos personalizados sin compromiso. Contáctanos
-                      para una evaluación detallada de tu proyecto.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Columna derecha: Preguntas 7-12 -->
-            <div class="faq-column">
-              <div class="accordion" id="faqAccordionRight">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="faqHeadingSeven">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faqCollapseSeven"
-                      aria-expanded="false"
-                      aria-controls="faqCollapseSeven"
-                      data-i18n="faq.q7"
-                    >
-                      ¿Qué sucede después de entregar el sitio web?
-                    </button>
-                  </h2>
-                  <div
-                    id="faqCollapseSeven"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="faqHeadingSeven"
-                    data-bs-parent="#faqAccordionRight"
-                  >
-                    <div class="accordion-body" data-i18n="faq.a7">
-                      Después de la entrega, brindamos capacitación sobre cómo
-                      usar y administrar el sitio. Ofrecemos soporte técnico
-                      continuo y planes de mantenimiento personalizados según
-                      tus necesidades.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="faqHeadingEight">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faqCollapseEight"
-                      aria-expanded="false"
-                      aria-controls="faqCollapseEight"
-                      data-i18n="faq.q8"
-                    >
-                      ¿Ofrecen soluciones de comercio electrónico?
-                    </button>
-                  </h2>
-                  <div
-                    id="faqCollapseEight"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="faqHeadingEight"
-                    data-bs-parent="#faqAccordionRight"
-                  >
-                    <div class="accordion-body" data-i18n="faq.a8">
-                      Sí, desarrollamos tiendas online completas con sistemas de
-                      pago integrados, gestión de inventario, carrito de compras
-                      y más. Utilizamos plataformas como Shopify, WooCommerce o
-                      soluciones personalizadas.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="faqHeadingNine">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faqCollapseNine"
-                      aria-expanded="false"
-                      aria-controls="faqCollapseNine"
-                      data-i18n="faq.q9"
-                    >
-                      ¿El sitio será compatible con dispositivos móviles?
-                    </button>
-                  </h2>
-                  <div
-                    id="faqCollapseNine"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="faqHeadingNine"
-                    data-bs-parent="#faqAccordionRight"
-                  >
-                    <div class="accordion-body" data-i18n="faq.a9">
-                      Por supuesto. Todos nuestros sitios son completamente
-                      responsive y se adaptan perfectamente a cualquier tamaño
-                      de pantalla: teléfonos, tablets y computadoras de
-                      escritorio.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="faqHeadingTen">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faqCollapseTen"
-                      aria-expanded="false"
-                      aria-controls="faqCollapseTen"
-                      data-i18n="faq.q10"
-                    >
-                      ¿Cuáles son los datos incluidos en el hosting?
-                    </button>
-                  </h2>
-                  <div
-                    id="faqCollapseTen"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="faqHeadingTen"
-                    data-bs-parent="#faqAccordionRight"
-                  >
-                    <div class="accordion-body" data-i18n="faq.a10">
-                      El hosting incluye almacenamiento suficiente para imágenes
-                      y contenido, ancho de banda ilimitado, SSL (seguridad), y
-                      soporte técnico. Recomendamos planes según el tráfico
-                      esperado.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="faqHeadingEleven">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faqCollapseEleven"
-                      aria-expanded="false"
-                      aria-controls="faqCollapseEleven"
-                      data-i18n="faq.q11"
-                    >
-                      ¿Pueden migrar un sitio existente?
-                    </button>
-                  </h2>
-                  <div
-                    id="faqCollapseEleven"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="faqHeadingEleven"
-                    data-bs-parent="#faqAccordionRight"
-                  >
-                    <div class="accordion-body" data-i18n="faq.a11">
-                      Sí, podemos migrar tu sitio web actual sin perder datos.
-                      Nos encargamos de la transferencia de contenido, bases de
-                      datos, redirecciones 301 y configuración de DNS para una
-                      transición sin problemas.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="faqHeadingTwelve">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faqCollapseTwelve"
-                      aria-expanded="false"
-                      aria-controls="faqCollapseTwelve"
-                      data-i18n="faq.q12"
-                    >
-                      ¿Hay disponibilidad para proyectos urgentes?
-                    </button>
-                  </h2>
-                  <div
-                    id="faqCollapseTwelve"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="faqHeadingTwelve"
-                    data-bs-parent="#faqAccordionRight"
-                  >
-                    <div class="accordion-body" data-i18n="faq.a12">
-                      Sí, podemos aceptar proyectos urgentes según nuestra
-                      disponibilidad. Contáctanos directamente para analizar tu
-                      necesidad y ofrecerte un plan acelerado si es posible.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Sección de Contacto -->
-      <section id="contact" class="contact-section">
-        <div class="container">
-          <!-- Encabezado -->
-          <div class="section-header">
-            <h2 class="section-title" data-i18n="contact.title">
-              Contacta con Nosotros
-            </h2>
-            <p class="section-subtitle" data-i18n="contact.subtitle">
-              ¿Tienes un proyecto en mente? Nos encantaría escucharte. Completa
-              el formulario y nos pondremos en contacto contigo lo antes
-              posible.
-            </p>
-          </div>
-
-          <div class="contact-wrapper">
-            <!-- Columna Izquierda: Información -->
-            <div class="contact-info">
-              <!-- Grid de 2x2 para las cards de contacto -->
-              <div class="info-cards-grid">
-                <div class="info-card">
-                  <div class="info-icon">
-                    <i class="bi bi-geo-alt"></i>
-                  </div>
-                  <h3 data-i18n="contact.locationLabel">Ubicación</h3>
-                  <p data-i18n="contact.locationText">
-                    Buenos Aires, Argentina
-                  </p>
-                </div>
-
-                <div class="info-card">
-                  <div class="info-icon">
-                    <i class="bi bi-telephone"></i>
-                  </div>
-                  <h3 data-i18n="contact.phoneLabel">Teléfono</h3>
-                  <a href="tel:+34900000000">+54 11 4194-8773</a>
-                </div>
-
-                <div class="info-card">
-                  <div class="info-icon">
-                    <i class="bi bi-envelope"></i>
-                  </div>
-                  <h3 data-i18n="contact.emailLabel">Email</h3>
-                  <a href="mailto:info@nexcore.com">info@nexcore.com</a>
-                </div>
-
-                <div class="info-card">
-                  <div class="info-icon">
-                    <i class="bi bi-whatsapp"></i>
-                  </div>
-                  <h3>WhatsApp</h3>
-                  <a
-                    href="https://wa.me/541141948773"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Enviar Mensaje
-                  </a>
-                </div>
-              </div>
-
-              <!-- Horarios - Ocupa las 2 columnas -->
-              <div class="info-schedule">
-                <h4 data-i18n="contact.scheduleTitle">Horarios de Atención</h4>
-                <ul>
-                  <li>
-                    <span data-i18n="contact.mondayFriday"
-                      >Lunes - Viernes:</span
-                    >
-                    <span data-i18n="contact.monday9to18">09:00 - 18:00</span>
-                  </li>
-                  <li>
-                    <span data-i18n="contact.saturday">Sábado:</span>
-                    <span data-i18n="contact.saturday10to14"
-                      >10:00 - 14:00</span
-                    >
-                  </li>
-                  <li>
-                    <span data-i18n="contact.sunday">Domingo:</span>
-                    <span data-i18n="contact.closed">Cerrado</span>
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Mapa interactivo -->
-              <div class="contact-map">
-                <div id="map" class="map-container"></div>
-              </div>
-            </div>
-
-            <!-- Columna Derecha: Formulario -->
-            <div class="contact-form-wrapper">
-              <form
-                id="contactForm"
-                class="contact-form"
-                method="POST"
-                action="#"
-              >
-                <div class="form-row">
-                  <div class="form-group full">
-                    <label for="nombre" data-i18n="contact.nameLabel"
-                      >Nombre Completo *</label
-                    >
-                    <input
-                      type="text"
-                      id="nombre"
-                      name="nombre"
-                      placeholder="Tu nombre"
-                      required
-                    />
-                  </div>
-                  <div class="form-group full">
-                    <label for="email" data-i18n="contact.emailInputLabel"
-                      >Correo Electrónico *</label
-                    >
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      placeholder="tu@email.com"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div class="form-row">
-                  <div class="form-group full">
-                    <label for="telefono" data-i18n="contact.phoneLabel"
-                      >Teléfono</label
-                    >
-                    <input
-                      type="tel"
-                      id="telefono"
-                      name="telefono"
-                      placeholder="+54 11 4194-8773"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="asunto" data-i18n="contact.subjectLabel"
-                      >Asunto *</label
-                    >
-                    <input
-                      type="text"
-                      id="asunto"
-                      name="asunto"
-                      placeholder="¿En qué podemos ayudarte?"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="servicio" data-i18n="contact.serviceLabel"
-                    >Tipo de Servicio</label
-                  >
-                  <select id="servicio" name="servicio">
-                    <option value="" data-i18n="contact.selectService">
-                      Selecciona un servicio
-                    </option>
-                    <option value="diseño" data-i18n="contact.service1">
-                      Diseño Web
-                    </option>
-                    <option value="desarrollo" data-i18n="contact.service2">
-                      Desarrollo Full Stack
-                    </option>
-                    <option value="ecommerce" data-i18n="contact.service3">
-                      E-commerce
-                    </option>
-                    <option value="seo" data-i18n="contact.service4">
-                      SEO y Marketing
-                    </option>
-                    <option value="consultoria" data-i18n="contact.service5">
-                      Consultoría Digital
-                    </option>
-                    <option value="otro" data-i18n="contact.service6">
-                      Otro
-                    </option>
-                  </select>
-                </div>
-
-                <div class="form-group">
-                  <label for="mensaje" data-i18n="contact.messageLabelForm"
-                    >Mensaje *</label
-                  >
-                  <textarea
-                    id="mensaje"
-                    name="mensaje"
-                    placeholder="Cuéntanos sobre tu proyecto..."
-                    rows="5"
-                    required
-                  ></textarea>
-                </div>
-
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    id="politica"
-                    name="politica"
-                    required
-                  />
-                  <label for="politica" data-i18n="contact.privacyCheckbox">
-                    Acepto la <a href="#">política de privacidad</a>
-                  </label>
-                </div>
-
-                <button
-                  type="submit"
-                  class="btn btn-primary btn-lg"
-                  data-i18n="contact.submitBtn"
-                >
-                  Enviar Mensaje
-                </button>
-
-                <p class="form-note" data-i18n="contact.requiredFields">
-                  * Campos obligatorios
-                </p>
-              </form>
-            </div>
-          </div>
-        </div>
-
-        <!-- Elemento decorativo -->
-        <div class="contact-deco" aria-hidden="true"></div>
-      </section>
-
-      <!-- Sección de Formas de Pago -->
-      <section id="pagos" class="payment-section">
-        <div class="container">
-          <!-- Encabezado -->
-          <div class="section-header">
-            <h2 class="section-title">
-              <span data-i18n="pagos.title">Pagá Como</span>
-              <span class="highlight" data-i18n="pagos.titleHighlight"
-                >Prefieras</span
-              >
-            </h2>
-            <p class="section-subtitle" data-i18n="pagos.subtitle">
-              Aceptamos múltiples métodos de pago para que elijas el que más te
-              convenga. Transacciones seguras y confiables para tu tranquilidad.
-            </p>
-          </div>
-
-          <!-- Grid de Opciones de Pago -->
-          <div class="payment-grid">
-            <!-- Card 1: Mercado Pago -->
-            <div class="payment-card popular">
-              <div class="popular-badge">
-                <i class="bi bi-star-fill"></i>
-                <span data-i18n="pagos.popular">POPULAR</span>
-              </div>
-              <div class="payment-icon">
-                <i class="bi bi-wallet2"></i>
-              </div>
-              <h3 data-i18n="pagos.mercadoPagoTitle">Mercado Pago</h3>
-              <p class="payment-description" data-i18n="pagos.mercadoPagoDesc">
-                Pagá con tu cuenta de Mercado Pago de forma rápida y segura
-              </p>
-              <ul class="payment-features">
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="pagos.mercadoPagoFeature1">Instantáneo</span>
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="pagos.mercadoPagoFeature2">Seguro</span>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Card 2: Transferencia -->
-            <div class="payment-card">
-              <div class="payment-icon">
-                <i class="bi bi-bank"></i>
-              </div>
-              <h3 data-i18n="pagos.transferTitle">Transferencia</h3>
-              <p class="payment-description" data-i18n="pagos.transferDesc">
-                Transferencia bancaria directa desde tu cuenta
-              </p>
-              <ul class="payment-features">
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="pagos.transferFeature1">Sin comisión</span>
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="pagos.transferFeature2">CVU/Alias</span>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Card 3: Tarjetas -->
-            <div class="payment-card">
-              <div class="payment-icon">
-                <i class="bi bi-credit-card"></i>
-              </div>
-              <h3 data-i18n="pagos.tarjetasTitle">Tarjetas</h3>
-              <p class="payment-description" data-i18n="pagos.tarjetasDesc">
-                Crédito y débito de todas las entidades bancarias
-              </p>
-              <ul class="payment-features">
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="pagos.tarjetasFeature1">En cuotas</span>
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="pagos.tarjetasFeature2">Débito</span>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Card 4: Efectivo -->
-            <div class="payment-card">
-              <div class="payment-icon">
-                <i class="bi bi-cash-coin"></i>
-              </div>
-              <h3 data-i18n="pagos.efectivoTitle">Efectivo</h3>
-              <p class="payment-description" data-i18n="pagos.efectivoDesc">
-                Pago en efectivo para proyectos locales y presenciales
-              </p>
-              <ul class="payment-features">
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="pagos.efectivoFeature1">Flexible</span>
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="pagos.efectivoFeature2">Presencial</span>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Card 5: Seguridad -->
-            <div class="payment-card security-card">
-              <div class="payment-icon">
-                <i class="bi bi-shield-check"></i>
-              </div>
-              <h3>Pago 100% Seguro y Protegido</h3>
-              <p class="payment-description">
-                Todas las transacciones están protegidas con los más altos
-                estándares de seguridad. Tu información está encriptada y nunca
-                compartimos tus datos con terceros.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-      <div class="footer-content container">
-        <!-- Grid de contenido principal -->
-        <div class="footer-grid">
-          <!-- Columna 1: Sobre nosotros -->
-          <div class="footer-section">
-            <div class="footer-logo">
-              <img src="assets/Nexcore logo.png" alt="Nexcore logo" />
-              <span>NEXCORE</span>
+    <!-- Hidden file input for import -->
+    <input
+      type="file"
+      id="importFileInput"
+      accept=".pdf,.json"
+      style="display: none"
+    />
+
+    <!-- Modal para nueva cuenta -->
+    <div class="modal" id="accountModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title-section">
+            <h2>Agregar Nueva Cuenta</h2>
+            <p class="modal-description">Completa los datos de tu cuenta</p>
+          </div>
+          <button class="modal-close" id="closeModal">&times;</button>
+        </div>
+        <form id="accountForm">
+          <div class="form-group">
+            <label for="username">Nombre de usuario (opcional)</label>
+            <input type="text" id="username" placeholder="tu-usuario" />
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico (opcional)</label>
+            <div class="email-input-wrapper">
+              <input type="text" id="email" placeholder="tu-email" />
+              <span class="email-suffix" id="emailSuffix">@gmail.com</span>
             </div>
-            <p class="footer-description" data-i18n="footer.description">
-              Agencia de desarrollo web especializada en crear soluciones
-              digitales innovadoras para empresas de todos los tamaños.
+          </div>
+          <div class="form-group">
+            <label for="password">Contraseña</label>
+            <div style="display: flex; gap: 0.5rem; align-items: center">
+              <input
+                type="password"
+                id="password"
+                required
+                placeholder="••••••••"
+                style="flex: 1"
+              />
+              <button
+                type="button"
+                class="btn btn-icon-toggle"
+                id="togglePasswordVisibility"
+                style="
+                  background: none;
+                  border: 1px solid var(--border-color);
+                  color: var(--text-secondary);
+                  cursor: pointer;
+                  padding: 0.5rem;
+                  border-radius: 8px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 40px;
+                  height: 40px;
+                "
+                title="Mostrar/Ocultar contraseña"
+              >
+                <i class="bi bi-eye"></i>
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                id="openGeneratorBtn"
+                style="
+                  padding: 0;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 40px;
+                  height: 40px;
+                  gap: 0.5rem;
+                "
+              >
+                <i class="bi bi-shuffle"></i>
+              </button>
+            </div>
+          </div>
+          <div
+            class="form-group"
+            id="passwordStrengthGroup"
+            style="display: none"
+          >
+            <label>Fortaleza de Contraseña</label>
+            <div style="display: flex; align-items: center; gap: 0.5rem">
+              <div
+                style="
+                  flex: 1;
+                  height: 8px;
+                  background: var(--border-color);
+                  border-radius: 4px;
+                  overflow: hidden;
+                "
+              >
+                <div
+                  id="strengthBar"
+                  style="
+                    height: 100%;
+                    width: 0%;
+                    background: var(--error-color);
+                    transition: width 0.3s;
+                  "
+                ></div>
+              </div>
+              <span
+                id="strengthLabel"
+                style="font-size: 0.875rem; min-width: 80px"
+              ></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="notes"
+              >Notas <span style="color: var(--danger-color)">*</span></label
+            >
+            <textarea
+              id="notes"
+              placeholder="Ej: Cuenta de trabajo creada en 2024, usar para correo corporativo"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="category">Categoría</label>
+            <select id="category" required>
+              <option value="">Selecciona una categoría</option>
+              <option value="streaming">Streaming</option>
+              <option value="redes-sociales">Redes Sociales</option>
+              <option value="billetera-virtual">Billetera Virtual</option>
+              <option value="trabajo">Trabajo</option>
+              <option value="app">App</option>
+              <option value="video-juego">Video Juego</option>
+              <option value="personal">Personal</option>
+              <option value="otros">Otros</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label
+              >Etiquetas (opcional) - Máximo 3 etiquetas (30 caracteres
+              c/u)</label
+            >
+            <div
+              id="tagsContainer"
+              style="
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                margin-bottom: 0.5rem;
+              "
+            ></div>
+            <div id="tagInputContainer" style="display: flex; gap: 0.5rem">
+              <input
+                type="text"
+                id="tagInput"
+                placeholder="Agregar etiqueta (30 caracteres máx)..."
+                maxlength="30"
+                style="flex: 1"
+              />
+              <button
+                type="button"
+                id="addTagBtn"
+                class="btn btn-secondary"
+                style="padding: 0.5rem 1rem"
+              >
+                <i class="bi bi-tag"></i> Agregar
+              </button>
+            </div>
+          </div>
+          <div class="form-group form-group-checkbox">
+            <label>
+              <input type="checkbox" id="status" checked />
+              <span>Cuenta en uso</span>
+            </label>
+          </div>
+          <div class="form-group" id="inactiveUntilGroup" style="display: none">
+            <label for="inactiveUntil">En desuso hasta (opcional)</label>
+            <input
+              type="date"
+              id="inactiveUntil"
+              placeholder="Selecciona una fecha"
+            />
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" id="cancelBtn">
+              Cancelar
+            </button>
+            <button type="submit" class="btn btn-primary">
+              Guardar Cuenta
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal para ver cuenta -->
+    <div class="modal" id="viewModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Detalles de la Cuenta</h2>
+          <button class="modal-close" id="closeViewModal">&times;</button>
+        </div>
+        <div id="viewAccountContent"></div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" id="deleteBtn">
+            Eliminar
+          </button>
+          <button type="button" class="btn btn-primary" id="editBtn">
+            Guardar Cambios
+          </button>
+          <button type="button" class="btn btn-secondary" id="closeViewBtn">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para cambiar contraseña -->
+    <div class="modal fade" id="passwordGeneratorModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content change-password-modal-content">
+          <div class="modal-header change-password-header">
+            <h5 class="modal-title">Generador de Contraseñas</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body change-password-body">
+            <div class="generator-preview" style="margin-bottom: 1.5rem">
+              <label
+                style="
+                  display: block;
+                  font-size: 0.875rem;
+                  margin-bottom: 0.5rem;
+                  color: var(--text-secondary);
+                "
+                >Contraseña Generada</label
+              >
+              <div style="display: flex; gap: 0.5rem">
+                <input
+                  type="text"
+                  id="generatedPassword"
+                  readonly
+                  style="
+                    flex: 1;
+                    padding: 0.75rem;
+                    border: 1px solid var(--border-color);
+                    border-radius: 8px;
+                    background: var(--card-bg);
+                    color: var(--text-primary);
+                  "
+                />
+                <button
+                  type="button"
+                  id="copyGeneratedBtn"
+                  class="btn btn-primary"
+                  style="padding: 0.75rem 1rem"
+                >
+                  <i class="bi bi-copy"></i> Copiar
+                </button>
+              </div>
+            </div>
+
+            <div class="generator-options">
+              <h6 style="margin-bottom: 1rem; color: var(--text-secondary)">
+                Opciones
+              </h6>
+
+              <div style="margin-bottom: 1rem">
+                <label
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    cursor: pointer;
+                  "
+                >
+                  <input type="checkbox" id="genMayusculas" checked />
+                  <span>Incluir mayúsculas (A-Z)</span>
+                </label>
+              </div>
+
+              <div style="margin-bottom: 1rem">
+                <label
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    cursor: pointer;
+                  "
+                >
+                  <input type="checkbox" id="genMinusculas" checked />
+                  <span>Incluir minúsculas (a-z)</span>
+                </label>
+              </div>
+
+              <div style="margin-bottom: 1rem">
+                <label
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    cursor: pointer;
+                  "
+                >
+                  <input type="checkbox" id="genNumeros" checked />
+                  <span>Incluir números (0-9)</span>
+                </label>
+              </div>
+
+              <div style="margin-bottom: 1rem">
+                <label
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    cursor: pointer;
+                  "
+                >
+                  <input type="checkbox" id="genSimbolos" checked />
+                  <span>Incluir símbolos (!@#$%^&*)</span>
+                </label>
+              </div>
+
+              <div style="margin-bottom: 1rem">
+                <label
+                  style="
+                    display: block;
+                    font-size: 0.875rem;
+                    margin-bottom: 0.5rem;
+                  "
+                  >Longitud: <span id="lengthValue">16</span> caracteres</label
+                >
+                <input
+                  type="range"
+                  id="passwordLength"
+                  min="8"
+                  max="32"
+                  value="16"
+                  style="width: 100%"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer change-password-footer">
+            <button type="button" id="regenerateBtn" class="btn btn-secondary">
+              <i class="bi bi-arrow-repeat"></i> Generar Nuevo
+            </button>
+            <button type="button" id="useGeneratedBtn" class="btn btn-primary">
+              <i class="bi bi-check"></i> Usar Esta Contraseña
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para cambiar contraseña -->
+    <div class="modal fade" id="changePasswordModal" tabindex="-1">
+      <div
+        class="modal-dialog modal-dialog-centered change-password-modal-dialog"
+      >
+        <div class="modal-content change-password-modal-content">
+          <div class="modal-header change-password-header">
+            <h5 class="modal-title">Cambiar Contraseña</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body change-password-body">
+            <form id="changePasswordForm">
+              <div class="change-password-form-group">
+                <label for="currentPassword" class="change-password-label"
+                  >Contraseña Actual</label
+                >
+                <div class="change-password-input-group">
+                  <input
+                    type="password"
+                    class="change-password-input"
+                    id="currentPassword"
+                    placeholder="••••••••"
+                    required
+                  />
+                  <button
+                    class="change-password-input-toggle"
+                    type="button"
+                    id="toggleCurrentPassword"
+                    tabindex="-1"
+                  >
+                    <i class="bi bi-eye"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="change-password-form-group">
+                <label for="newPassword" class="change-password-label"
+                  >Nueva Contraseña</label
+                >
+                <div class="change-password-input-group">
+                  <input
+                    type="password"
+                    class="change-password-input"
+                    id="newPassword"
+                    placeholder="••••••••"
+                    required
+                  />
+                  <button
+                    class="change-password-input-toggle"
+                    type="button"
+                    id="toggleNewPassword"
+                    tabindex="-1"
+                  >
+                    <i class="bi bi-eye"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="change-password-form-group">
+                <label for="confirmPassword" class="change-password-label"
+                  >Confirmar Contraseña</label
+                >
+                <div class="change-password-input-group">
+                  <input
+                    type="password"
+                    class="change-password-input"
+                    id="confirmPassword"
+                    placeholder="••••••••"
+                    required
+                  />
+                  <button
+                    class="change-password-input-toggle"
+                    type="button"
+                    id="toggleConfirmPassword"
+                    tabindex="-1"
+                  >
+                    <i class="bi bi-eye"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div
+                id="changePasswordError"
+                class="change-password-alert change-password-alert-error d-none"
+                role="alert"
+              ></div>
+              <div
+                id="changePasswordSuccess"
+                class="change-password-alert change-password-alert-success d-none"
+                role="alert"
+              ></div>
+            </form>
+          </div>
+          <div class="modal-footer change-password-footer">
+            <button
+              type="button"
+              class="change-password-btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="change-password-btn-primary"
+              id="changePasswordSubmitBtn"
+            >
+              Cambiar Contraseña
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Confirmación de Eliminación -->
+    <div
+      class="modal fade"
+      id="deleteConfirmModal"
+      tabindex="-1"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+    >
+      <div class="modal-dialog modal-dialog-centered delete-confirm-modal">
+        <div class="modal-content delete-confirm-content">
+          <div class="modal-header delete-confirm-header">
+            <h5 class="modal-title">
+              <i class="bi bi-exclamation-triangle"></i> Confirmar Eliminación
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body delete-confirm-body">
+            <p class="delete-confirm-text">
+              ¿Estás seguro de que deseas eliminar esta cuenta?
             </p>
-            <div class="footer-socials">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-              >
-                <i class="bi bi-facebook"></i>
+            <p
+              class="delete-confirm-account-name"
+              id="deleteConfirmAccountName"
+            >
+              Cuenta: <strong></strong>
+            </p>
+            <div
+              class="delete-confirm-category"
+              style="
+                padding: 0.5rem 1rem;
+                border-radius: 8px;
+                color: white;
+                font-weight: 600;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                margin: 0.75rem 0;
+              "
+            ></div>
+            <div class="delete-confirm-warning">
+              <i class="bi bi-info-circle"></i>
+              <span>Esta acción no se puede deshacer</span>
+            </div>
+          </div>
+          <div class="modal-footer delete-confirm-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button type="button" class="btn btn-danger" id="confirmDeleteBtn">
+              <i class="bi bi-trash"></i> Eliminar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para confirmar duplicados -->
+    <div
+      class="modal fade"
+      id="duplicateConfirmModal"
+      tabindex="-1"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+    >
+      <div class="modal-dialog modal-dialog-centered delete-confirm-modal">
+        <div class="modal-content delete-confirm-content">
+          <div class="modal-header delete-confirm-header">
+            <h5 class="modal-title">
+              <i class="bi bi-exclamation-circle"></i> Cuenta Duplicada
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body delete-confirm-body">
+            <p class="delete-confirm-text">
+              Esta cuenta ya existe en tu sistema
+            </p>
+            <p
+              class="delete-confirm-account-name"
+              id="duplicateConfirmAccountName"
+            >
+              Correo: <strong></strong>
+            </p>
+            <div
+              class="duplicate-confirm-category"
+              style="
+                padding: 0.5rem 1rem;
+                border-radius: 8px;
+                color: white;
+                font-weight: 600;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                margin: 0.75rem 0;
+              "
+            ></div>
+            <div class="delete-confirm-warning">
+              <i class="bi bi-info-circle"></i>
+              <span>¿Deseas guardar esta cuenta de todas formas?</span>
+            </div>
+          </div>
+          <div class="modal-footer delete-confirm-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="confirmDuplicateBtn"
+            >
+              <i class="bi bi-check"></i> Guardar de Todas Formas
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para ayuda e información -->
+    <div class="modal" id="helpModal">
+      <div class="modal-content modal-help">
+        <div class="modal-header">
+          <h2>Centro de Ayuda</h2>
+          <button class="modal-close" id="closeHelpModal">&times;</button>
+        </div>
+        <div class="help-content">
+          <!-- Tabs for help sections -->
+          <div class="help-tabs">
+            <button class="help-tab-btn active" data-tab="inicio">
+              <i class="bi bi-house"></i> Inicio
+            </button>
+            <button class="help-tab-btn" data-tab="caracteristicas">
+              <i class="bi bi-star"></i> Características
+            </button>
+            <button class="help-tab-btn" data-tab="atajos">
+              <i class="bi bi-keyboard"></i> Atajos
+            </button>
+          </div>
+
+          <!-- Tab Content -->
+          <div class="help-tab-content">
+            <!-- Inicio -->
+            <div class="help-section active" data-section="inicio">
+              <h3>Bienvenido a VaultMail</h3>
+              <p>
+                VaultMail es un gestor seguro de cuentas diseñado para ayudarte
+                a organizar y administrar todas tus cuentas en un solo lugar de
+                forma segura y eficiente.
+              </p>
+              <div class="help-box">
+                <h4><i class="bi bi-key"></i> Sistema de Login</h4>
+                <p>
+                  La primera vez que accedas, establece una contraseña maestra.
+                  Esta contraseña protege todas tus cuentas guardadas. Recuerda
+                  mantenerla segura y en un lugar seguro.
+                </p>
+                <ul>
+                  <li>Se requiere contraseña para acceder a VaultMail</li>
+                  <li>Tus datos se desbloquean solo con esta contraseña</li>
+                  <li>La contraseña se encripta localmente en tu navegador</li>
+                </ul>
+              </div>
+              <div class="help-box">
+                <h4>
+                  <i class="bi bi-arrow-left-right"></i> Cambiar Contraseña
+                </h4>
+                <p>
+                  Puedes cambiar tu contraseña maestra en cualquier momento
+                  desde el menú lateral. Necesitarás confirmar tu contraseña
+                  actual.
+                </p>
+                <ul>
+                  <li>Haz clic en "Cambiar Contraseña" en el menú lateral</li>
+                  <li>Introduce tu contraseña actual para verificación</li>
+                  <li>Ingresa la nueva contraseña y confírmala</li>
+                  <li>Los cambios se aplican inmediatamente</li>
+                </ul>
+              </div>
+              <div class="help-box">
+                <h4><i class="bi bi-plus-circle"></i> ¿Cómo comenzar?</h4>
+                <ol>
+                  <li>
+                    Haz clic en <strong>"+ Nueva Cuenta"</strong> para agregar
+                    tu primera cuenta
+                  </li>
+                  <li>
+                    Completa los datos: usuario o correo, contraseña y categoría
+                  </li>
+                  <li>Tus datos se guardan automáticamente en tu navegador</li>
+                  <li>Organiza tus cuentas usando categorías y favoritos</li>
+                </ol>
+              </div>
+            </div>
+
+            <!-- Características -->
+            <div class="help-section" data-section="caracteristicas">
+              <h3>Características Principales</h3>
+              <div class="help-feature">
+                <h4><i class="bi bi-folder"></i> Categorización</h4>
+                <p>
+                  Organiza tus cuentas en diferentes categorías: Streaming,
+                  Redes Sociales, Billetera Virtual, Trabajo, App, Video Juego,
+                  Personal y Otros.
+                </p>
+              </div>
+              <div class="help-feature">
+                <h4><i class="bi bi-star-fill"></i> Favoritos</h4>
+                <p>
+                  Marca tus cuentas más usadas como favoritas para acceder
+                  rápidamente a ellas.
+                </p>
+              </div>
+              <div class="help-feature">
+                <h4><i class="bi bi-search"></i> Búsqueda y Filtros</h4>
+                <p>
+                  Busca cuentas por correo o notas, filtra por categoría y
+                  estado de uso.
+                </p>
+              </div>
+              <div class="help-feature">
+                <h4><i class="bi bi-archive"></i> Archivado</h4>
+                <p>
+                  Archiva cuentas que no usas frecuentemente sin eliminarlas.
+                </p>
+              </div>
+              <div class="help-feature">
+                <h4><i class="bi bi-download"></i> Exportar/Importar</h4>
+                <p>
+                  Descarga tus datos como JSON o importa cuentas desde un
+                  archivo.
+                </p>
+              </div>
+              <div class="help-feature">
+                <h4><i class="bi bi-sun"></i> Tema Claro/Oscuro</h4>
+                <p>
+                  Cambia entre modo claro y oscuro para mayor comodidad visual.
+                </p>
+              </div>
+            </div>
+
+            <!-- Atajos de Teclado -->
+            <div class="help-section" data-section="atajos">
+              <h3>Atajos de Teclado</h3>
+              <p>Usa estos atajos para navegar más rápidamente:</p>
+              <div class="shortcuts-table">
+                <div class="shortcut-item">
+                  <div class="shortcut-keys">Ctrl + A</div>
+                  <div class="shortcut-desc">Agregar nueva cuenta</div>
+                </div>
+                <div class="shortcut-item">
+                  <div class="shortcut-keys">Ctrl + B</div>
+                  <div class="shortcut-desc">Expandir/Comprimir sidebar</div>
+                </div>
+                <div class="shortcut-item">
+                  <div class="shortcut-keys">Ctrl + K</div>
+                  <div class="shortcut-desc">Enfoca la barra de búsqueda</div>
+                </div>
+                <div class="shortcut-item">
+                  <div class="shortcut-keys">Ctrl + T</div>
+                  <div class="shortcut-desc">Cambiar tema (claro/oscuro)</div>
+                </div>
+                <div class="shortcut-item">
+                  <div class="shortcut-keys">Ctrl + F</div>
+                  <div class="shortcut-desc">Mostrar solo favoritos</div>
+                </div>
+                <div class="shortcut-item">
+                  <div class="shortcut-keys">Ctrl + Alt + ←</div>
+                  <div class="shortcut-desc">
+                    Ir a página anterior (paginación)
+                  </div>
+                </div>
+                <div class="shortcut-item">
+                  <div class="shortcut-keys">Ctrl + Alt + →</div>
+                  <div class="shortcut-desc">
+                    Ir a página siguiente (paginación)
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>VaultMail</h3>
+            <p>
+              Organiza y administra todas tus cuentas de forma segura con
+              VaultMail. Todos los datos se guardan localmente en tu navegador.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Características</h4>
+            <ul>
+              <li>Almacenamiento seguro local</li>
+              <li>Categorización de cuentas</li>
+              <li>Búsqueda y filtros avanzados</li>
+              <li>Gestión de estado de uso</li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Privacidad</h4>
+            <p>
+              Esta aplicación no envía datos a ningún servidor. Todo permanece
+              en tu dispositivo.
+            </p>
+            <div class="footer-icons">
+              <a href="#" aria-label="GitHub" title="GitHub">
+                <i class="bi bi-github"></i>
               </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
-                <i class="bi bi-linkedin"></i>
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
-                <i class="bi bi-instagram"></i>
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Twitter"
-              >
+              <a href="#" aria-label="Twitter" title="Twitter">
                 <i class="bi bi-twitter"></i>
               </a>
             </div>
           </div>
-
-          <!-- Columna 2: Navegación -->
-          <div class="footer-section">
-            <h4 data-i18n="footer.navTitle">Navegación</h4>
-            <ul class="footer-links">
-              <li><a href="#hero" data-i18n="nav.inicio">Inicio</a></li>
-              <li>
-                <a href="#nosotros-top" data-i18n="nav.nosotros">Nosotros</a>
-              </li>
-              <li>
-                <a href="#servicios" data-i18n="nav.servicios">Servicios</a>
-              </li>
-              <li>
-                <a href="#proyectos" data-i18n="nav.proyectos">Proyectos</a>
-              </li>
-              <li>
-                <a href="#testimonios-top" data-i18n="nav.testimonios"
-                  >Testimonios</a
-                >
-              </li>
-              <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
-            </ul>
-          </div>
-
-          <!-- Columna 3: Servicios -->
-          <div class="footer-section">
-            <h4 data-i18n="footer.servicesTitle">Servicios</h4>
-            <ul class="footer-links">
-              <li>
-                <a href="#servicios" data-i18n="footer.service1">Diseño Web</a>
-              </li>
-              <li>
-                <a href="#servicios" data-i18n="footer.service2"
-                  >Desarrollo Full Stack</a
-                >
-              </li>
-              <li>
-                <a href="#servicios" data-i18n="footer.service3">E-commerce</a>
-              </li>
-              <li>
-                <a href="#servicios" data-i18n="footer.service4"
-                  >Optimización SEO</a
-                >
-              </li>
-              <li>
-                <a href="#servicios" data-i18n="footer.service5"
-                  >Consultoría Digital</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Columna 4: Contacto -->
-          <div class="footer-section">
-            <h4 data-i18n="footer.contactTitle">Contacto</h4>
-            <ul class="footer-links footer-contact">
-              <li>
-                <a href="mailto:info@nexcore.com">
-                  <i class="bi bi-envelope"></i>
-                  info@nexcore.com
-                </a>
-              </li>
-              <li>
-                <a href="tel:+34900000000">
-                  <i class="bi bi-telephone"></i>
-                  +54 11 4194-8773
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://wa.me/541141948773"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i class="bi bi-whatsapp"></i>
-                  WhatsApp
-                </a>
-              </li>
-              <li>
-                <span class="footer-address">
-                  <i class="bi bi-geo-alt"></i>
-                  Buenos Aires, Argentina
-                </span>
-              </li>
-            </ul>
-          </div>
         </div>
-
-        <!-- Línea divisora -->
-        <div class="footer-divider"></div>
-
-        <!-- Footer inferior -->
         <div class="footer-bottom">
           <div class="footer-bottom-left">
-            <div class="footer-copyright-content">
-              <span class="copyright-icon">
-                <i class="bi bi-c-circle"></i>
-              </span>
-              <p data-i18n="footer.copyright">
-                2026 Nexcore. Todos los derechos reservados.
-              </p>
-            </div>
-          </div>
-          <div class="footer-bottom-center">
-            <!-- Selector de idioma en footer -->
-            <div class="footer-language-switcher">
-              <span class="language-label" data-i18n="footer.languageLabel"
-                >Idioma:</span
+            <p>&copy; 2026 VaultMail. Todos los derechos reservados.</p>
+            <p>
+              Creado por
+              <a
+                href="https://nexcore-gamma.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Nexcore</a
               >
-              <button class="lang-btn" data-lang="es">ES</button>
-              <span class="lang-separator">|</span>
-              <button class="lang-btn active" data-lang="en">EN</button>
-            </div>
-            <button
-              class="btn-donate"
-              id="btn-donate-footer"
-              aria-label="Donaciones"
-              title="Donaciones"
-              data-i18n-attr="title"
-              data-i18n-key="donations.tooltip"
-            >
-              <i class="bi bi-heart-fill"></i>
-            </button>
+            </p>
           </div>
-          <div class="footer-bottom-right">
-            <ul class="footer-legal">
-              <li>
-                <a href="#" data-i18n="footer.privacy"
-                  >Política de Privacidad</a
-                >
-              </li>
-              <li>
-                <a href="#" data-i18n="footer.terms">Términos de Servicio</a>
-              </li>
-              <li><a href="#" data-i18n="footer.cookies">Cookies</a></li>
-            </ul>
-          </div>
+          <button id="installAppBtn" class="btn btn-install-app d-none">
+            <i class="bi bi-download"></i>
+            Instalar app
+          </button>
         </div>
       </div>
-
-      <!-- Elemento decorativo de fondo -->
-      <div class="footer-deco" aria-hidden="true"></div>
     </footer>
 
-    <!-- Donation Modal -->
-    <div id="donation-modal" class="donation-modal" aria-hidden="true">
-      <div class="donation-modal-content">
-        <button class="donation-modal-close" aria-label="Cerrar">
-          <i class="bi bi-x"></i>
-        </button>
-
-        <div class="donation-container">
-          <div class="donation-header">
-            <img
-              src="assets/Nexcore logo.png"
-              alt="Nexcore"
-              class="donation-logo"
-            />
-            <h2 data-i18n="donations.title">Apoya nuestro trabajo</h2>
-          </div>
-
-          <p class="donation-description" data-i18n="donations.description">
-            Tu donación nos ayuda a seguir creando contenido de calidad y
-            mejorando nuestros servicios.
-          </p>
-
-          <div class="donation-qr-container">
-            <img
-              id="donation-qr"
-              src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://link.mercadopago.com.ar/mauriricotti"
-              alt="Código QR Mercado Pago"
-              class="donation-qr"
-            />
-          </div>
-
-          <p class="donation-footer" data-i18n="donations.thanks">
-            ¡Gracias por tu generosidad!
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Cookie Consent Banner -->
-    <div
-      id="cookie-banner"
-      class="cookie-banner"
-      aria-labelledby="cookie-title"
-    >
-      <div class="cookie-content">
-        <div class="cookie-text">
-          <h3 id="cookie-title" data-i18n="cookies.title">
-            Preferencias de Cookies
-          </h3>
-          <p data-i18n="cookies.description">
-            Utilizamos cookies para mejorar tu experiencia. Puedes aceptar todas
-            o personalizar tu selección.
-          </p>
-        </div>
-        <div class="cookie-buttons">
-          <button
-            id="cookie-accept-all"
-            class="btn btn-primary"
-            data-i18n="cookies.acceptAll"
-          >
-            Aceptar todas
-          </button>
-          <button
-            id="cookie-reject"
-            class="btn btn-outline"
-            data-i18n="cookies.reject"
-          >
-            Rechazar
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Leaflet JS para mapa interactivo -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <script src="main.js"></script>
+
+    <!-- Service Worker Registration para PWA/Offline -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then((registration) => {
+              console.log(
+                "[App] Service Worker registrado exitosamente:",
+                registration
+              );
+
+              // Verificar actualizaciones cada 10 segundos
+              setInterval(() => {
+                registration.update();
+              }, 10000);
+
+              // Detectar actualizaciones disponibles
+              registration.addEventListener("updatefound", () => {
+                const newWorker = registration.installing;
+                newWorker.addEventListener("statechange", () => {
+                  if (
+                    newWorker.state === "installed" &&
+                    navigator.serviceWorker.controller
+                  ) {
+                    console.log(
+                      "[App] Nueva versión disponible. Recargando..."
+                    );
+                    // Recargar la página para obtener la nueva versión
+                    window.location.reload();
+                  }
+                });
+              });
+            })
+            .catch((error) => {
+              console.error("[App] Error al registrar Service Worker:", error);
+            });
+        });
+      }
+
+      // Detectar cambios en conexión
+      window.addEventListener("online", () => {
+        console.log("[App] Conexión a internet restaurada");
+        document.body.classList.remove("offline-mode");
+      });
+
+      window.addEventListener("offline", () => {
+        console.log("[App] Sin conexión a internet - Modo offline activado");
+        document.body.classList.add("offline-mode");
+      });
+
+      // Verificar estado inicial
+      if (!navigator.onLine) {
+        document.body.classList.add("offline-mode");
+      }
+    </script>
+
+    <!-- Notificación de sesión abierta -->
+    <div id="sessionNotification" class="session-notification">
+      <button
+        id="closeSessionNotificationBtn"
+        class="session-notification-close-btn"
+        title="Cerrar"
+      >
+        <i class="bi bi-x"></i>
+      </button>
+      <div class="session-notification-content">
+        <div class="session-notification-header">
+          <i class="bi bi-exclamation-circle"></i>
+          <h3>Sesión Abierta</h3>
+        </div>
+        <p class="session-notification-message">
+          Tu cuenta está abierta hace <span id="sessionTime">0 minutos</span>.
+          Asegúrate de cerrar sesión correctamente para proteger tus
+          contraseñas.
+        </p>
+        <div class="session-notification-actions">
+          <button
+            id="closeSessionNotification"
+            class="session-notification-btn-close"
+          >
+            No volver a mostrar por 24hs
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
