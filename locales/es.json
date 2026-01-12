@@ -82,10 +82,27 @@
     "service6Sub": "EXPERIENCIA DE USUARIO",
     "service6Text": "Diseños centrados en conversión y experiencia, con prototipos y tests de usabilidad."
   },
+  "por-que-nosotros": {
+    "label": "DIFERENCIADORES",
+    "title": "<span style=\"color: #006341;\">Nos diferenciamos</span> de otras agencias",
+    "subtitle": "En el mercado hay muchas agencias. Aquí está por qué somos la mejor opción para tu proyecto.",
+    "feature1Title": "Atención Personalizada",
+    "feature1Text": "No somos una fábrica de sitios. Cada proyecto recibe atención dedicada y un trato directo sin intermediarios.",
+    "feature2Title": "Equipo de Expertos",
+    "feature2Text": "Desarrolladores, diseñadores y especialistas en SEO que trabajan en conjunto para resultados óptimos.",
+    "feature3Title": "Enfoque en Resultados",
+    "feature3Text": "Nos importan los números. Medimos, analizamos y optimizamos constantemente para tu éxito.",
+    "feature4Title": "Tecnología Moderna",
+    "feature4Text": "Usamos las tecnologías más modernas: Next.js, React, Node.js. Sitios rápidos, seguros y escalables.",
+    "feature5Title": "Soporte Post-Venta",
+    "feature5Text": "Después de publicar, no desaparecemos. Brindamos soporte continuo, mantenimiento y optimizaciones.",
+    "feature6Title": "Precios Transparentes",
+    "feature6Text": "Sin sorpresas ocultas. Presupuestos claros, realistas y sin compromisos. Paga solo lo que necesitas."
+  },
   "cta": {
     "title": "¿Listo para empezar tu proyecto?",
     "subtitle": "Hablemos y transformemos tu idea en una web que atraiga clientes y crezca con tu negocio.",
-    "btn1": "Cotizar ahora",
+    "btn1": "Cotizar",
     "btn2": "Contáctanos"
   },
   "proyectos": {
@@ -96,7 +113,7 @@
     "subtitle": "Cada proyecto es una oportunidad para crear experiencias digitales excepcionales que impulsan el crecimiento de nuestros clientes.",
     "project1Type": "Landing Page",
     "project1Name": "Oklahoma Studio",
-    "project1Text": "Una web moderna y visualmente atractiva diseñada para una barbería profesional. Presenta sus servicios, equipo y estilo de trabajo con una estética cuidada, transmitiendo calidad, confianza y una experiencia premium desde el primer vistazo.",
+    "project1Text": "Web moderna para barbería profesional con diseño cuidado enfocado en calidad y experiencia premium.",
     "project1Btn": "Visitar Web",
     "project2Type": "Tienda Online",
     "project2Name": "Empa-Market",

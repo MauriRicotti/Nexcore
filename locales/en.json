@@ -82,10 +82,27 @@
     "service6Sub": "USER EXPERIENCE",
     "service6Text": "Design focused on conversion and experience, with prototypes and usability tests."
   },
+  "por-que-nosotros": {
+    "label": "DIFFERENTIATORS",
+    "title": "<span style=\"color: #006341;\">We stand out</span> from other agencies",
+    "subtitle": "There are many agencies in the market. Here's why we're the best choice for your project.",
+    "feature1Title": "Personalized Attention",
+    "feature1Text": "We're not a website factory. Every project receives dedicated attention and direct treatment without intermediaries.",
+    "feature2Title": "Expert Team",
+    "feature2Text": "Developers, designers, and SEO specialists working together for optimal results.",
+    "feature3Title": "Results-Focused",
+    "feature3Text": "We care about numbers. We constantly measure, analyze, and optimize for your success.",
+    "feature4Title": "Modern Technology",
+    "feature4Text": "We use the latest technologies: Next.js, React, Node.js. Fast, secure, and scalable sites.",
+    "feature5Title": "After-Sales Support",
+    "feature5Text": "After launching, we don't disappear. We provide ongoing support, maintenance, and optimizations.",
+    "feature6Title": "Transparent Pricing",
+    "feature6Text": "No hidden surprises. Clear, realistic quotes with no commitments. Pay only for what you need."
+  },
   "cta": {
     "title": "Ready to start your project?",
     "subtitle": "Let's talk and transform your idea into a website that attracts customers and grows with your business.",
-    "btn1": "Get Quote Now",
+    "btn1": "Get Quote",
     "btn2": "Contact Us"
   },
   "proyectos": {
@@ -96,7 +113,7 @@
     "subtitle": "Each project is an opportunity to create exceptional digital experiences that drive our clients' growth.",
     "project1Type": "Landing Page",
     "project1Name": "Oklahoma Studio",
-    "project1Text": "A modern and visually attractive website designed for a professional barbershop. It showcases their services, team and work style with careful aesthetics, conveying quality, trust and a premium experience from the first glance.",
+    "project1Text": "Modern website for a professional barbershop with careful design focused on quality and premium experience.",
     "project1Btn": "Visit Website",
     "project2Type": "Online Store",
     "project2Name": "Empa-Market",
