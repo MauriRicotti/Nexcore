@@ -1392,25 +1392,28 @@
       </section>
 
       <!-- Sección: Preguntas Frecuentes -->
-      <section id="faq" class="faq container" aria-label="Preguntas frecuentes">
-        <div class="faq-head">
-          <span
-            class="eyebrow"
-            style="color: var(--color-primario)"
-            data-i18n="faq.label"
-            >FAQ</span
-          >
-          <h2 class="faq-title" data-i18n="faq.title">Preguntas frecuentes</h2>
-          <p class="faq-sub" data-i18n="faq.subtitle">
-            Respuestas rápidas a dudas comunes sobre nuestros servicios.
-          </p>
-        </div>
+      <section id="faq" class="faq" aria-label="Preguntas frecuentes">
+        <div class="container">
+          <div class="faq-wrapper">
+            <!-- Columna izquierda: Título y CTA -->
+            <div class="faq-left">
+              <span
+                class="eyebrow"
+                style="color: var(--color-primario)"
+                data-i18n="faq.label"
+                >PREGUNTAS FRECUENTES</span
+              >
+              <h2 class="faq-title" data-i18n="faq.title">Preguntas Frecuentes</h2>
+              <p class="faq-sub" data-i18n="faq.subtitle">
+                Respuestas claras a las preguntas más comunes para que puedas unirte con confianza y entrar sin incertidumbre.
+              </p>
+              <a href="#contact" class="btn btn-outline" data-i18n="faq.cta">Contacta con nuestro equipo</a>
+            </div>
 
-        <div class="faq-accordion">
-          <div class="faq-columns">
-            <!-- Columna izquierda: Preguntas 1-6 -->
-            <div class="faq-column">
-              <div class="accordion" id="faqAccordionLeft">
+            <!-- Columna derecha: Acordeón -->
+            <div class="faq-right">
+              <div class="faq-accordion">
+                <div class="accordion" id="faqAccordion">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="faqHeadingOne">
                     <button
@@ -1430,7 +1433,7 @@
                     id="faqCollapseOne"
                     class="accordion-collapse collapse"
                     aria-labelledby="faqHeadingOne"
-                    data-bs-parent="#faqAccordionLeft"
+                    data-bs-parent="#faqAccordion"
                   >
                     <div class="accordion-body" data-i18n="faq.a1">
                       Un sitio básico o landing suele tardar entre 1 y 3
@@ -1458,7 +1461,7 @@
                     id="faqCollapseTwo"
                     class="accordion-collapse collapse"
                     aria-labelledby="faqHeadingTwo"
-                    data-bs-parent="#faqAccordionLeft"
+                    data-bs-parent="#faqAccordion"
                   >
                     <div class="accordion-body" data-i18n="faq.a2">
                       Sí, ofrecemos planes de mantenimiento y soporte para
@@ -1486,7 +1489,7 @@
                     id="faqCollapseThree"
                     class="accordion-collapse collapse"
                     aria-labelledby="faqHeadingThree"
-                    data-bs-parent="#faqAccordionLeft"
+                    data-bs-parent="#faqAccordion"
                   >
                     <div class="accordion-body" data-i18n="faq.a3">
                       Sí. Dependiendo del proyecto recomendamos WordPress,
@@ -1514,7 +1517,7 @@
                     id="faqCollapseFour"
                     class="accordion-collapse collapse"
                     aria-labelledby="faqHeadingFour"
-                    data-bs-parent="#faqAccordionLeft"
+                    data-bs-parent="#faqAccordion"
                   >
                     <div class="accordion-body" data-i18n="faq.a4">
                       Es ideal que proveas contenido y material visual. Si no
@@ -1542,7 +1545,7 @@
                     id="faqCollapseFive"
                     class="accordion-collapse collapse"
                     aria-labelledby="faqHeadingFive"
-                    data-bs-parent="#faqAccordionLeft"
+                    data-bs-parent="#faqAccordion"
                   >
                     <div class="accordion-body" data-i18n="faq.a5">
                       Sí, incluimos optimización SEO básica en todos nuestros
@@ -1570,190 +1573,12 @@
                     id="faqCollapseSix"
                     class="accordion-collapse collapse"
                     aria-labelledby="faqHeadingSix"
-                    data-bs-parent="#faqAccordionLeft"
+                    data-bs-parent="#faqAccordion"
                   >
                     <div class="accordion-body" data-i18n="faq.a6">
                       El costo varía según el tipo y complejidad. Ofrecemos
                       presupuestos personalizados sin compromiso. Contáctanos
                       para una evaluación detallada de tu proyecto.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Columna derecha: Preguntas 7-12 -->
-            <div class="faq-column">
-              <div class="accordion" id="faqAccordionRight">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="faqHeadingSeven">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faqCollapseSeven"
-                      aria-expanded="false"
-                      aria-controls="faqCollapseSeven"
-                      data-i18n="faq.q7"
-                    >
-                      ¿Qué sucede después de entregar el sitio web?
-                    </button>
-                  </h2>
-                  <div
-                    id="faqCollapseSeven"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="faqHeadingSeven"
-                    data-bs-parent="#faqAccordionRight"
-                  >
-                    <div class="accordion-body" data-i18n="faq.a7">
-                      Después de la entrega, brindamos capacitación sobre cómo
-                      usar y administrar el sitio. Ofrecemos soporte técnico
-                      continuo y planes de mantenimiento personalizados según
-                      tus necesidades.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="faqHeadingEight">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faqCollapseEight"
-                      aria-expanded="false"
-                      aria-controls="faqCollapseEight"
-                      data-i18n="faq.q8"
-                    >
-                      ¿Ofrecen soluciones de comercio electrónico?
-                    </button>
-                  </h2>
-                  <div
-                    id="faqCollapseEight"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="faqHeadingEight"
-                    data-bs-parent="#faqAccordionRight"
-                  >
-                    <div class="accordion-body" data-i18n="faq.a8">
-                      Sí, desarrollamos tiendas online completas con sistemas de
-                      pago integrados, gestión de inventario, carrito de compras
-                      y más. Utilizamos plataformas como Shopify, WooCommerce o
-                      soluciones personalizadas.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="faqHeadingNine">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faqCollapseNine"
-                      aria-expanded="false"
-                      aria-controls="faqCollapseNine"
-                      data-i18n="faq.q9"
-                    >
-                      ¿El sitio será compatible con dispositivos móviles?
-                    </button>
-                  </h2>
-                  <div
-                    id="faqCollapseNine"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="faqHeadingNine"
-                    data-bs-parent="#faqAccordionRight"
-                  >
-                    <div class="accordion-body" data-i18n="faq.a9">
-                      Por supuesto. Todos nuestros sitios son completamente
-                      responsive y se adaptan perfectamente a cualquier tamaño
-                      de pantalla: teléfonos, tablets y computadoras de
-                      escritorio.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="faqHeadingTen">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faqCollapseTen"
-                      aria-expanded="false"
-                      aria-controls="faqCollapseTen"
-                      data-i18n="faq.q10"
-                    >
-                      ¿Cuáles son los datos incluidos en el hosting?
-                    </button>
-                  </h2>
-                  <div
-                    id="faqCollapseTen"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="faqHeadingTen"
-                    data-bs-parent="#faqAccordionRight"
-                  >
-                    <div class="accordion-body" data-i18n="faq.a10">
-                      El hosting incluye almacenamiento suficiente para imágenes
-                      y contenido, ancho de banda ilimitado, SSL (seguridad), y
-                      soporte técnico. Recomendamos planes según el tráfico
-                      esperado.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="faqHeadingEleven">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faqCollapseEleven"
-                      aria-expanded="false"
-                      aria-controls="faqCollapseEleven"
-                      data-i18n="faq.q11"
-                    >
-                      ¿Pueden migrar un sitio existente?
-                    </button>
-                  </h2>
-                  <div
-                    id="faqCollapseEleven"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="faqHeadingEleven"
-                    data-bs-parent="#faqAccordionRight"
-                  >
-                    <div class="accordion-body" data-i18n="faq.a11">
-                      Sí, podemos migrar tu sitio web actual sin perder datos.
-                      Nos encargamos de la transferencia de contenido, bases de
-                      datos, redirecciones 301 y configuración de DNS para una
-                      transición sin problemas.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="faqHeadingTwelve">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faqCollapseTwelve"
-                      aria-expanded="false"
-                      aria-controls="faqCollapseTwelve"
-                      data-i18n="faq.q12"
-                    >
-                      ¿Hay disponibilidad para proyectos urgentes?
-                    </button>
-                  </h2>
-                  <div
-                    id="faqCollapseTwelve"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="faqHeadingTwelve"
-                    data-bs-parent="#faqAccordionRight"
-                  >
-                    <div class="accordion-body" data-i18n="faq.a12">
-                      Sí, podemos aceptar proyectos urgentes según nuestra
-                      disponibilidad. Contáctanos directamente para analizar tu
-                      necesidad y ofrecerte un plan acelerado si es posible.
                     </div>
                   </div>
                 </div>
@@ -1916,29 +1741,29 @@
 
                 <div class="form-group">
                   <label for="servicio" data-i18n="contact.serviceLabel"
-                    >Tipo de Servicio</label
+                    >Tipo de Servicio *</label
                   >
-                  <select id="servicio" name="servicio">
+                  <select id="servicio" name="servicio" required>
                     <option value="" data-i18n="contact.selectService">
                       Selecciona un servicio
                     </option>
-                    <option value="diseño" data-i18n="contact.service1">
-                      Diseño Web
+                    <option value="landing-pages" data-i18n="servicios.service1Title">
+                      Landing Pages
                     </option>
-                    <option value="desarrollo" data-i18n="contact.service2">
-                      Desarrollo Full Stack
+                    <option value="sitios-corporativos" data-i18n="servicios.service2Title">
+                      Sitios Corporativos
                     </option>
-                    <option value="ecommerce" data-i18n="contact.service3">
-                      E-commerce
+                    <option value="personal-brand" data-i18n="servicios.service3Title">
+                      Personal Brand Websites
                     </option>
-                    <option value="seo" data-i18n="contact.service4">
-                      SEO y Marketing
+                    <option value="web-apps-ecommerce" data-i18n="servicios.service4Title">
+                      Web Apps y Tiendas Online
                     </option>
-                    <option value="consultoria" data-i18n="contact.service5">
-                      Consultoría Digital
+                    <option value="mantenimiento" data-i18n="servicios.service5Title">
+                      Mantenimiento y Actualizaciones
                     </option>
-                    <option value="otro" data-i18n="contact.service6">
-                      Otro
+                    <option value="diseño-ux" data-i18n="servicios.service6Title">
+                      Diseño & UX
                     </option>
                   </select>
                 </div>
@@ -1975,10 +1800,6 @@
                 >
                   Enviar Mensaje
                 </button>
-
-                <p class="form-note" data-i18n="contact.requiredFields">
-                  * Campos obligatorios
-                </p>
               </form>
             </div>
           </div>

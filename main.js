@@ -20,14 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
       opacity: 0,
       y: 30,
       duration: 0.4,
-      scrollTrigger: { trigger: '#nosotros', start: 'top 75%' }
+      scrollTrigger: { trigger: '#nosotros', start: 'top 95%' }
     });
     gsap.from('#nosotros .nosotros-right .card', {
       opacity: 0,
       y: 30,
       duration: 0.4,
       stagger: 0.1,
-      scrollTrigger: { trigger: '#nosotros', start: 'top 75%' }
+      scrollTrigger: { trigger: '#nosotros', start: 'top 95%' }
     });
   }
 
@@ -393,8 +393,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (angle < ANGLE_THRESHOLD && distance > SWIPE_THRESHOLD) {
         const isMenuOpen = mobileMenu.classList.contains('is-open');
         
-        // Swipe right (open menu) - from left edge
-        if (deltaX > 0 && touchStartX < 50 && !isMenuOpen) {
+        // Swipe right (open menu) - from anywhere on screen
+        if (deltaX > 0 && !isMenuOpen) {
           openMenu();
         }
         // Swipe left (close menu) - while menu is open
@@ -553,7 +553,7 @@ document.addEventListener('DOMContentLoaded', () => {
           duration: 0.5,
           scrollTrigger: {
             trigger: section.id,
-            start: 'top 65%'
+            start: 'top 90%'
           }
         });
       }
@@ -566,7 +566,7 @@ document.addEventListener('DOMContentLoaded', () => {
           delay: 0.1,
           scrollTrigger: {
             trigger: section.id,
-            start: 'top 65%'
+            start: 'top 90%'
           }
         });
       }
@@ -582,6 +582,8 @@ document.addEventListener('DOMContentLoaded', () => {
       { selector: '.proyectos-inner', section: '#proyectos' },
       { selector: '.accordion-item', section: '#faq' },
       { selector: '.info-card', section: '#contact' },
+      { selector: '.info-schedule', section: '#contact' },
+      { selector: '.contact-form-wrapper', section: '#contact' },
       { selector: '.payment-card', section: '#pagos' }
     ];
 
@@ -594,7 +596,7 @@ document.addEventListener('DOMContentLoaded', () => {
           delay: index * 0.08,
           scrollTrigger: {
             trigger: card,
-            start: 'top 75%'
+            start: 'top 95%'
           }
         });
       });
